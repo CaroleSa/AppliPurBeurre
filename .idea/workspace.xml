@@ -2,107 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d68bf07-bf33-40bf-9bcd-0e0ec4acc973" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/AppliPurBeurre.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/purbeurre/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/purbeurre/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/purbeurre/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/purbeurre/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/purbeurre/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/.browserslistrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/.travis.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/css/creative.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/css/creative.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/gulpfile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/img/bg-masthead.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/img/colette.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/img/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/img/logo_carrot.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/img/logo_exit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/img/logo_purbeurre.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/img/logo_user.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/img/portfolio/fullsize/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/img/portfolio/fullsize/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/img/portfolio/fullsize/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/img/portfolio/fullsize/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/img/portfolio/fullsize/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/img/portfolio/fullsize/6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/img/portfolio/thumbnails/1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/img/portfolio/thumbnails/2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/img/portfolio/thumbnails/3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/img/portfolio/thumbnails/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/img/portfolio/thumbnails/5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/img/portfolio/thumbnails/6.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/img/remy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/js/creative.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/js/creative.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/scss/_global.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/scss/_masthead.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/scss/_navbar.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/scss/_portfolio.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/scss/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/scss/creative.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/bootstrap/js/bootstrap.bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/bootstrap/js/bootstrap.bundle.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/bootstrap/js/bootstrap.bundle.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/bootstrap/js/bootstrap.bundle.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/bootstrap/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/bootstrap/js/bootstrap.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/bootstrap/js/bootstrap.min.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/fontawesome-free/css/all.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/fontawesome-free/css/all.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/fontawesome-free/css/brands.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/fontawesome-free/css/brands.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/fontawesome-free/css/fontawesome.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/fontawesome-free/css/fontawesome.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/fontawesome-free/css/regular.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/fontawesome-free/css/regular.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/fontawesome-free/css/solid.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/fontawesome-free/css/solid.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/fontawesome-free/css/svg-with-js.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/fontawesome-free/css/svg-with-js.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/fontawesome-free/css/v4-shims.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/fontawesome-free/css/v4-shims.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/fontawesome-free/webfonts/fa-brands-400.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/fontawesome-free/webfonts/fa-brands-400.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/fontawesome-free/webfonts/fa-brands-400.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/fontawesome-free/webfonts/fa-brands-400.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/fontawesome-free/webfonts/fa-brands-400.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/fontawesome-free/webfonts/fa-regular-400.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/fontawesome-free/webfonts/fa-regular-400.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/fontawesome-free/webfonts/fa-regular-400.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/fontawesome-free/webfonts/fa-regular-400.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/fontawesome-free/webfonts/fa-regular-400.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/fontawesome-free/webfonts/fa-solid-900.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/fontawesome-free/webfonts/fa-solid-900.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/fontawesome-free/webfonts/fa-solid-900.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/fontawesome-free/webfonts/fa-solid-900.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/fontawesome-free/webfonts/fa-solid-900.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/jquery-easing/jquery.easing.compatibility.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/jquery-easing/jquery.easing.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/jquery-easing/jquery.easing.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/jquery/jquery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/jquery/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/jquery/jquery.min.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/jquery/jquery.slim.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/jquery/jquery.slim.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/jquery/jquery.slim.min.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/magnific-popup/jquery.magnific-popup.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/magnific-popup/jquery.magnific-popup.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/purbeurre/test/vendor/magnific-popup/magnific-popup.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/purbeurre/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/purbeurre/test/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -115,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/purbeurre/test/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="68" column="53" lean-forward="true" selection-start-line="68" selection-start-column="53" selection-end-line="68" selection-end-column="53" />
+            <state relative-caret-position="249">
+              <caret line="68" column="117" selection-start-line="68" selection-start-column="117" selection-end-line="68" selection-end-column="117" />
             </state>
           </provider>
         </entry>
@@ -332,8 +233,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/purbeurre/test/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="68" column="53" lean-forward="true" selection-start-line="68" selection-start-column="53" selection-end-line="68" selection-end-column="53" />
+        <state relative-caret-position="249">
+          <caret line="68" column="117" selection-start-line="68" selection-start-column="117" selection-end-line="68" selection-end-column="117" />
         </state>
       </provider>
     </entry>
