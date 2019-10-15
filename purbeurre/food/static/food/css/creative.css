@@ -4310,7 +4310,7 @@ input[type="button"].btn-block {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.navbar-dark .navbar-text a {
+.navbar-dark .navbar-text a{
   color: #fff;
 }
 
@@ -6208,7 +6208,7 @@ a.close.disabled {
 }
 
 .bg-primary {
-  background-color: #f4623a !important;
+  background-color: #E8A75D !important;
 }
 
 a.bg-primary:hover, a.bg-primary:focus,
@@ -6268,7 +6268,7 @@ button.bg-danger:focus {
 }
 
 .bg-light {
-  background-color: #f8f9fa !important;
+  background-color: #c45525 !important;
 }
 
 a.bg-light:hover, a.bg-light:focus,
@@ -7702,7 +7702,7 @@ button.bg-dark:focus {
 
 .pt-5,
 .py-5 {
-  padding-top: 3rem !important;
+  padding-top: 1rem !important;
 }
 
 .pr-5,
@@ -7712,7 +7712,7 @@ button.bg-dark:focus {
 
 .pb-5,
 .py-5 {
-  padding-bottom: 3rem !important;
+  padding-bottom: 1rem !important;
 }
 
 .pl-5,
@@ -9581,7 +9581,7 @@ hr.light {
 
 
 .page-section {
-  padding: 8rem 0;
+  padding: 4rem 0;
 }
 
 #mainNav {
@@ -9744,10 +9744,12 @@ header.masthead h1 {
 }
 
 
-#questionTextarea{
+#searchTextarea{
     margin-top:10px;
     margin-right:30px;
     height : 30px;
+    color : black;
+    background:#C0C0C0;
 }
 
 li{
@@ -9761,4 +9763,9 @@ li{
 
 #productTextarea{
     height : 30px;
+    color : black;
+}
+
+.text-white {
+  color: #FFFFFF !important;
 }
