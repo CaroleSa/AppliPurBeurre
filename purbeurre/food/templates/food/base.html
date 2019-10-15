@@ -23,6 +23,9 @@
   <!-- Theme CSS - Includes Bootstrap -->
   <link href="static/food/css/creative.min.css" rel="stylesheet">
 
+  <!-- Import css file -->
+  <link rel="stylesheet" href="static/food/css/creative.css" />
+
   <!-- Favicon logo -->
   <link rel="icon" type="icon/png" href="static/food/img/favicon.png"/>
 
@@ -35,20 +38,33 @@
     <div class="container">
       <img src="static/food/img/logo_purbeurre.png" alt="logo Purbeurre">
       <h1 class="navbar-brand js-scroll-trigger">&nbsp;&nbsp;PurBeurre</h1>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto my-2 my-lg-0">
-          <li class="nav-item">
-            <textarea class="nav-link js-scroll-trigger" rows="1" placeholder="question"></textarea>
+
+          <li class="nav-item" >
+            <textarea rows="1" id="questionTextarea" placeholder="Question"></textarea>
           </li>
-          <li class="nav-item">
-            <img src="static/food/img/logo_user.png" alt="logo user">
+
+          <li class="nav-item" id="userLogo">
+            <a onmouseover="document.photo.src='static/food/img/logo_user_black.png'"
+            onmouseout="document.photo.src='static/food/img/logo_user.png'"
+            href="" ><img src="static/food/img/logo_user.png"  name="photo"></a>
           </li>
-          <li class="nav-item">
-            <img src="static/food/img/logo_carrot.png" alt="logo carrot">
+
+          <li class="nav-item" id="carrotLogo">
+            <a href="" ><img src="static/food/img/logo_carrot.png" alt="logo carrot"></a>
           </li>
-          <li class="nav-item">
-            <img src="static/food/img/logo_exit.png" alt="logo exit">
+
+          <li class="nav-item" id="exit_logo">
+            <a onmouseover="document.photo2.src='static/food/img/logo_exit.png'"
+            onmouseout="document.photo2.src='static/food/img/logo_exit_2.png'"
+            href="" ><img src="static/food/img/logo_exit_2.png"  name="photo2"></a>
           </li>
+
         </ul>
       </div>
     </div>
