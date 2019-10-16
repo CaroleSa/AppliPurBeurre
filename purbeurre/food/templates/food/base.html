@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+{% load static %}
 
 <head>
 
@@ -26,6 +27,10 @@
   <!-- Import css file -->
   <link rel="stylesheet" href="static/food/css/creative.css" />
 
+  {% block link %}
+
+  {% endblock %}
+
   <!-- Favicon logo -->
   <link rel="icon" type="icon/png" href="static/food/img/favicon.png"/>
 
@@ -50,19 +55,19 @@
           </li>
 
           <li class="nav-item" id="userLogo">
-            <a onmouseover="document.photo.src='static/food/img/logo_user_black.png'"
-            onmouseout="document.photo.src='static/food/img/logo_user.png'"
-            href="" ><img src="static/food/img/logo_user.png"  name="photo"></a>
+            <a onmouseover="document.photo.src='{% static 'food/img/logo_user_black.png' %}'"
+            onmouseout="document.photo.src='{% static 'food/img/logo_user.png' %}'"
+            href="" ><img src="{% static 'food/img/logo_user.png' %}" name="photo" alt="logo user"></a>
           </li>
 
           <li class="nav-item" id="carrotLogo">
-            <a href="" ><img src="static/food/img/logo_carrot.png" alt="logo carrot"></a>
+            <a href="" ><img src="{% static 'food/img/logo_carrot.png' %}" alt="logo carrot"></a>
           </li>
 
           <li class="nav-item" id="exit_logo">
-            <a onmouseover="document.photo2.src='static/food/img/logo_exit.png'"
-            onmouseout="document.photo2.src='static/food/img/logo_exit_2.png'"
-            href="" ><img src="static/food/img/logo_exit_2.png"  name="photo2"></a>
+            <a onmouseover="document.photo2.src='{% static 'food/img/logo_exit.png' %}'"
+            onmouseout="document.photo2.src='{% static 'food/img/logo_exit_2.png' %}'"
+            href="" ><img src="{% static 'food/img/logo_exit_2.png' %}"  name="photo2" alt="logo exit"></a>
           </li>
 
         </ul>
@@ -85,15 +90,15 @@
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="static/food/vendor/jquery/jquery.min.js"></script>
-  <script src="static/food/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="{% static 'food/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'food/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
   <!-- Plugin JavaScript -->
-  <script src="static/food/vendor/jquery-easing/jquery.easing.min.js"></script>
-  <script src="static/food/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+  <script src="{% static 'food/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
+  <script src="{% static 'food/vendor/magnific-popup/jquery.magnific-popup.min.js' %}"></script>
 
   <!-- Custom scripts for this template -->
-  <script src="static/food/js/creative.min.js"></script>
+  <script src="{% static 'food/js/creative.min.js' %}"></script>
 
 </body>
 
