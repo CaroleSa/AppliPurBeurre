@@ -7,7 +7,8 @@ header{
     width : 200px;
     height : 200px;
     border: 2px white outset;
-    margin:90px;}
+    margin:90px;
+    margin-bottom: 70px;}
 
 #nutriscore{
     border: 2px black solid;
@@ -18,7 +19,7 @@ header{
     text-align:center ;
     font-weight : bold ;
     font-size : 1.5em;
-    margin : -300px 0 0 260px;
+    margin : -290px 0 0 270px;
     margin-bottom:210px;}
 
 @media (min-width: 992) {
