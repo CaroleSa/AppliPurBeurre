@@ -25,10 +25,11 @@ class CallApi:
         # creating the list that contains foods data of categories chooses
         for elt in self.categories:
             payload = {'action': 'process', 'tagtype_0': 'categories', 'tag_contains_0': 'contains',
-                       'tag_0': "\'" + elt + "\'", 'sort_by': 'unique_scans_n', 'page_size': '1000',
+                       'tag_0': "\'" + elt + "\'", 'sort_by': 'unique_scans_n', 'page_size': '2',
                        'axis_x': 'energy', 'axis_y': 'products_n', 'json': '1'}
             request = requests.get("https://fr.openfoodfacts.org/cgi/search.pl?", params=payload)
             data = request.json()
+
             self.list_data.append(data)
 
         return self.list_data
