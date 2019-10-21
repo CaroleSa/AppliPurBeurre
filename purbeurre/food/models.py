@@ -1,4 +1,13 @@
+#! /usr/bin/env python3
+# coding: UTF-8
+
+""" Models """
+
+
+# Import
 from django.db import models
+
+
 
 class Nutriment(models.Model):
     energy = models.DecimalField(max_digits=5, decimal_places=1)

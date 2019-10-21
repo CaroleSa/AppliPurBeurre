@@ -8,8 +8,8 @@
 # imports
 import psycopg2
 from purbeurre.purbeurre.settings import DATABASES
+from purbeurre.food.models import Food, Nutriment, Categorie
 from purbeurre.food.classes.call_api import CallApi
-
 
 
 
@@ -36,8 +36,8 @@ class InsertData:
         # get attributes of CallApi class
         categories_food = self.new_call_api.categories
         list_data = self.new_call_api.load_data()
-
-
+        i=0
+        # METTRE CONDITION + EXCEPT
         for elt, data in zip(categories_food, list_data):
 
             # inserting data into Food table
@@ -47,7 +47,20 @@ class InsertData:
                 nutrition_grade = "\'" + value['nutrition_grade_fr'].replace("'", "") + "\'"
                 nutriments = value['nutriments']
                 picture = "\'" + value['image_url'].replace("'", "") + "\'"
-                url = "\'" + value['url'].replace("'", "") + "\'"
+                link = "\'" + value['url'].replace("'", "") + "\'"
+
+                # insert data to the database (Categorie table)
+                Categorie.objects.create(name=elt)
+                categorie_id = Categorie.objects.values_list('ID').filter(name=elt)
+
+                # insert data to the database (Food table)
+                Food.objects.create(name=product_name)
+                Food.objects.create(categorie=categorie_id)
+                Food.objects.create(nutriment=i)
+                Food.objects.create(nutrition_grade=nutrition_grade)
+                Food.objects.create(utl_picture=picture)
+                Food.objects.create(link=link)
+                i += 1
 
                 nutriments_name = ["energy", "proteins", "fat", "satured-fat", "carbohydrates", "sugars",
                                    "fiber", "sodium"]
@@ -60,7 +73,11 @@ class InsertData:
                     if value == None:
                         value = "NULL"
                     name = "\'" + name.replace("'", "") + "\'"
+                    name = name.replace("-", "_")
                     print(product_name, name, value)
+
+                    # insert data to the database (Nutriment table)
+                    Nutriment.objects.create(name=value)
 
 
 
