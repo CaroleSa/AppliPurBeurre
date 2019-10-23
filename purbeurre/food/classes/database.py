@@ -3,88 +3,68 @@
 
 """ Class Database """
 
+import os
 
+os.environ['DJANGO_SETTINGS_MODULE'] = 'purbeurre.purbeurre.settings'
+
+import django
+django.setup()
 
 # imports
 import psycopg2
-from purbeurre.purbeurre.settings import DATABASES
-from purbeurre.food.models import Food, Nutriment, Categorie
-from purbeurre.food.classes.call_api import CallApi
+from purbeurre.settings import DATABASES
+from food.models import Food, Categorie
+from food.classes.call_api import CallApi
+import django.db
 
 
 
 
-class InsertData:
-    """ Creation database and insert data """
+class Database:
 
     def __init__(self):
-        """ Connection at MySQL and creation of cursor """
-        """"# connection at PostgreSql and creation cursor
-        default = DATABASES.get("default")
-        user = default.get("USER")
-        name_bdd = default.get("NAME")
-        conn = psycopg2.connect("dbname={} user={}".format(name_bdd, user))
-
-        self.cursor = conn.cursor()"""
 
         # instantiate the class Call_api
         self.new_call_api = CallApi()
 
-
-    def test(self):
-
-        # get attributes of CallApi class
+    def insert_data(self):
+        # insert the data if they do not exist in the database
+        # get categories list and the data food of the CallApi class
         categories_food = self.new_call_api.categories
         list_data = self.new_call_api.load_data()
-        i=0
-        # METTRE CONDITION + EXCEPT
+
         for elt, data in zip(categories_food, list_data):
 
-            # inserting data into Food table
-            for value in data['products']:
-
-                product_name = "\'" + value['product_name_fr'].replace("'", "") + "\'"
-                nutrition_grade = "\'" + value['nutrition_grade_fr'].replace("'", "") + "\'"
-                nutriments = value['nutriments']
-                picture = "\'" + value['image_url'].replace("'", "") + "\'"
-                link = "\'" + value['url'].replace("'", "") + "\'"
-
-                # insert data to the database (Categorie table)
+            try :
+                # insert data in Categorie table
+                # index = categories_food.index(elt)
+                index = categories_food.index(elt) + 1
                 Categorie.objects.create(name=elt)
-                categorie_id = Categorie.objects.values_list('ID').filter(name=elt)
 
-                # insert data to the database (Food table)
-                Food.objects.create(name=product_name)
-                Food.objects.create(categorie=categorie_id)
-                Food.objects.create(nutriment=i)
-                Food.objects.create(nutrition_grade=nutrition_grade)
-                Food.objects.create(utl_picture=picture)
-                Food.objects.create(link=link)
-                i += 1
+                for value in data['products']:
 
-                nutriments_name = ["energy", "proteins", "fat", "satured-fat", "carbohydrates", "sugars",
-                                   "fiber", "sodium"]
+                    # get data product_name, nutrition_grade, ...
+                    product_name = value['product_name_fr']
+                    grade = value['nutrition_grade_fr']
+                    picture = value['image_url']
+                    page_link = value['url']
+                    nutriments = value['nutriments']
+                    energy_100g = nutriments.get('energy_100g')
+                    proteins_100g = nutriments.get('proteins_100g')
+                    fat_100g = nutriments.get('fat_100g')
+                    carbohydrates_100g = nutriments.get('carbohydrates_100g')
+                    sugars_100g = nutriments.get('sugars_100g')
+                    fiber_100g = nutriments.get('fiber_100g')
+                    sodium_100g = nutriments.get('sodium_100g')
 
-                for name in nutriments_name:
-                    # string concatenation
-                    name_100 = name + "_100g"
-                    # get nutriments value in API
-                    value = nutriments.get(name_100)
-                    if value == None:
-                        value = "NULL"
-                    name = "\'" + name.replace("'", "") + "\'"
-                    name = name.replace("-", "_")
-                    print(product_name, name, value)
+                    categorie_id = Categorie.objects.get(id=index)
 
-                    # insert data to the database (Nutriment table)
-                    Nutriment.objects.create(name=value)
+                    # inserting data in Food table
+                    Food.objects.create(name=product_name, categorie=categorie_id,
+                                        nutrition_grade=grade, url_picture=picture, link=page_link,
+                                        energy=energy_100g, proteins=proteins_100g, fat=fat_100g,
+                                        carbohydrates=carbohydrates_100g, sugars=sugars_100g, fiber=fiber_100g,
+                                        sodium=sodium_100g)
 
-
-
-
-
-
-
-# instantiate the class Database
-NEW_DATABASE = InsertData()
-NEW_DATABASE.test()
+            except django.db.utils.IntegrityError:
+                continue

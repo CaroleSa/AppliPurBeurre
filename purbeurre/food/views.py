@@ -1,6 +1,10 @@
 from django.shortcuts import render
+from food.classes import database
 
 def index(request):
+    bdd = database.Database()
+    bdd.insert_data()
+
     return render(request, 'food/index.html')
 
 def result(request):
