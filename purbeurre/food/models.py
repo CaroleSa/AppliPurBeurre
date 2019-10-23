@@ -8,11 +8,13 @@
 from django.db import models
 
 
+
 class Categorie(models.Model):
     name = models.CharField(max_length=50, unique=True)
 
     def __str__(self):
         return self.name
+
 
 class Food(models.Model):
     name = models.CharField(max_length=120, unique=True)
@@ -31,6 +33,7 @@ class Food(models.Model):
     def __str__(self):
         return self.name, self.categorie, self.nutrition_grade, self.url_picture, self.link, \
                self.energy, self.proteins, self.fat, self.carbohydrates, self.sugars, self.fiber, self.sodium
+
 
 class Favorite(models.Model):
     food = models.ForeignKey(Food, on_delete=models.CASCADE)
