@@ -1,0 +1,44 @@
+header{
+    background-color: #343a40 !important;
+}
+
+#image{
+    display: block;
+    width : 200px;
+    height : 200px;
+    border: 2px white outset;
+    margin:90px;
+    margin-bottom: 70px;}
+
+#nutriscore{
+    border: 2px black solid;
+    border-radius: 30px;
+    width : 40px;
+    height : 40px;
+    background-color:#86ebe6;
+    text-align:center ;
+    font-weight : bold ;
+    font-size : 1.5em;
+    margin : -290px 0 0 270px;
+    margin-bottom:210px;}
+
+@media (min-width: 992) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  header.masthead {
+    height: 4vh;
+    min-height: 15rem;
+    padding-top: 72px;
+    padding-bottom: 0;
+  }
+  header.masthead p {
+    font-size: 1.15rem;
+  }
+  header.masthead h1 {
+    font-size: 3rem;
+  }
+}
