@@ -24,34 +24,38 @@ def index(request):
 
 def result(request):
     # get food searched
-    """food = request.POST.get('search')
-    print(food, "C'est ici !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")"""
-    # get names foods in the database
+    """food = request.GET.get('search', None)"""
     food = "Nutella"
-    names = Food.objects.values_list('name')
-    for name in names:
+    if not food:
+        # create context dictionary
+        context = {'foods_data': "False"}
+        return render(request, 'food/result.html', context)
 
-        # if the names foods contains the name food searched
-        if name.count(food) >= 1:
+    else:
+        # get names foods in the database
+        names = Food.objects.values_list('name')
+        for name in names:
 
-            # get food categorie
-            data = Food.objects.values_list('categorie')
-            categorie_food = data.get(name=name)
+            # if the names foods contains the name food searched
+            if name.count(food) >= 1:
 
-            # get data of all foods of the same categorie
-            data = Food.objects.values_list('name', 'nutrition_grade', 'url_picture')
-            foods_data = data.filter(categorie=categorie_food)
+                # get food categorie
+                data = Food.objects.values_list('categorie')
+                categorie_food = data.get(name=name)
 
-            # create context dictionary
-            context = {'foods_data': foods_data}
+                # get data of all foods of the same categorie
+                data = Food.objects.values_list('name', 'nutrition_grade', 'url_picture')
+                foods_data = data.filter(categorie=categorie_food)
 
-            return render(request, 'food/result.html', context)
+                # create context dictionary
+                context = {'foods_data': foods_data}
+                print(foods_data)
+                return render(request, 'food/result.html', context)
 
-        else:
-            # create context dictionary
-            context = {'foods_data': "False"}
-
-            return render(request, 'food/result.html', context)
+            else:
+                # create context dictionary
+                context = {'foods_data': "False"}
+                return render(request, 'food/result.html', context)
 
     # save favorite food
     save_favorite = False
