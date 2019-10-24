@@ -1,14 +1,28 @@
 {% extends 'food/base.html' %}
+{% load static %}
 
 {% block link %}
 
 <!-- Import css file -->
-<link rel="stylesheet" href="{% static 'account/css/style.css' %}">
+<link rel="stylesheet" href="{% static 'food/css/style.css' %}">
 
 {% endblock %}
 
 
-{% block content %}
+{% block content2 %}
+<h1 class="text-white">Compte utilisateur</h1>
+{% endblock %}
 
+{% block content %}
+  <!-- About Section -->
+  <section class="page-section bg-primary" id="about">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="text-black mt-0"></h2>
+        </div>
+      </div>
+    </div>
+  </section>
 
 {% endblock %}
