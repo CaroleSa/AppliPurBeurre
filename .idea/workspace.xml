@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d68bf07-bf33-40bf-9bcd-0e0ec4acc973" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/purbeurre/account/templates/account/create_account.html" beforeDir="false" afterPath="$PROJECT_DIR$/purbeurre/account/templates/account/create_account.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/purbeurre/purbeurre/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/purbeurre/purbeurre/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/purbeurre/food/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/purbeurre/food/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,17 +18,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/purbeurre/food/classes/database.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="-139">
+              <caret line="27" column="49" lean-forward="true" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/purbeurre/purbeurre/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="36" column="27" lean-forward="true" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
+            <state relative-caret-position="153">
+              <caret line="87" column="21" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -70,8 +69,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/purbeurre/food/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-119">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="354">
+              <caret line="42" column="29" lean-forward="true" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
               <folding>
                 <element signature="e#91#126#0" expanded="true" />
               </folding>
@@ -79,11 +78,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/purbeurre/food/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-173">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/purbeurre/food/classes/call_api.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="373">
+              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/purbeurre/account/templates/account/create_account.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="25" column="12" lean-forward="true" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+            <state relative-caret-position="459">
+              <caret line="27" column="14" lean-forward="true" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -93,18 +110,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="456">
               <caret line="42" column="14" lean-forward="true" selection-end-line="42" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/purbeurre/food/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="8" selection-end-column="1" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -179,7 +184,6 @@
         <option value="$PROJECT_DIR$/purbeurre/food/apps.py" />
         <option value="$PROJECT_DIR$/purbeurre/food/migrations/__init__.py" />
         <option value="$PROJECT_DIR$/purbeurre/food/models.py" />
-        <option value="$PROJECT_DIR$/purbeurre/food/classes/call_api.py" />
         <option value="$PROJECT_DIR$/purbeurre/food/classes/database.py" />
         <option value="$PROJECT_DIR$/purbeurre/account/migrations/templates/account/index.html" />
         <option value="$PROJECT_DIR$/purbeurre/account/templates/account/index.html" />
@@ -191,9 +195,10 @@
         <option value="$PROJECT_DIR$/purbeurre/food/templates/food/result.html" />
         <option value="$PROJECT_DIR$/purbeurre/food/templates/food/detail.html" />
         <option value="$PROJECT_DIR$/purbeurre/food/templates/food/favorites.html" />
+        <option value="$PROJECT_DIR$/purbeurre/account/templates/account/create_account.html" />
+        <option value="$PROJECT_DIR$/purbeurre/food/classes/call_api.py" />
         <option value="$PROJECT_DIR$/purbeurre/food/views.py" />
         <option value="$PROJECT_DIR$/purbeurre/purbeurre/settings.py" />
-        <option value="$PROJECT_DIR$/purbeurre/account/templates/account/create_account.html" />
       </list>
     </option>
   </component>
@@ -276,21 +281,6 @@
               <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="food" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AppliPurBeurre" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AppliPurBeurre" type="462c0819:PsiDirectoryNode" />
-              <item name="purbeurre" type="462c0819:PsiDirectoryNode" />
-              <item name="food" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="AppliPurBeurre" type="b2602c69:ProjectViewProjectNode" />
-              <item name="AppliPurBeurre" type="462c0819:PsiDirectoryNode" />
-              <item name="purbeurre" type="462c0819:PsiDirectoryNode" />
-              <item name="food" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="food" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AppliPurBeurre" type="b2602c69:ProjectViewProjectNode" />
@@ -675,20 +665,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/purbeurre/food/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/purbeurre/food/classes/call_api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="22" column="24" lean-forward="true" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/purbeurre/account/migrations/templates/account/result.html" />
     <entry file="file://$PROJECT_DIR$/purbeurre/account/migrations/templates/account/index.html" />
     <entry file="file://$PROJECT_DIR$/purbeurre/account/static/account/style.css">
@@ -733,30 +709,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/purbeurre/food/classes/database.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/purbeurre/food/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-119">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#91#126#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/purbeurre/purbeurre/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="36" column="27" lean-forward="true" selection-start-line="36" selection-start-column="27" selection-end-line="36" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/purbeurre/purbeurre/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -777,6 +729,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/purbeurre/food/classes/call_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/purbeurre/account/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -793,8 +752,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/purbeurre/account/templates/account/create_account.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="14" lean-forward="true" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purbeurre/food/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-173">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purbeurre/food/classes/database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-139">
+          <caret line="27" column="49" lean-forward="true" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purbeurre/food/views.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="354">
-          <caret line="25" column="12" lean-forward="true" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+          <caret line="42" column="29" lean-forward="true" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
+          <folding>
+            <element signature="e#91#126#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purbeurre/purbeurre/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="87" column="21" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
         </state>
       </provider>
     </entry>

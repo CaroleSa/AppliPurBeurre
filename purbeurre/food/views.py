@@ -8,15 +8,18 @@
 from django.shortcuts import render
 from food.classes import database
 from food.models import Food, Categorie, Favorite
-
+from requests.exceptions import ConnectionError
 
 
 def index(request):
     # create database and insert data if database is empty
-    bdd = database.Database()
-    bdd.insert_data()
-
-    return render(request, 'food/index.html')
+    try:
+        bdd = database.Database()
+        bdd.insert_data()
+        return render(request, 'food/index.html')
+    except ConnectionError:
+        context = {'error': "Problème de connexion"}
+        return render(request, 'food/index.html', context)
 
 
 def result(request):
@@ -33,6 +36,14 @@ def result(request):
 
     # create context dictionary
     context = {'foods_data': foods_data}
+
+    # save favorite food
+    save_favorite = False
+    food_saved = "Nutella"
+    if save_favorite == True:
+        id_foods = Food.objects.values_list('id')
+        id_food = id_foods.get(name=food_saved)
+        Favorite.food.create(food=id_food)
 
     return render(request, 'food/result.html', context)
 
@@ -61,9 +72,9 @@ def favorites(request):
     for id in id_favorites_foods:
         data = Food.filter(id=id)
         data_foods = data.values_list('name', 'link', 'url_picture')
-        print(data_foods[0])
+        print("TTEESSTT", data_foods[0])
         # insert data in context dictionary
-        context[elt] = data_food[0]
+
 
 
     return render(request, 'food/favorites.html')
