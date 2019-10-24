@@ -1,8 +1,36 @@
 {% extends 'food/base.html' %}
+{% load static %}
+
+{% block link %}
+
+<!-- Import css file -->
+<link rel="stylesheet" href="{% static 'food/css/style.css' %}">
+
+{% endblock %}
+
+
+
+
+{% block content2 %}
+<h1 class="text-white">Mes aliments</h1>
+{% endblock %}
+
 
 {% block content %}
+  <!-- About Section -->
+  <section class="page-section bg-primary" id="about">
+    <div class="container">
+      <div class="row justify-content-around">
+          <p class="text-center">Nutriscore<br><span class="medium">A B C D E</span></p>
+          <p class="text-left"> Repère nutritionnel<br>pour 100g :<br> informations</p>
+      </div><br><br><br><br>
+      <div class="row justify-content-center">
+          <input type="button" value="Voir la fiche d'OpenFoodFacts">
+      </div>
 
 
 
+    </div>
+  </section>
 
 {% endblock %}

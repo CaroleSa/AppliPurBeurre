@@ -4,23 +4,16 @@
 {% block link %}
 
 <!-- Import css file -->
-<link rel="stylesheet" href="{% static 'food/css/result.css' %}">
+<link rel="stylesheet" href="{% static 'food/css/style.css' %}">
 
 {% endblock %}
 
 
+{% block content2 %}
+<h1 class="text-white">Aliment cherché</h1>
+{% endblock %}
+
 {% block content %}
-
-<!-- Masthead -->
-  <header class="masthead">
-    <div class="container h-100">
-      <div class="row h-100 align-items-center justify-content-center text-center">
-        <div class="col-lg-10">
-          <h1 class="text-white">Aliment cherché</h1>
-      </div>
-    </div>
-  </header>
-
   <!-- About Section -->
   <section class="page-section bg-primary" id="about">
     <div class="container">
