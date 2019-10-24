@@ -8,8 +8,12 @@
 </div>
 <div class="col-lg-8 align-self-baseline">
   <h2 class="text-white-75 font-weight-light mb-5">Trouvez un produit de substitution pour ceux que vous consommez tous les jours.</h2>
-  <textarea class="js-scroll-trigger" rows="1" id="productTextarea" placeholder="Produit"></textarea>
-  <button>Chercher</button>
+  <form>
+    <textarea class="js-scroll-trigger" rows="1" id="productTextarea" placeholder="Produit"></textarea>
+    <input type="button" onclick="location.href='{% url 'result' %}'" value="Chercher" />
+  </form>
+
+
 </div>
 {% endblock %}
 

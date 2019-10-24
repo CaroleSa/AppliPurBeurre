@@ -18,24 +18,39 @@ def index(request):
         bdd.insert_data()
         return render(request, 'food/index.html')
     except ConnectionError:
-        context = {'error': "Problème de connexion"}
+        context = {'error_message': "Problème de connexion"}
         return render(request, 'food/index.html', context)
 
 
 def result(request):
     # get food searched
+    """food = request.POST.get('search')
+    print(food, "C'est ici !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")"""
+    # get names foods in the database
     food = "Nutella"
+    names = Food.objects.values_list('name')
+    for name in names:
 
-    # get food categorie
-    data = Food.objects.values_list('categorie')
-    categorie_food = data.get(name=food)
+        # if the names foods contains the name food searched
+        if name.count(food) >= 1:
 
-    # get data of all foods of the same categorie
-    data = Food.objects.values_list('name', 'nutrition_grade', 'url_picture')
-    foods_data = data.filter(categorie=categorie_food)
+            # get food categorie
+            data = Food.objects.values_list('categorie')
+            categorie_food = data.get(name=name)
 
-    # create context dictionary
-    context = {'foods_data': foods_data}
+            # get data of all foods of the same categorie
+            data = Food.objects.values_list('name', 'nutrition_grade', 'url_picture')
+            foods_data = data.filter(categorie=categorie_food)
+
+            # create context dictionary
+            context = {'foods_data': foods_data}
+
+            return render(request, 'food/result.html', context)
+
+        else:
+            # create context dictionary
+            context = {'error_message': 'Aucun résultat'}
+            return render(request, 'food/result.html', context)
 
     # save favorite food
     save_favorite = False
@@ -44,8 +59,6 @@ def result(request):
         id_foods = Food.objects.values_list('id')
         id_food = id_foods.get(name=food_saved)
         Favorite.food.create(food=id_food)
-
-    return render(request, 'food/result.html', context)
 
 
 def detail(request):
