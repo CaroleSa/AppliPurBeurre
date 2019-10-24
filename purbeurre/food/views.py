@@ -49,7 +49,8 @@ def result(request):
 
         else:
             # create context dictionary
-            context = {'error_message': 'Aucun résultat'}
+            context = {'foods_data': "False"}
+
             return render(request, 'food/result.html', context)
 
     # save favorite food

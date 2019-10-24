@@ -23,18 +23,22 @@
         </div>
       </div>
       <div class="row">
-        <div><a id="image" href=""><img src="{% static 'food/img/logo_carrot.png' %}" alt="logo carrot"></a>
-          <p id="nutriscore">A</p><p class="text-center">Nom aliment</p><p class="text-center"><i class="fa fa-floppy-o" aria-hidden="true"></i>Sauvegarder</p>
+      {% if foods_data == "False" %}
+        <div class="text-center">
+          Pas de résultats
         </div>
-        <div><a id="image" href=""><img src="{% static 'food/img/logo_carrot.png' %}" alt="logo carrot"></a><p id="nutriscore">A</p></div>
-        <div><a id="image" href=""><img src="{% static 'food/img/logo_carrot.png' %}" alt="logo carrot"></a><p id="nutriscore">A</p></div>
-      </div>
 
-      <div class="row">
-        <div><a id="image" href=""><img src="{% static 'food/img/logo_carrot.png' %}" alt="logo carrot"></a><p id="nutriscore">A</p></div>
-        <div><a id="image" href=""><img src="{% static 'food/img/logo_carrot.png' %}" alt="logo carrot"></a><p id="nutriscore">A</p></div>
-        <div><a id="image" href=""><img src="{% static 'food/img/logo_carrot.png' %}" alt="logo carrot"></a><p id="nutriscore">A</p></div>
-      </div>
+      {% else %}
+        <ul>
+        {% for food_data in foods_data %}
+          <li><div><a id="image" href="{% url 'detail' %}"><img src="{{ food_data.url_picture }}" alt="logo carrot"></a>
+          <p id="nutriscore">{{ food_data.nutrition_grade }}</p><p class="text-center">{{ food_data.name }}</p><p class="text-center"><i class="fa fa-floppy-o" aria-hidden="true"></i>Sauvegarder</p>
+          </div></li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+
+
 
 
     </div>

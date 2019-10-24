@@ -12,7 +12,7 @@
 
 
 {% block content2 %}
-<h1 class="text-white">Nom aliment</h1>
+<h1 class="text-white">{{ nom_aliment }}</h1>
 {% endblock %}
 
 
@@ -25,7 +25,7 @@
           <p class="text-left"> Repère nutritionnel<br>pour 100g :<br> informations</p>
       </div><br><br><br><br>
       <div class="row justify-content-center">
-          <input type="button" value="Voir la fiche d'OpenFoodFacts">
+          <input type="button" onclick="location.href='{{ link }}'" value="Voir la fiche d'OpenFoodFacts">
       </div>
 
 
