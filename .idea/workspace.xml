@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d68bf07-bf33-40bf-9bcd-0e0ec4acc973" name="Default Changelist" comment="" />
+    <list default="true" id="6d68bf07-bf33-40bf-9bcd-0e0ec4acc973" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/purbeurre/food/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/purbeurre/food/views.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,7 +15,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/purbeurre/purbeurre/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
@@ -26,18 +28,30 @@
         <entry file="file://$PROJECT_DIR$/purbeurre/account/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+              <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/purbeurre/food/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+              <folding>
+                <element signature="e#91#126#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/purbeurre/food/views.py">
+        <entry file="file://$PROJECT_DIR$/purbeurre/food/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+            <state>
+              <caret selection-end-line="8" selection-end-column="1" />
               <folding>
-                <element signature="e#0#35#0" expanded="true" />
+                <element signature="e#0#32#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -111,7 +125,6 @@
         <option value="$PROJECT_DIR$/purbeurre/food/classes/tests.py" />
         <option value="$PROJECT_DIR$/purbeurre/purbeurre/wsgi.py" />
         <option value="$PROJECT_DIR$/purbeurre/food/apps.py" />
-        <option value="$PROJECT_DIR$/purbeurre/food/views.py" />
         <option value="$PROJECT_DIR$/purbeurre/food/migrations/__init__.py" />
         <option value="$PROJECT_DIR$/purbeurre/food/models.py" />
         <option value="$PROJECT_DIR$/purbeurre/food/classes/call_api.py" />
@@ -127,6 +140,7 @@
         <option value="$PROJECT_DIR$/purbeurre/food/templates/food/detail.html" />
         <option value="$PROJECT_DIR$/purbeurre/food/templates/food/favorites.html" />
         <option value="$PROJECT_DIR$/purbeurre/purbeurre/settings.py" />
+        <option value="$PROJECT_DIR$/purbeurre/food/views.py" />
       </list>
     </option>
   </component>
@@ -244,15 +258,15 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Carole\program_python\Program\AppliPurBeurre\purbeurre\account\migrations\templates\account" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Carole\program_python\Program\AppliPurBeurre\purbeurre\food\classes" />
       <recent name="C:\Users\Carole\program_python\Program\AppliPurBeurre\purbeurre\food" />
       <recent name="C:\Users\Carole\program_python\Program\AppliPurBeurre\purbeurre\food\test\other" />
       <recent name="C:\Users\Carole\program_python\Program\AppliPurBeurre\purbeurre\food\test\static\food" />
       <recent name="C:\Users\Carole\program_python\Program\AppliPurBeurre\purbeurre\food\test\static" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Carole\program_python\Program\AppliPurBeurre\purbeurre\account\migrations\templates\account" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -400,7 +414,7 @@
     <frame x="-5" y="0" width="1616" height="876" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24968314" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24968314" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32974428" />
@@ -411,7 +425,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Favorites" order="7" weight="0.32974428" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32974428" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.30955586" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.30955586" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -441,16 +455,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/purbeurre/food/static/food/scss/_variables.scss" />
     <entry file="file://$PROJECT_DIR$/purbeurre/food/static/food/scss/_navbar.scss" />
-    <entry file="file://$PROJECT_DIR$/purbeurre/food/static/food/css/index.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/purbeurre/food/static/food/css/base.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="136" column="28" lean-forward="true" selection-start-line="136" selection-start-column="28" selection-end-line="136" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/purbeurre/food/static/food/css/index.css" />
+    <entry file="file://$PROJECT_DIR$/purbeurre/food/static/food/css/base.css" />
     <entry file="file://$PROJECT_DIR$/purbeurre/food/static/food/css/creative.min.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -642,16 +648,6 @@
     <entry file="file://$PROJECT_DIR$/purbeurre/account/static/account/style.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/purbeurre/food/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="8" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/purbeurre/account/templates/account/index.html" />
     <entry file="file://$PROJECT_DIR$/purbeurre/account/urls.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -718,17 +714,7 @@
     <entry file="file://$PROJECT_DIR$/purbeurre/account/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/purbeurre/food/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
+          <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -736,6 +722,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="86" column="21" selection-start-line="86" selection-start-column="21" selection-end-line="86" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purbeurre/food/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="8" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purbeurre/food/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+          <folding>
+            <element signature="e#91#126#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
