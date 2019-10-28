@@ -54,8 +54,10 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto my-2 my-lg-0">
 
-          <li class="nav-item" >
-            <input type="text" id="searchTextarea" placeholder="Chercher">
+          <li class="nav-item">
+            <form onsubmit="location.href='{% url 'food:result' %}'" action="{% url 'food:result' %}" method="get">
+              <input type="text" id="searchTextarea" placeholder="Chercher" name="search">
+            </form>
           </li>
 
           <li class="nav-item" id="userLogo">
