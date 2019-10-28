@@ -24,11 +24,12 @@ def index(request):
 
 def result(request):
     # get food searched
-    """food = request.GET.get('search', None)"""
-    food = "Nutella"
+    food = request.GET.get('search')
+    print(food, 'LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL')
+
     if not food:
         # create context dictionary
-        context = {'foods_data': "False"}
+        context = {'foods_data': "False", 'message': "Vous n'avez rien demandé"}
         return render(request, 'food/result.html', context)
 
     else:
@@ -49,12 +50,11 @@ def result(request):
 
                 # create context dictionary
                 context = {'foods_data': foods_data}
-                print(foods_data)
                 return render(request, 'food/result.html', context)
 
             else:
                 # create context dictionary
-                context = {'foods_data': "False"}
+                context = {'foods_data': "False", "message": "cet aliment n'existe pas"}
                 return render(request, 'food/result.html', context)
 
     # save favorite food

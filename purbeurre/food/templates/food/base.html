@@ -55,17 +55,17 @@
         <ul class="navbar-nav ml-auto my-2 my-lg-0">
 
           <li class="nav-item" >
-            <textarea rows="1" id="searchTextarea" placeholder="Chercher"></textarea>
+            <input type="text" id="searchTextarea" placeholder="Chercher">
           </li>
 
           <li class="nav-item" id="userLogo">
             <a onmouseover="document.photo.src='{% static 'food/img/logo_user_black.png' %}'"
             onmouseout="document.photo.src='{% static 'food/img/logo_user.png' %}'"
-            href="{% url 'create_account' %}" ><img src="{% static 'food/img/logo_user.png' %}" name="photo" alt="logo user"></a>
+            href="{% url 'account:create_account' %}" ><img src="{% static 'food/img/logo_user.png' %}" name="photo" alt="logo user"></a>
           </li>
 
           <li class="nav-item" id="carrotLogo">
-            <a href="{% url 'favorites' %}" ><img src="{% static 'food/img/logo_carrot.png' %}" alt="logo carrot"></a>
+            <a href="{% url 'food:favorites' %}" ><img src="{% static 'food/img/logo_carrot.png' %}" alt="logo carrot"></a>
           </li>
 
           <li class="nav-item" id="exit_logo">
