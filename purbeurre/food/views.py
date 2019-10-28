@@ -24,8 +24,7 @@ def index(request):
 
 def result(request):
     # get food searched
-    food = request.GET.get('search')
-    print(food, 'LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL')
+    food = request.GET.get('search').lower()
 
     if not food:
         # create context dictionary
@@ -35,21 +34,24 @@ def result(request):
     else:
         # get names foods in the database
         names = Food.objects.values_list('name')
+
         for name in names:
+            name = name[0]
+            name_lower = name.lower()
 
             # if the names foods contains the name food searched
-            if name.count(food) >= 1:
+            if name_lower.count(food) >= 1:
 
                 # get food categorie
                 data = Food.objects.values_list('categorie')
                 categorie_food = data.get(name=name)
 
-                # get data of all foods of the same categorie
-                data = Food.objects.values_list('name', 'nutrition_grade', 'url_picture')
-                foods_data = data.filter(categorie=categorie_food)
+                # get data of all foods of the same categorie and order by nutrition_grade
+                foods_data = Food.objects.filter(categorie=categorie_food)
+                foods_data = foods_data.order_by('nutrition_grade')
 
                 # create context dictionary
-                context = {'foods_data': foods_data}
+                context = {'search': food, 'foods_data': foods_data}
                 return render(request, 'food/result.html', context)
 
             else:

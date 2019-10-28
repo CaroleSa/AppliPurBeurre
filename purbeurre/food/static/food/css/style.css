@@ -4,11 +4,18 @@ header{
 
 #image{
     display: block;
+    border: 2px black solid;
     width : 200px;
     height : 200px;
-    border: 2px white outset;
-    margin:90px;
-    margin-bottom: 70px;}
+    margin:85px;
+    margin-bottom: 70px;
+    }
+
+h2{
+    margin-bottom: 110px;
+    font-size : 3em ;
+
+}
 
 #nutriscore{
     border: 2px black solid;
@@ -31,7 +38,7 @@ header{
 @media (min-width: 992px) {
   header.masthead {
     height: 4vh;
-    min-height: 15rem;
+    min-height: 20rem;
     padding-top: 72px;
     padding-bottom: 0;
   }
