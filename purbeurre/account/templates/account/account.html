@@ -10,7 +10,7 @@
 
 
 {% block content2 %}
-<h2 class="text-white">Créer un compte</h2>
+<h2 class="text-white">Compte utilisateur</h2>
 {% endblock %}
 
 {% block content %}
@@ -19,12 +19,11 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-4 text-center" id="form"><br>
-          <h4 class="text-black mt-0">Création compte utilisateur :</h4><br>
+          <h4 class="text-black mt-0">Connexion utilisateur :</h4><br>
           <label for="{{ form.e_mail.id_for_label }}">{{ form.e_mail }}<br>
           <label for="{{ form.password.id_for_label }}">{{ form.password }}<br>
-          <p>{{ error }}</p>
-          <input type="submit" value="Valider"><br><br>
-          <a href="{% url 'account:account' %}"><p class="small">M'identifier</p></a>
+          <input type="submit" value="Me connecter"><br><br>
+          <a href="{% url 'account:create_account' %}"><p class="small">Créer un compte</p></a>
         </div>
       </div>
     </div>

@@ -6,6 +6,8 @@
 
 # imports
 from django.shortcuts import render
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+
 from food.classes import database
 from food.models import Food, Categorie, Favorite
 from requests.exceptions import ConnectionError
@@ -23,6 +25,7 @@ def index(request):
 
 
 def result(request):
+
     # get food searched
     food = request.GET.get('search').lower()
 
@@ -36,6 +39,7 @@ def result(request):
         names = Food.objects.values_list('name')
 
         for name in names:
+
             name = name[0]
             name_lower = name.lower()
 
@@ -47,8 +51,19 @@ def result(request):
                 categorie_food = data.get(name=name)
 
                 # get data of all foods of the same categorie and order by nutrition_grade
-                foods_data = Food.objects.filter(categorie=categorie_food)
-                foods_data = foods_data.order_by('nutrition_grade')
+                data = Food.objects.filter(categorie=categorie_food)
+                foods_data = data.order_by('nutrition_grade')
+
+                paginator = Paginator(foods_data, 12)
+                page = request.GET.get('page')
+                try:
+                    foods_data = paginator.page(page)
+                except PageNotAnInteger:
+                    # If page is not an integer, deliver first page.
+                    foods_data = paginator.page(1)
+                except EmptyPage:
+                    # If page is out of range (e.g. 9999), deliver last page of results.
+                    foods_data = paginator.page(paginator.num_pages)
 
                 # create context dictionary
                 context = {'search': food, 'foods_data': foods_data}
@@ -70,9 +85,7 @@ def result(request):
 
 def detail(request):
     # get food selected
-    food = "Nutella"
-
-    # create context dictionary
+    food = request.GET['food']
     context = {}
 
     # create a list that contains the data to retrieve

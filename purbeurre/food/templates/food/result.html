@@ -38,15 +38,24 @@
             <div class="foreground">
               <p id="nutriscore">{{ food_data.nutrition_grade }}</p>
             </div>
-            <p class="text-center">{{ food_data.name }}</p>
-            <p class="text-center">
-              <a href="{% url 'food:detail' %}"><i class="fas fa-save"></i></a>Sauvegarder
+            <br><p id="nameFood" class="text-center">{{ food_data.name }}</p>
+            <p class="text-center save">
+                <i id="floppy" class="fas fa-save"></i> Sauvegarder
             </p>
-
-
           </div>
         {% endfor %}
 
+          <div class="clearfix"></div>
+            <nav aria-label="...">
+                <ul class="pager">
+                {% if foods_data.has_previous %}
+                    <li><a href="?page={{ foods_data.previous_page_number }}">Précédent</a></li>
+                {% endif %}
+                {% if foods_data.has_next %}
+                    <li><a href="?page={{ foods_data.next_page_number }}">Suivant</a></li>
+                {% endif %}
+                </ul>
+            </nav>
       {% endif %}
 
     </div>

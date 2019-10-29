@@ -9718,3 +9718,7 @@ font-size : 1.5em ;
 .big{
 font-size : 2em ;
 }
+
+a:link{
+text-decoration:none;
+}
