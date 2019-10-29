@@ -51,20 +51,37 @@ def create_account(request):
     if request.method == 'POST':
         form = Account(request.POST)
 
-        if form.is_valid():
+        if form.is_valid() is True:
+
             # get user's e-mail
-            email = form.cleaned_data['e_mail']
+            email = request.POST.get('e_mail')
 
             # get and encrypted user's password
-            password = form.cleaned_data['password'].encode()
+            password = request.POST.get('password').encode()
             encrypted_password = hashlib.sha1(password).hexdigest()
 
             # insert user's data in the database
             User.objects.create(e_mail=email, password=encrypted_password)
 
+            context["message"] = "Votre compte a bien été créé."
+
         else:
-            # Form data doesn't match the expected format.
-            # Add errors to the template.
-            context["error"] = "Message d'erreur"
+            email = request.POST.get('e_mail')
+            email_database = str(User.objects.get(e_mail__icontains=email))
+
+            if email == email_database:
+                context["message"] = "Ce compte existe déjà."
+
+            else:
+                # verif .com .fr nombre de chiffre mot de pass, majuscules dans email
+                # Form data doesn't match the expected format.
+                # Add errors to the template.
+                context["message"] = "Message d'erreur"
 
     return render(request, 'account/create_account.html', context)
+
+
+def my_account(request):
+    context = {}
+
+    return render(request, 'account/my_account.html', context)

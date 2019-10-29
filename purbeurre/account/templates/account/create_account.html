@@ -20,10 +20,13 @@
       <div class="row justify-content-center">
         <div class="col-lg-4 text-center" id="form"><br>
           <h4 class="text-black mt-0">Création compte utilisateur :</h4><br>
-          <label for="{{ form.e_mail.id_for_label }}">{{ form.e_mail }}<br>
-          <label for="{{ form.password.id_for_label }}">{{ form.password }}<br>
-          <p>{{ error }}</p>
-          <input type="submit" value="Valider"><br><br>
+          <form action="{% url 'account:create_account' %}" method="post">
+            {% csrf_token %}
+            <label for="{{ form.e_mail.id_for_label }}">{{ form.e_mail }}<br>
+            <label for="{{ form.password.id_for_label }}">{{ form.password }}<br>
+            <p>{{ message }}</p>
+            <input type="submit" value="Valider"><br><br>
+          </form>
           <a href="{% url 'account:account' %}"><p class="small">M'identifier</p></a>
         </div>
       </div>
