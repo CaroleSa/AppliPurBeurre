@@ -1,3 +1,10 @@
+#! /usr/bin/env python3
+# coding: UTF-8
+
+""" Views """
+
+
+# Imports
 from django.shortcuts import render
 from account.forms import Account
 from account.models import User
@@ -10,10 +17,32 @@ def account(request):
     form = Account()
     context = {'form': form}
 
+    # get the e-mail entered by the user
+    email = form.cleaned_data['e_mail']
+    # searched e-mail in the database
+    email = User.objects.get(e_mail=email)
+
+    if email.exists() is True:
+        # get and encrypted the password entered by the user
+        password = form.cleaned_data['password'].encode()
+        encrypted_password = hashlib.sha1(password).hexdigest()
+
+        # get encrypted password in the database
+        data = User.objects.filter(email=email)
+        password_database = data.objects.values_list('password')
+
+        if encrypted_password == password_database:
+            context["user"] = "True"
+
+        else:
+            context["user"] = "False"
+            context["error"] = "Le mot de passe n'est pas correct."
+
+    else:
+        context["error"] = "Cette adresse e-mail n'existe pas."
+
     return render(request, 'account/account.html', context)
-
-
-
+# indiquer pourquoi l'adresse mail pas bonne ou mot de passe
 
 def create_account(request):
     form = Account()
