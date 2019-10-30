@@ -5,11 +5,13 @@
 
 
 # Imports
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import re
 from account.forms import CreateAccount, AccessAccount
 from account.models import User
 import hashlib
+
+
 
 
 
@@ -44,9 +46,12 @@ def access_account(request):
 
                         # if the user's password ok
                         if password_database == encrypted_password:
-                            context["message"] = "Le compte existe mais rien ne se passe :)."
-                            context["color"] = "green"
-                            my_account(request)
+                            csrf = request.GET.get('csrfmiddlewaretoken')
+                            mail = request.GET.get('e_mail')
+                            password = request.GET.get('password')
+
+                            # redirected from my account page
+                            return redirect('/account/my_account/?csrfmiddlewaretoken='+csrf+'&e_mail='+mail+'&password='+password)
 
                         # if the user's password don't ok
                         else:
