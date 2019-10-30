@@ -10,7 +10,17 @@ from account.models import User
 
 
 
-class Account(ModelForm):
+class CreateAccount(ModelForm):
+    class Meta:
+        model = User
+        fields = ["e_mail", "password"]
+        widgets = {
+            'e_mail': EmailInput(attrs={'class': 'form-control', 'Placeholder': 'Adresse E-mail'}),
+            'password': TextInput(attrs={'class': 'form-control', 'Placeholder': 'Mot de passe', 'type': 'password', 'maxlength': '8', 'minlength':"8"})
+        }
+
+
+class AccessAccount(ModelForm):
     class Meta:
         model = User
         fields = ["e_mail", "password"]

@@ -10,7 +10,7 @@
 
 
 {% block content2 %}
-<h2 class="text-white">Créer un compte</h2>
+<h2 class="text-white">Créer mon compte</h2>
 {% endblock %}
 
 {% block content %}
@@ -28,7 +28,7 @@
             <p id="{{ color }}">{{ message }}</p>
             <input type="submit" value="Valider"><br><br>
           </form>
-          <a href="{% url 'account:account' %}"><p class="small">M'identifier</p></a>
+          <a href="{% url 'account:access_account' %}"><p class="small">M'identifier</p></a>
         </div>
       </div>
     </div>
