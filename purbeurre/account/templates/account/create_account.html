@@ -24,7 +24,8 @@
             {% csrf_token %}
             <label for="{{ form.e_mail.id_for_label }}">{{ form.e_mail }}<br>
             <label for="{{ form.password.id_for_label }}">{{ form.password }}<br>
-            <p>{{ message }}</p>
+            <input class="form-control" placeholder="Confirmer mot de passe" type="password" name="passwordControl" maxlength="8" minlength="8" required><br>
+            <p id="{{ color }}">{{ message }}</p>
             <input type="submit" value="Valider"><br><br>
           </form>
           <a href="{% url 'account:account' %}"><p class="small">M'identifier</p></a>
