@@ -5,7 +5,7 @@
 
 
 # imports
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 from food.classes import database
@@ -27,52 +27,39 @@ def index(request):
 def result(request):
 
     # get food searched
-    food = request.GET.get('search').lower()
+    food = request.GET.get('search')
 
+    # if there is no food searched
     if not food:
         # create context dictionary
-        context = {'foods_data': "False", 'message': "Vous n'avez rien demandé"}
-        return render(request, 'food/result.html', context)
+        context = {'message': "Vous n'avez rien demandé"}
+        return render(request, 'food/index.html', context)
 
+    # if there is food searched
     else:
-        # get names foods in the database
-        names = Food.objects.values_list('name')
+        # get the categorie of the food searched in the database
+        list_food = food.split()
+        for word in list_food:
+            name = Food.objects.filter(name__icontains=word)[ :1]
+            categorie_food = name.values_list('categorie')
 
-        for name in names:
-
-            name = name[0]
-            name_lower = name.lower()
-
-            # if the names foods contains the name food searched
-            if name_lower.count(food) >= 1:
-
-                # get food categorie
-                data = Food.objects.values_list('categorie')
-                categorie_food = data.get(name=name)
-
-                # get data of all foods of the same categorie and order by nutrition_grade
+            # if a categorie exists
+            if categorie_food:
+                # get data of all foods of the same categorie and order by nutrition grade
+                categorie_food = categorie_food[0]
                 data = Food.objects.filter(categorie=categorie_food)
                 foods_data = data.order_by('nutrition_grade')
-
-                paginator = Paginator(foods_data, 12)
-                page = request.GET.get('page')
-                try:
-                    foods_data = paginator.page(page)
-                except PageNotAnInteger:
-                    # If page is not an integer, deliver first page.
-                    foods_data = paginator.page(1)
-                except EmptyPage:
-                    # If page is out of range (e.g. 9999), deliver last page of results.
-                    foods_data = paginator.page(paginator.num_pages)
 
                 # create context dictionary
                 context = {'search': food, 'foods_data': foods_data}
                 return render(request, 'food/result.html', context)
 
+            # if a categorie don't exists
             else:
                 # create context dictionary
-                context = {'foods_data': "False", "message": "cet aliment n'existe pas"}
-                return render(request, 'food/result.html', context)
+                context = {"message": "Pas de résultat."}
+                return render(request, 'food/index.html', context)
+
 
     # save favorite food
     save_favorite = False
@@ -85,17 +72,17 @@ def result(request):
 
 def detail(request):
     # get food selected
-    food = request.GET['food']
+    #food = request.GET.get('e_mail')
     context = {}
 
-    # create a list that contains the data to retrieve
+    """# create a list that contains the data to retrieve
     list = ['energy', 'proteins', 'fat', 'carbohydrates', 'sugars', 'fiber', 'sodium', 'url_picture', 'link']
     for elt in list:
         # get data in the database
         data = Food.objects.values_list(elt)
         data_food = data.get(name=food)
         # insert data in context dictionary
-        context[elt] = data_food[0]
+        context[elt] = data_food[0]"""
 
     return render(request, 'food/detail.html', context)
 
