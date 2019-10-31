@@ -62,22 +62,19 @@
 
 
 
-    let i;
-
-    for (i = 1; i <= $('.fas fa-save').length; i++) {
-    console.log(compteur);
-}
-
     $("#image").on('click', function() {
-        $.get({
-      data : {food: 'je teste'},
-      type : 'GET',
-      url : 'http://127.0.0.1:8000/food/detail/'
-})
+        $.post("detail/",
+    {
+        "test": "123-456789",
+    },
+    )
 
-    });
+});
 
-  var $nameFoodElt = $('#nameFood').val();
+
+
+
+
 
 
 

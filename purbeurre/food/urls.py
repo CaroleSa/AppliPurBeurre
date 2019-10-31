@@ -1,10 +1,11 @@
 from django.conf.urls import url
 from . import views
+from django.urls import path
 
 app_name = 'food'
 
 urlpatterns = [
     url(r'^result/$', views.result,  name="result"),
-    url(r'^detail/$', views.detail, name="detail"),
+    path('detail/<name>', views.detail, name="detail"),
     url(r'^favorites/$', views.favorites, name="favorites")
 ]

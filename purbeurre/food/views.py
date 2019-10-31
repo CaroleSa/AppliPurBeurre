@@ -58,7 +58,7 @@ def result(request):
             else:
                 # create context dictionary
                 context = {"message": "Pas de résultat."}
-                return render(request, 'food/index.html', context)
+                return render(request, 'food/result.html', context)
 
 
     # save favorite food
@@ -70,19 +70,16 @@ def result(request):
         Favorite.food.create(food=id_food)
 
 
-def detail(request):
-    # get food selected
-    #food = request.GET.get('e_mail')
-    context = {}
+def detail(request, name):
+    # get the data to the food selected
+    food = Food.objects.values_list('name', 'nutrition_grade', 'url_picture', 'link', 'energy', 'proteins', 'fat', 'carbohydrates', 'sugars', 'fiber', 'sodium')
+    food_data = food.get(name=name)
 
-    """# create a list that contains the data to retrieve
-    list = ['energy', 'proteins', 'fat', 'carbohydrates', 'sugars', 'fiber', 'sodium', 'url_picture', 'link']
-    for elt in list:
-        # get data in the database
-        data = Food.objects.values_list(elt)
-        data_food = data.get(name=food)
-        # insert data in context dictionary
-        context[elt] = data_food[0]"""
+    # create the context dictionary
+    context = {}
+    name_data = ('name', 'nutrition_grade', 'url_picture', 'link', 'energy', 'proteins', 'fat', 'carbohydrates', 'sugars', 'fiber', 'sodium')
+    for i, elt in enumerate(name_data):
+        context[elt] = food_data[i]
 
     return render(request, 'food/detail.html', context)
 

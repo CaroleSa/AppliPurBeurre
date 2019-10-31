@@ -24,15 +24,17 @@
       </div>
       <div class="row">
 
-      {% if foods_data == "False" %}
+
         <p class="text-center">
           {{ message }}
         </p>
 
-      {% else %}
+
         {% for food_data in foods_data %}
+          {% if not food_data.name %}
+          {% else %}
           <div>
-            <a id="image" href="{% url 'food:detail' %}">
+            <a id="image" href="{% url 'food:detail' name=food_data.name %}">
               <img src="{{ food_data.url_picture }}" alt="food image" height="196" width="196">
             </a>
             <div class="foreground">
@@ -43,7 +45,9 @@
                 <i id="floppy" class="fas fa-save"></i> Sauvegarder
             </p>
           </div>
+          {% endif %}
         {% endfor %}
+
 
           <div class="clearfix"></div>
             <nav aria-label="...">
@@ -56,7 +60,7 @@
                 {% endif %}
                 </ul>
             </nav>
-      {% endif %}
+
 
     </div>
   </section>
