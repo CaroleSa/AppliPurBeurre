@@ -27,7 +27,7 @@ def index(request):
 def result(request):
 
     # get food searched
-    food = request.GET.get('search')
+    food = request.POST.get('search')
 
     # if there is no food searched
     if not food:

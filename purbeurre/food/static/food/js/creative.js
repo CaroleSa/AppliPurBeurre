@@ -63,11 +63,6 @@
 
 
     $("#image").on('click', function() {
-        $.post("detail/",
-    {
-        "test": "123-456789",
-    },
-    )
 
 });
 
