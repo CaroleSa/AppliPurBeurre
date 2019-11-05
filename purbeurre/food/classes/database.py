@@ -23,9 +23,9 @@ class Database:
         self.new_call_api = CallApi()
 
     def insert_data(self):
-        # get categories list and the data food of the CallApi class
-        categories_food = self.new_call_api.categories
-        list_data = self.new_call_api.load_data()
+        # get the data food of the CallApi class
+        categories_food = ['pizza', 'pate a tartiner', 'gateau', 'yaourt', 'bonbon']
+        list_data = self.new_call_api.load_data(categories_food)
 
         # insert the data if they do not exist in the database
         data_food = Food.objects.all()

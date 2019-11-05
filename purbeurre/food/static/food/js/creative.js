@@ -62,11 +62,6 @@
 
 
 
-    $("#image").on('click', function() {
-
-});
-
-
 
 
 

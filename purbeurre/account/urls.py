@@ -1,3 +1,11 @@
+#! /usr/bin/env python3
+# coding: UTF-8
+
+""" URLS """
+
+
+
+# import
 from django.conf.urls import url
 from . import views
 
