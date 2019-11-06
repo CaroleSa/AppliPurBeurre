@@ -41,10 +41,7 @@
               <p id="nutriscore">{{ food_data.nutrition_grade }}</p>
             </div>
             <br><p id="nameFood" class="text-center test">{{ food_data.name }}</p>
-            <p class="text-center save" onclick="$.ajax({
-      data : {data: 'tester id',
-      type : 'POST',
-      url : '/result'});">
+            <p class="text-center save" onclick=" alert('lalala')">
                 <i id="floppy" class="fas fa-save"></i> Sauvegarder
             </p>
           </div>

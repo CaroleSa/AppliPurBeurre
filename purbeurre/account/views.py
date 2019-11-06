@@ -7,7 +7,7 @@
 # Imports
 from django.shortcuts import render, redirect
 import re
-from account.forms import CreateAccount, AccessAccount
+from account.forms import Account
 from account.models import User
 import hashlib
 
@@ -17,17 +17,17 @@ import hashlib
 
 
 def access_account(request):
-    form = AccessAccount()
+    form = Account()
     context = {'form': form}
 
-    if request.method == 'GET':
-        form = AccessAccount(request.GET)
+    if request.method == 'POST':
+        form = Account(request.POST)
 
         # if the data entered by the user is valid
         if form.is_valid() is True or 'e_mail' in form.errors.as_data():
 
             # if e-mail is valid
-            email = str(request.GET.get('e_mail'))
+            email = str(request.POST.get('e_mail'))
             regexp = r"(^[a-z0-9._-]+@[a-z0-9._-]+\.[(com|fr)]+)"
             if re.match(regexp, email) is not None:
 
@@ -37,7 +37,7 @@ def access_account(request):
                     elt = elt[0]
                     if email == elt :
                         # encrypted user's password
-                        password = request.GET.get('password')
+                        password = request.POST.get('password')
                         password = password.encode()
                         encrypted_password = hashlib.sha1(password).hexdigest()
                         # get password encrypted to the databse
@@ -46,12 +46,10 @@ def access_account(request):
 
                         # if the user's password ok
                         if password_database == encrypted_password:
-                            csrf = request.GET.get('csrfmiddlewaretoken')
-                            mail = request.GET.get('e_mail')
-                            password = request.GET.get('password')
-
+                            mail = request.POST.get('e_mail')
+                            context = {'mail': mail}
                             # redirected from my account page
-                            return redirect('/account/my_account/?csrfmiddlewaretoken='+csrf+'&e_mail='+mail+'&password='+password)
+                            return render(request, 'account/my_account.html', context)
 
                         # if the user's password don't ok
                         else:
@@ -72,7 +70,7 @@ def access_account(request):
         # if the data entered by the user is not valid
         else:
             # if e-mail is not valid
-            email = str(request.GET.get('e_mail'))
+            email = str(request.POST.get('e_mail'))
             regexp = r"(^[a-z0-9._-]+@[a-z0-9._-]+\.[(com|fr)]+)"
             if re.match(regexp, email) is None:
                 context["message"] = "L'e-mail n'est pas valide."
@@ -80,7 +78,7 @@ def access_account(request):
 
             # if e-mail is valid
             else:
-                password = request.GET.get('password')
+                password = request.POST.get('password')
                 # if user's password is too long
                 if len(password) > 8:
                     context["message"] = "Votre mot de passe doit contenir 8 caractères"
@@ -91,11 +89,11 @@ def access_account(request):
 
 
 def create_account(request):
-    form = CreateAccount()
+    form = Account()
     context = {'form': form}
 
     if request.method == 'POST':
-        form = CreateAccount(request.POST)
+        form = Account(request.POST)
 
         # if the data entered by the user is valid
         if form.is_valid() is True:

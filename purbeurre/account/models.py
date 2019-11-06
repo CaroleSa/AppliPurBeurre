@@ -6,12 +6,11 @@
 
 # Import
 from django.db import models
+from django.utils import timezone
 
 
 
 class User(models.Model):
     e_mail = models.EmailField(unique=True)
     password = models.CharField(max_length=50)
-
-    def __str__(self):
-        return self.e_mail
+    creation_date = models.DateField(default=timezone.now)
