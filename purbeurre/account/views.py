@@ -35,7 +35,7 @@ def access_account(request):
                 data = User.objects.values_list('e_mail')
                 for elt in data:
                     elt = elt[0]
-                    if email == elt :
+                    if email == elt:
                         # encrypted user's password
                         password = request.POST.get('password')
                         password = password.encode()
@@ -46,8 +46,9 @@ def access_account(request):
 
                         # if the user's password ok
                         if password_database == encrypted_password:
-                            mail = request.POST.get('e_mail')
-                            context = {'mail': mail}
+                            data = User.objects.filter(e_mail=email)
+                            date = data.values_list('creation_date')
+                            context = {'mail': email, 'date': date}
                             # redirected from my account page
                             return render(request, 'account/my_account.html', context)
 

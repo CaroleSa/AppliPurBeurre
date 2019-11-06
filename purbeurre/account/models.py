@@ -13,3 +13,6 @@ class User(models.Model):
     e_mail = models.EmailField(unique=True)
     password = models.CharField(max_length=50)
     creation_date = models.DateField(default=timezone.now)
+
+    def __str__(self):
+        return self.e_mail, self.creation_date
