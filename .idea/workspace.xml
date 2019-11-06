@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d68bf07-bf33-40bf-9bcd-0e0ec4acc973" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/purbeurre/account/migrations/0001_initial.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/purbeurre/account/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/purbeurre/account/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/purbeurre/account/migrations/0001_initial.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/purbeurre/account/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/purbeurre/account/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/purbeurre/account/templates/account/access_account.html" beforeDir="false" afterPath="$PROJECT_DIR$/purbeurre/account/templates/account/access_account.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/purbeurre/account/templates/account/my_account.html" beforeDir="false" afterPath="$PROJECT_DIR$/purbeurre/account/templates/account/my_account.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/purbeurre/account/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/purbeurre/account/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/purbeurre/food/templates/food/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/purbeurre/food/templates/food/result.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/purbeurre/purbeurre/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/purbeurre/purbeurre/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/purbeurre/purbeurre/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/purbeurre/purbeurre/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,10 +53,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/purbeurre/account/templates/account/create_account.html">
+        <entry file="file://$PROJECT_DIR$/purbeurre/food/migrations/0001_initial.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="36" column="14" lean-forward="true" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
+            <state relative-caret-position="582">
+              <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+              <folding>
+                <element signature="e#49#89#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -68,26 +67,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/purbeurre/purbeurre/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="367">
-              <caret line="93" selection-start-line="93" selection-end-line="93" />
+            <state relative-caret-position="248">
+              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/purbeurre/account/migrations/0001_initial.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/purbeurre/account/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="221">
+              <caret line="13" column="44" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
               <folding>
                 <element signature="e#67#95#0" expanded="true" />
               </folding>
@@ -98,8 +88,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/purbeurre/purbeurre/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="24" lean-forward="true" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+            <state relative-caret-position="510">
+              <caret line="30" column="19" lean-forward="true" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
               <folding>
                 <element signature="e#633#665#0" expanded="true" />
               </folding>
@@ -108,20 +98,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/purbeurre/food/migrations/0001_initial.py">
+        <entry file="file://$PROJECT_DIR$/purbeurre/account/migrations/0001_initial.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="799">
-              <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
-              <folding>
-                <element signature="e#49#89#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="357">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/purbeurre/account/migrations/__init__.py">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -195,7 +177,6 @@
         <option value="$PROJECT_DIR$/purbeurre/account/migrations/templates/account/index.html" />
         <option value="$PROJECT_DIR$/purbeurre/account/templates/account/index.html" />
         <option value="$PROJECT_DIR$/purbeurre/food/__init__.py" />
-        <option value="$PROJECT_DIR$/purbeurre/purbeurre/urls.py" />
         <option value="$PROJECT_DIR$/purbeurre/purbeurre/__init__.py" />
         <option value="$PROJECT_DIR$/../GrandPyBot/webapp/static/script.js" />
         <option value="$PROJECT_DIR$/purbeurre/food/templates/food/favorites.html" />
@@ -214,20 +195,21 @@
         <option value="$PROJECT_DIR$/purbeurre/food/classes/call_api.py" />
         <option value="$PROJECT_DIR$/purbeurre/account/test_call_api.py" />
         <option value="$PROJECT_DIR$/purbeurre/food/classes/test_call_api.py" />
-        <option value="$PROJECT_DIR$/purbeurre/purbeurre/settings.py" />
         <option value="$PROJECT_DIR$/purbeurre/account/forms.py" />
         <option value="$PROJECT_DIR$/purbeurre/account/templates/account/create_account.html" />
         <option value="$PROJECT_DIR$/purbeurre/food/templates/food/result.html" />
         <option value="$PROJECT_DIR$/purbeurre/account/templates/account/my_account.html" />
         <option value="$PROJECT_DIR$/purbeurre/account/templates/account/access_account.html" />
         <option value="$PROJECT_DIR$/purbeurre/account/views.py" />
+        <option value="$PROJECT_DIR$/purbeurre/purbeurre/urls.py" />
+        <option value="$PROJECT_DIR$/purbeurre/purbeurre/settings.py" />
         <option value="$PROJECT_DIR$/purbeurre/account/models.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2507" />
-    <option name="y" value="38" />
+    <option name="x" value="2262" />
+    <option name="y" value="145" />
     <option name="width" value="1015" />
     <option name="height" value="939" />
   </component>
@@ -446,6 +428,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1592" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.117492095" />
@@ -467,7 +450,7 @@
     </layout>
     <layout-to-restore>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.117492095" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.117492095" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49936628" weight="0.32974428" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
@@ -477,7 +460,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Favorites" order="7" weight="0.32974428" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32974428" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.91951835" visible="true" weight="0.2340195" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.91951835" visible="true" weight="0.2340195" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.08048162" side_tool="true" weight="0.25033647" />
       <window_info anchor="bottom" id="Python Console" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -486,21 +469,6 @@
     </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/purbeurre/food/apps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Desktop/FORMATION/PROJETS/validé/Projet 6/P6 Carole Sartori/script.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5052" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/purbeurre/manage.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/psycopg2/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1054">
@@ -514,9 +482,6 @@
           <caret line="177" column="51" selection-start-line="177" selection-start-column="40" selection-end-line="177" selection-end-column="51" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/purbeurre/food/migrations/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/db/models/query.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -713,40 +678,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/purbeurre/account/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-          <folding>
-            <element signature="e#66#98#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/purbeurre/food/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/purbeurre/account/templates/account/create_account.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="14" lean-forward="true" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/purbeurre/account/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#66#123#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/-1742306119/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1969">
@@ -761,29 +692,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/purbeurre/account/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-          <folding>
-            <element signature="e#67#95#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/purbeurre/account/migrations/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/purbeurre/purbeurre/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="24" lean-forward="true" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
-          <folding>
-            <element signature="e#633#665#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/db/migrations/migration.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="235">
@@ -791,9 +699,65 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/purbeurre/account/migrations/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purbeurre/account/templates/account/create_account.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="36" column="14" lean-forward="true" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purbeurre/purbeurre/home.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purbeurre/account/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#66#123#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purbeurre/food/migrations/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purbeurre/account/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <folding>
+            <element signature="e#66#98#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purbeurre/account/migrations/0003_user_creation_date.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purbeurre/account/migrations/0002_auto_20191106_1410.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purbeurre/account/migrations/0001_initial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purbeurre/food/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/purbeurre/food/migrations/0001_initial.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
+        <state relative-caret-position="582">
           <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
           <folding>
             <element signature="e#49#89#0" expanded="true" />
@@ -803,15 +767,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/purbeurre/purbeurre/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="93" selection-start-line="93" selection-end-line="93" />
+        <state relative-caret-position="248">
+          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/purbeurre/account/migrations/0001_initial.py">
+    <entry file="file://$PROJECT_DIR$/purbeurre/purbeurre/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="510">
+          <caret line="30" column="19" lean-forward="true" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
+          <folding>
+            <element signature="e#633#665#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purbeurre/account/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="44" selection-start-line="13" selection-start-column="44" selection-end-line="13" selection-end-column="44" />
+          <folding>
+            <element signature="e#67#95#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

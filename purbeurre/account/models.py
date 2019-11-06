@@ -9,7 +9,6 @@ from django.db import models
 from django.utils import timezone
 
 
-
 class User(models.Model):
     e_mail = models.EmailField(unique=True)
     password = models.CharField(max_length=50)
