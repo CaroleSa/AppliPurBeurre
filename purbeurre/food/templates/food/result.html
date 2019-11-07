@@ -34,16 +34,18 @@
           {% if not food_data.name %}
           {% else %}
           <div>
-            <a id="image" href="{% url 'food:detail' name=food_data.name %}">
+            <a id="image" href="{% url 'food:detail' name=food_data.name %} ">
               <img src="{{ food_data.url_picture }}" alt="food image" height="196" width="196">
             </a>
             <div class="foreground">
               <p id="nutriscore">{{ food_data.nutrition_grade }}</p>
             </div>
-            <br><p id="nameFood" class="text-center test">{{ food_data.name }}</p>
-            <p class="text-center save" onclick=" alert('lalala')">
-                <i id="floppy" class="fas fa-save"></i> Sauvegarder
-            </p>
+            <br><p id="nameFood" class="text-center">{{ food_data.name }}</p>
+             <div class="save" id="{{ food_data.id }}">
+                <p class="text-center">
+                    <i id="floppy" class="fas fa-save"></i> Sauvegarder
+                </p>
+             </div>
           </div>
           {% endif %}
         {% endfor %}

@@ -46,7 +46,10 @@ def access_account(request):
 
                         # if the user's password ok, return my_account page
                         if password_database == encrypted_password:
-                            return redirect('account:my_account', mail=email, access=password_database)
+                            data = User.objects.values_list('creation_date')
+                            date = data.get(e_mail=email)[0]
+                            context = {'date': date, 'mail': email}
+                            return render(request, 'account/my_account.html', context)
 
                         # if the user's password don't ok
                         else:
@@ -154,24 +157,3 @@ def create_account(request):
                         context["color"] = "red"
 
     return render(request, 'account/create_account.html', context)
-
-
-def my_account(request, mail, access):
-    data = User.objects.values_list('e_mail')
-    for elt in data:
-        if elt == mail:
-            data = User.objects.values_list('password')
-            password_database = str(data.get(e_mail=mail)[0])
-
-            if access == password_database:
-                data = User.objects.values_list('creation_date')
-                date = data.get(e_mail=mail)[0]
-                context = {'mail': mail, 'date': date}
-                return render(request, 'account/my_account.html', context)
-
-        else:
-            form = Account()
-            context = {'form': form}
-            context["message"] = "Données non-valides"
-            context["color"] = "red"
-            return render(request, 'account/access_account.html', context)

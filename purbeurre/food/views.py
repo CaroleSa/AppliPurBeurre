@@ -7,7 +7,6 @@
 # imports
 from django.shortcuts import render, redirect
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
-
 from food.classes import database
 from food.models import Food, Categorie, Favorite
 from requests.exceptions import ConnectionError
@@ -24,7 +23,18 @@ def index(request):
         return render(request, 'food/index.html', context)
 
 
+
 def result(request):
+
+    if request.method == 'POST':
+        # save favorite food
+        test = request.POST['test']
+        print(test,
+          "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL")
+        food_saved = "Nutella"
+        id_foods = Food.objects.values_list('id')
+        id_food = id_foods.get(name=food_saved)
+        Favorite.food.create(food=id_food)
 
     # get food searched
     food = request.POST.get('search')
@@ -59,17 +69,6 @@ def result(request):
                 # create context dictionary
                 context = {"message": "Pas de résultat."}
                 return render(request, 'food/result.html', context)
-
-
-    # save favorite food
-    id = request.POST['data']
-    print(id,"LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL")
-    save_favorite = False
-    food_saved = "Nutella"
-    if save_favorite == True:
-        id_foods = Food.objects.values_list('id')
-        id_food = id_foods.get(name=food_saved)
-        Favorite.food.create(food=id_food)
 
 
 def detail(request, name):
