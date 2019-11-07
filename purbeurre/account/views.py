@@ -44,13 +44,9 @@ def access_account(request):
                         data = User.objects.values_list('password')
                         password_database = str(data.get(e_mail=email)[0])
 
-                        # if the user's password ok
+                        # if the user's password ok, return my_account page
                         if password_database == encrypted_password:
-                            data = User.objects.filter(e_mail=email)
-                            date = data.values_list('creation_date')
-                            context = {'mail': email, 'date': date}
-                            # redirected from my account page
-                            return render(request, 'account/my_account.html', context)
+                            return redirect('account:my_account', mail=email, access=password_database)
 
                         # if the user's password don't ok
                         else:
@@ -142,7 +138,8 @@ def create_account(request):
             # if e-mail is valid
             else:
                 # if user's e-mail exists to the database
-                email_database = str(User.objects.get(e_mail__icontains=email))
+                data = User.objects.values_list('e_mail')
+                email_database = data.get(e_mail=email)[0]
                 if email == email_database:
                     # create error message
                     context["message"] = "Ce compte existe déjà."
@@ -159,6 +156,22 @@ def create_account(request):
     return render(request, 'account/create_account.html', context)
 
 
-def my_account(request):
+def my_account(request, mail, access):
+    data = User.objects.values_list('e_mail')
+    for elt in data:
+        if elt == mail:
+            data = User.objects.values_list('password')
+            password_database = str(data.get(e_mail=mail)[0])
 
-    return render(request, 'account/my_account.html')
+            if access == password_database:
+                data = User.objects.values_list('creation_date')
+                date = data.get(e_mail=mail)[0]
+                context = {'mail': mail, 'date': date}
+                return render(request, 'account/my_account.html', context)
+
+        else:
+            form = Account()
+            context = {'form': form}
+            context["message"] = "Données non-valides"
+            context["color"] = "red"
+            return render(request, 'account/access_account.html', context)
