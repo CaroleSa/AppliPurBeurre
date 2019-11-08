@@ -11,6 +11,7 @@ from food.classes import database
 from food.models import Food, Categorie, Favorite
 from requests.exceptions import ConnectionError
 from django.db.utils import IntegrityError
+from django.db.models import F
 
 
 def index(request):
@@ -88,11 +89,12 @@ def detail(request, name):
 
 
 def favorites(request):
-    favorites_foods_id = Favorite.objects.values_list('id')
-    for id in favorites_foods_id:
-        data = Food.get(id=id)
-        data_foods = data.values_list('name', 'link', 'url_picture')
+    id = Favorite.objects.values_list('id')
+    id = Favorite.objects.filter(food__id='10')
+
+    for elt in id:
+        data = Food.objects.get(id=elt)
         # insert data in context dictionary
-        context = {'data': data_foods}
+        context = {'data': data}
 
         return render(request, 'food/favorites.html', context)

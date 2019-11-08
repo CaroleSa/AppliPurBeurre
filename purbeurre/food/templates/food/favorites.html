@@ -21,7 +21,9 @@
   <section class="page-section bg-primary" id="about">
     <div class="container">
       <div class="row justify-content-around">
-          <p class="text-left"> Aliments  :</p>
+        {% for food in data.id %}
+          <p class="text-left"> {{ food.name }}</p>
+        {% endfor %}
       </div><br><br><br><br>
       <div class="row justify-content-center">
           <input type="button" value="Voir la fiche d'OpenFoodFacts">
