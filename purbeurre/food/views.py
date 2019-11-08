@@ -10,6 +10,7 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from food.classes import database
 from food.models import Food, Categorie, Favorite
 from requests.exceptions import ConnectionError
+from django.db.utils import IntegrityError
 
 
 def index(request):
@@ -26,16 +27,16 @@ def index(request):
 
 def result(request):
 
-    if request.method == 'POST':
-        # save favorite food
-        test = request.POST['test']
-        print(test,
-          "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL")
-        food_saved = "Nutella"
-        id_foods = Food.objects.values_list('id')
-        id_food = id_foods.get(name=food_saved)
-        Favorite.food.create(food=id_food)
+    # SAVE FOOD SELECTED BY USER
+    id = request.POST.get('id', None)
+    if id is not None:
+        id_food = Food.objects.get(id=id)
+        try:
+            Favorite.objects.create(food=id_food)
+        except IntegrityError:
+            pass
 
+    # DISPLAY AN ERROR MESSAGE OR RETURN THE RESULT PAGE
     # get food searched
     food = request.POST.get('search')
 
@@ -71,6 +72,7 @@ def result(request):
                 return render(request, 'food/result.html', context)
 
 
+
 def detail(request, name):
     # get the data to the food selected
     food = Food.objects.values_list('name', 'nutrition_grade', 'url_picture', 'link', 'energy', 'proteins', 'fat', 'carbohydrates', 'sugars', 'fiber', 'sodium')
@@ -86,13 +88,11 @@ def detail(request, name):
 
 
 def favorites(request):
-    id_favorites_foods = Favorite.objects.values_list('id')
-    for id in id_favorites_foods:
-        data = Food.filter(id=id)
+    favorites_foods_id = Favorite.objects.values_list('id')
+    for id in favorites_foods_id:
+        data = Food.get(id=id)
         data_foods = data.values_list('name', 'link', 'url_picture')
-        print("TTEESSTT", data_foods[0])
         # insert data in context dictionary
+        context = {'data': data_foods}
 
-
-
-    return render(request, 'food/favorites.html')
+        return render(request, 'food/favorites.html', context)

@@ -88,15 +88,9 @@ $.ajaxSetup({
 
 // get id of element clicked in the result page
 $('.save').on('click', function() {
-    alert(this.id)
-    var $id = this.id
     $.ajax({
-      data : {test: 'test'},
+      data : {id: this.id},
       type : 'POST'
-
-    })
-    .done(function(data) {
-
     });
  });
 

@@ -36,7 +36,7 @@ class Food(models.Model):
 
 
 class Favorite(models.Model):
-    food = models.ForeignKey(Food, on_delete=models.CASCADE)
+    food = models.ForeignKey(Food, on_delete=models.CASCADE, unique=True)
 
     def __str__(self):
         return self.food
