@@ -8,7 +8,8 @@
 from django.shortcuts import render, redirect
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from food.classes import database
-from food.models import Food, Categorie, Favorite
+from food.models import Food, Categorie
+from account.models import UserAccount
 from requests.exceptions import ConnectionError
 from django.db.utils import IntegrityError
 from django.db.models import F
@@ -28,49 +29,54 @@ def index(request):
 
 def result(request):
 
-    # SAVE FOOD SELECTED BY USER
-    id = request.POST.get('id', None)
-    if id is not None:
-        id_food = Food.objects.get(id=id)
-        try:
-            Favorite.objects.create(food=id_food)
-        except IntegrityError:
-            pass
+    if request.method == 'POST':
+        # SAVE FOOD SELECTED BY USER
+        id_food = request.POST.get('id', None)
+        # ON TESTE JUSTE LE USER 1
+        id_user = 1
+        if id_food and id_user is not None:
+            # ENREGISTRER DANS COURS L'INSERTION DES DONNEES DANS TABLE INTERMEDIAIRE
+            food = Food.objects.get(id=id_food)
+            user = UserAccount.objects.get(id=id_user)
+            try:
+                user.favorites.add(food)
+            except IntegrityError:
+                pass
 
-    # DISPLAY AN ERROR MESSAGE OR RETURN THE RESULT PAGE
-    # get food searched
-    food = request.POST.get('search')
+        # DISPLAY AN ERROR MESSAGE OR RETURN THE RESULT PAGE
+        # get food searched
+        food = request.POST.get('search')
 
-    # if there is no food searched
-    if not food:
-        # create context dictionary
-        context = {'message': "Vous n'avez rien demandé"}
-        return render(request, 'food/index.html', context)
+        # if there is no food searched
+        if not food:
+            # create context dictionary
+            context = {'message': "Vous n'avez rien demandé"}
+            return render(request, 'food/index.html', context)
 
-    # if there is food searched
-    else:
-        # get the categorie of the food searched in the database
-        list_food = food.split()
-        for word in list_food:
-            name = Food.objects.filter(name__icontains=word)[ :1]
-            categorie_food = name.values_list('categorie')
+        # if there is food searched
+        else:
+            # get the categorie of the food searched in the database
+            list_food = food.split()
+            for word in list_food:
+                name = Food.objects.filter(name__icontains=word)[ :1]
+                categorie_food = name.values_list('categorie')
 
-            # if a categorie exists
-            if categorie_food:
-                # get data of all foods of the same categorie and order by nutrition grade
-                categorie_food = categorie_food[0]
-                data = Food.objects.filter(categorie=categorie_food)
-                foods_data = data.order_by('nutrition_grade')
+                # if a categorie exists
+                if categorie_food:
+                    # get data of all foods of the same categorie and order by nutrition grade
+                    categorie_food = categorie_food[0]
+                    data = Food.objects.filter(categorie=categorie_food)
+                    foods_data = data.order_by('nutrition_grade')
 
-                # create context dictionary
-                context = {'search': food, 'foods_data': foods_data}
-                return render(request, 'food/result.html', context)
+                    # create context dictionary
+                    context = {'search': food, 'foods_data': foods_data}
+                    return render(request, 'food/result.html', context)
 
-            # if a categorie don't exists
-            else:
-                # create context dictionary
-                context = {"message": "Pas de résultat."}
-                return render(request, 'food/result.html', context)
+                # if a categorie don't exists
+                else:
+                    # create context dictionary
+                    context = {"message": "Pas de résultat."}
+                    return render(request, 'food/result.html', context)
 
 
 
@@ -89,11 +95,9 @@ def detail(request, name):
 
 
 def favorites(request):
-    id = Favorite.objects.values_list('id')
-    id = Favorite.objects.filter(food__id='10')
-
-    for elt in id:
-        data = Food.objects.get(id=elt)
+        user = 1
+        favorites = UserAccount.objects.filter(id=user)
+        print(favorites, "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL")
         # insert data in context dictionary
         context = {'data': data}
 

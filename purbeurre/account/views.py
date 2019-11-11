@@ -8,7 +8,7 @@
 from django.shortcuts import render, redirect
 import re
 from account.forms import Account
-from account.models import User
+from account.models import UserAccount
 import hashlib
 
 
@@ -32,7 +32,7 @@ def access_account(request):
             if re.match(regexp, email) is not None:
 
                 # if user's e-mail exists to the database
-                data = User.objects.values_list('e_mail')
+                data = UserAccount.objects.values_list('e_mail')
                 for elt in data:
                     elt = elt[0]
                     if email == elt:
@@ -41,12 +41,12 @@ def access_account(request):
                         password = password.encode()
                         encrypted_password = hashlib.sha1(password).hexdigest()
                         # get password encrypted to the databse
-                        data = User.objects.values_list('password')
+                        data = UserAccount.objects.values_list('password')
                         password_database = str(data.get(e_mail=email)[0])
 
                         # if the user's password ok, return my_account page
                         if password_database == encrypted_password:
-                            data = User.objects.values_list('creation_date')
+                            data = UserAccount.objects.values_list('creation_date')
                             date = data.get(e_mail=email)[0]
                             context = {'date': date, 'mail': email}
                             return render(request, 'account/my_account.html', context)
@@ -112,7 +112,7 @@ def create_account(request):
                     password = password.encode()
                     encrypted_password = hashlib.sha1(password).hexdigest()
                     # insert user's data in the database
-                    User.objects.create(e_mail=email, password=encrypted_password)
+                    UserAccount.objects.create(e_mail=email, password=encrypted_password)
                     # create confirmation message
                     context["message"] = "Votre compte a bien été créé."
                     context["color"] = "green"
@@ -141,7 +141,7 @@ def create_account(request):
             # if e-mail is valid
             else:
                 # if user's e-mail exists to the database
-                data = User.objects.values_list('e_mail')
+                data = UserAccount.objects.values_list('e_mail')
                 email_database = data.get(e_mail=email)[0]
                 if email == email_database:
                     # create error message

@@ -6,13 +6,13 @@
 
 # Import
 from django.forms import ModelForm, TextInput, EmailInput
-from account.models import User
+from account.models import UserAccount
 
 
 
 class Account(ModelForm):
     class Meta:
-        model = User
+        model = UserAccount
         fields = ["e_mail", "password"]
         widgets = {
             'e_mail': EmailInput(attrs={'class': 'form-control', 'Placeholder': 'Adresse E-mail'}),
