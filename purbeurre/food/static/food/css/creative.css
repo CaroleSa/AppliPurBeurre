@@ -9726,3 +9726,9 @@ text-decoration:none;
 #red{
     Color:#c4101f;
 }
+
+.logo{
+  background-color: rgb(255,255,255,0.3) ;
+  padding : 15px ;
+  border-radius: 60px;
+}

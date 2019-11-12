@@ -28,7 +28,7 @@ def index(request):
 
 
 def result(request):
-
+    # cette ligne inutile ?
     if request.method == 'POST':
         # SAVE FOOD SELECTED BY USER
         id_food = request.POST.get('id', None)
@@ -95,10 +95,9 @@ def detail(request, name):
 
 
 def favorites(request):
-        user = 1
-        favorites = UserAccount.objects.filter(id=user)
-        print(favorites, "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL")
-        # insert data in context dictionary
+
+        data = Food.objects.filter(useraccount__id=1)
+
         context = {'data': data}
 
         return render(request, 'food/favorites.html', context)

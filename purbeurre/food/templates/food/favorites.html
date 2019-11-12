@@ -21,17 +21,13 @@
   <section class="page-section bg-primary" id="about">
     <div class="container">
       <div class="row justify-content-around">
-        {% for food in data.id %}
+        {% for food in data %}
+          <a id="image" href="{{ food.link }} ">
+              <img src="{{ food.url_picture }}" alt="food image" height="196" width="196">
+          </a>
           <p class="text-left"> {{ food.name }}</p>
         {% endfor %}
-      </div><br><br><br><br>
-      <div class="row justify-content-center">
-          <input type="button" value="Voir la fiche d'OpenFoodFacts">
       </div>
-
-
-
     </div>
   </section>
-
 {% endblock %}
