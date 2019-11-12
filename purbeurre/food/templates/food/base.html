@@ -54,10 +54,10 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto my-2 my-lg-0">
 
-          <li class="nav-item">
+          <li class="nav-item search">
             <form onsubmit="location.href='{% url 'food:result' %}'" action="{% url 'food:result' %}" method="post">
               {% csrf_token %}
-              <input type="text" id="searchTextarea" placeholder="Chercher" name="search">
+              <input type="text" id="searchTextarea" placeholder="  Chercher" name="search">
             </form>
           </li>
 

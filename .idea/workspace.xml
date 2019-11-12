@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d68bf07-bf33-40bf-9bcd-0e0ec4acc973" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/purbeurre/food/static/food/css/creative.css" beforeDir="false" afterPath="$PROJECT_DIR$/purbeurre/food/static/food/css/creative.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/purbeurre/food/templates/food/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/purbeurre/food/templates/food/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/purbeurre/food/templates/food/favorites.html" beforeDir="false" afterPath="$PROJECT_DIR$/purbeurre/food/templates/food/favorites.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/purbeurre/food/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/purbeurre/food/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/purbeurre/food/templates/food/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/purbeurre/food/templates/food/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/purbeurre/purbeurre/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/purbeurre/purbeurre/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,40 +37,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/purbeurre/food/templates/food/base.html">
+        <entry file="file://$PROJECT_DIR$/purbeurre/food/templates/food/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="67" column="15" lean-forward="true" selection-start-line="67" selection-start-column="15" selection-end-line="67" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/purbeurre/food/static/food/css/creative.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="449">
-              <caret line="9732" column="19" selection-start-line="9732" selection-start-column="19" selection-end-line="9732" selection-end-column="19" />
+            <state relative-caret-position="170">
+              <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/purbeurre/purbeurre/settings.py">
+        <entry file="file://$PROJECT_DIR$/purbeurre/food/static/food/css/creative.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="87" column="21" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
+            <state relative-caret-position="398">
+              <caret line="9736" column="39" selection-start-line="9736" selection-start-column="39" selection-end-line="9736" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/purbeurre/account/models.py">
+        <entry file="file://$PROJECT_DIR$/purbeurre/purbeurre/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
-              <folding>
-                <element signature="e#67#95#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="425">
+              <caret line="91" column="1" lean-forward="true" selection-start-line="91" selection-start-column="1" selection-end-line="91" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -88,7 +75,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/purbeurre/food/classes/database.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
+            <state relative-caret-position="374">
               <caret line="52" column="19" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="19" />
             </state>
           </provider>
@@ -106,8 +93,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/purbeurre/food/templates/food/detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+            <state relative-caret-position="244">
+              <caret line="34" column="8" lean-forward="true" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/purbeurre/food/templates/food/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="335">
+              <caret line="61" column="15" lean-forward="true" selection-start-line="61" selection-start-column="15" selection-end-line="61" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -123,8 +119,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>text-align: center</find>
-      <find>default</find>
       <find>#f4623a</find>
       <find>btn-light</find>
       <find>btn-xl</find>
@@ -153,6 +147,8 @@
       <find>nav_</find>
       <find>nav-item</find>
       <find>li</find>
+      <find>search</find>
+      <find>product</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -187,7 +183,6 @@
         <option value="$PROJECT_DIR$/purbeurre/account/templates/account/account.html" />
         <option value="$PROJECT_DIR$/purbeurre/account/__init__.py" />
         <option value="$PROJECT_DIR$/purbeurre/food/urls.py" />
-        <option value="$PROJECT_DIR$/purbeurre/food/templates/food/index.html" />
         <option value="$PROJECT_DIR$/purbeurre/food/static/food/css/style.css" />
         <option value="$PROJECT_DIR$/purbeurre/food/templates/food/detail.html" />
         <option value="$PROJECT_DIR$/purbeurre/food/classes/database.py" />
@@ -207,9 +202,10 @@
         <option value="$PROJECT_DIR$/purbeurre/account/models.py" />
         <option value="$PROJECT_DIR$/purbeurre/food/views.py" />
         <option value="$PROJECT_DIR$/purbeurre/food/templates/food/favorites.html" />
-        <option value="$PROJECT_DIR$/purbeurre/food/templates/food/base.html" />
-        <option value="$PROJECT_DIR$/purbeurre/food/static/food/css/creative.css" />
         <option value="$PROJECT_DIR$/purbeurre/purbeurre/settings.py" />
+        <option value="$PROJECT_DIR$/purbeurre/food/templates/food/base.html" />
+        <option value="$PROJECT_DIR$/purbeurre/food/templates/food/index.html" />
+        <option value="$PROJECT_DIR$/purbeurre/food/static/food/css/creative.css" />
       </list>
     </option>
   </component>
@@ -501,7 +497,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.16476552" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16476552" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49936628" weight="0.32974428" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
@@ -511,7 +507,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Favorites" order="7" weight="0.32974428" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32974428" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.91951835" visible="true" weight="0.20188425" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.91951835" visible="true" weight="0.20188425" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.08048162" side_tool="true" weight="0.25033647" />
       <window_info anchor="bottom" id="Python Console" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -729,13 +725,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/purbeurre/food/templates/food/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/purbeurre/food/migrations/0001_initial.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="634">
@@ -787,10 +776,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/purbeurre/food/classes/database.py">
+    <entry file="file://$PROJECT_DIR$/purbeurre/purbeurre/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="52" column="19" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="19" />
+        <state relative-caret-position="425">
+          <caret line="91" column="1" lean-forward="true" selection-start-line="91" selection-start-column="1" selection-end-line="91" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purbeurre/food/templates/food/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="34" column="8" lean-forward="true" selection-start-line="34" selection-start-column="8" selection-end-line="34" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -801,10 +797,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/purbeurre/food/templates/food/favorites.html">
+    <entry file="file://$PROJECT_DIR$/purbeurre/food/classes/database.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="32" column="14" lean-forward="true" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
+        <state relative-caret-position="374">
+          <caret line="52" column="19" selection-start-line="52" selection-start-column="19" selection-end-line="52" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -815,31 +811,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/purbeurre/food/templates/food/detail.html">
+    <entry file="file://$PROJECT_DIR$/purbeurre/food/templates/food/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+        <state relative-caret-position="170">
+          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purbeurre/food/templates/food/favorites.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="32" column="14" lean-forward="true" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/purbeurre/food/templates/food/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="67" column="15" lean-forward="true" selection-start-line="67" selection-start-column="15" selection-end-line="67" selection-end-column="15" />
+        <state relative-caret-position="335">
+          <caret line="61" column="15" lean-forward="true" selection-start-line="61" selection-start-column="15" selection-end-line="61" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/purbeurre/food/static/food/css/creative.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="9732" column="19" selection-start-line="9732" selection-start-column="19" selection-end-line="9732" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/purbeurre/purbeurre/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="87" column="21" selection-start-line="87" selection-start-column="21" selection-end-line="87" selection-end-column="21" />
+        <state relative-caret-position="398">
+          <caret line="9736" column="39" selection-start-line="9736" selection-start-column="39" selection-end-line="9736" selection-end-column="39" />
         </state>
       </provider>
     </entry>
