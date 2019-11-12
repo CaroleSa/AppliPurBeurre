@@ -80,18 +80,25 @@ def result(request):
 
 
 
-def detail(request, name):
-    # get the data to the food selected
-    food = Food.objects.values_list('name', 'nutrition_grade', 'url_picture', 'link', 'energy', 'proteins', 'fat', 'carbohydrates', 'sugars', 'fiber', 'sodium')
-    food_data = food.get(name=name)
+def detail(request):
 
-    # create the context dictionary
-    context = {}
-    name_data = ('name', 'nutrition_grade', 'url_picture', 'link', 'energy', 'proteins', 'fat', 'carbohydrates', 'sugars', 'fiber', 'sodium')
-    for i, elt in enumerate(name_data):
-        context[elt] = food_data[i]
+    if request.method == 'POST':
+        id_food = request.POST.get('id_food', None)
+        print(id_food, "detailFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF")
 
-    return render(request, 'food/detail.html', context)
+        # get the data to the food selected
+        food = Food.objects.values_list('name', 'nutrition_grade', 'url_picture', 'link', 'energy',
+                                        'proteins', 'fat', 'carbohydrates', 'sugars', 'fiber', 'sodium')
+        food_data = food.get(id=id_food)
+
+        # create the context dictionary
+        context = {}
+        name_data = ('name', 'nutrition_grade', 'url_picture', 'link', 'energy', 'proteins', 'fat',
+                     'carbohydrates', 'sugars', 'fiber', 'sodium')
+        for i, elt in enumerate(name_data):
+            context[elt] = food_data[i]
+
+        return render(request, 'food/detail.html', context)
 
 
 def favorites(request):

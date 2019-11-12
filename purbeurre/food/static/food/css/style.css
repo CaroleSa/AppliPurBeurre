@@ -62,7 +62,8 @@ h2{
 }
 
 .save:hover{
-   Color:#c45525 ;
+   Color:#c45525;
+   cursor: default;
 }
 
 a{

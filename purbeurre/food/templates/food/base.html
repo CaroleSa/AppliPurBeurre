@@ -64,17 +64,17 @@
           <li class="nav-item logo" id="userLogo">
             <a onmouseover="document.photo.src='{% static 'food/img/logo_user_black.png' %}'"
             onmouseout="document.photo.src='{% static 'food/img/logo_user.png' %}'"
-            href="{% url 'account:access_account' %}" ><img src="{% static 'food/img/logo_user.png' %}" name="photo" alt="logo user"></a>
+            href="{% url 'account:access_account' %}" ><img src="{% static 'food/img/logo_user.png' %}" title="Mon compte" name="photo" alt="logo user"></a>
           </li>
 
           <li class="nav-item logo" id="carrotLogo">
-            <a href="{% url 'food:favorites' %}" ><img src="{% static 'food/img/logo_carrot.png' %}" alt="logo carrot"></a>
+            <a href="{% url 'food:favorites' %}" ><img src="{% static 'food/img/logo_carrot.png' %}" title="Mes aliments" alt="logo carrot"></a>
           </li>
 
           <li class="nav-item logo" id="exit_logo">
             <a onmouseover="document.photo2.src='{% static 'food/img/logo_exit.png' %}'"
             onmouseout="document.photo2.src='{% static 'food/img/logo_exit_2.png' %}'"
-            href="{% url 'index' %}" ><img src="{% static 'food/img/logo_exit_2.png' %}"  name="photo2" alt="logo exit"></a>
+            href="{% url 'index' %}" ><img src="{% static 'food/img/logo_exit_2.png' %}"  name="photo2" title="Accueil" alt="logo exit"></a>
           </li>
 
         </ul>

@@ -86,7 +86,7 @@ $.ajaxSetup({
     }
 });
 
-// get id of element clicked in the result page
+// get id of element clicked in the result page for save the food
 $('.save').on('click', function() {
     $.ajax({
       data : {id: this.id},
@@ -94,6 +94,15 @@ $('.save').on('click', function() {
     });
  });
 
+// get id of element clicked in the result page for display the food in detail page
+$('.detail').on('click', function() {
+    alert(this.id);
+    $.ajax({
+      data : {id_food: this.id},
+      type : 'POST',
+      url : '/food/detail/'
+    });
+ });
 
 
 
