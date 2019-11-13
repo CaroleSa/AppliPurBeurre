@@ -12,7 +12,7 @@ from food.models import Food, Categorie
 from account.models import UserAccount
 from requests.exceptions import ConnectionError
 from django.db.utils import IntegrityError
-from django.db.models import F
+
 
 
 def index(request):
@@ -28,6 +28,7 @@ def index(request):
 
 
 def result(request):
+    print(request.method, "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL")
     # cette ligne inutile ?
     if request.method == 'POST':
         # SAVE FOOD SELECTED BY USER
@@ -81,24 +82,26 @@ def result(request):
 
 
 def detail(request):
+    print(request.method, "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL")
 
-    if request.method == 'POST':
-        id_food = request.POST.get('id_food', None)
-        print(id_food, "detailFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF")
 
-        # get the data to the food selected
-        food = Food.objects.values_list('name', 'nutrition_grade', 'url_picture', 'link', 'energy',
-                                        'proteins', 'fat', 'carbohydrates', 'sugars', 'fiber', 'sodium')
-        food_data = food.get(id=id_food)
+    id_food = request.POST.get('id_food', None)
 
-        # create the context dictionary
-        context = {}
-        name_data = ('name', 'nutrition_grade', 'url_picture', 'link', 'energy', 'proteins', 'fat',
-                     'carbohydrates', 'sugars', 'fiber', 'sodium')
-        for i, elt in enumerate(name_data):
-            context[elt] = food_data[i]
+    print(id_food, "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL")
 
-        return render(request, 'food/detail.html', context)
+    # get the data to the food selected
+    food = Food.objects.values_list('name', 'nutrition_grade', 'url_picture', 'link', 'energy',
+                                            'proteins', 'fat', 'carbohydrates', 'sugars', 'fiber', 'sodium')
+    food_data = food.get(id=id_food)
+
+    # create the context dictionary
+    context = {}
+    name_data = ('name', 'nutrition_grade', 'url_picture', 'link', 'energy', 'proteins', 'fat',
+                         'carbohydrates', 'sugars', 'fiber', 'sodium')
+    for i, elt in enumerate(name_data):
+        context[elt] = food_data[i]
+
+    return render(request, 'food/detail.html', context)
 
 
 def favorites(request):
