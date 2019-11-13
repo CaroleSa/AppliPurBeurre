@@ -8,8 +8,9 @@
 from django.shortcuts import render, redirect
 import re
 from account.forms import Account
-from account.models import UserAccount
+
 import hashlib
+from django.contrib.auth.models import User
 
 
 
@@ -89,6 +90,7 @@ def access_account(request):
 
 
 def create_account(request):
+
     form = Account()
     context = {'form': form}
 
@@ -102,58 +104,25 @@ def create_account(request):
             password_control = request.POST.get('passwordControl')
             password = request.POST.get('password')
 
-            # if e-mail is valid
-            regexp = r"(^[a-z0-9._-]+@[a-z0-9._-]+\.[(com|fr)]+)"
-            if re.match(regexp, email) is not None:
+            # if password and password control are the same
+            if password_control == password:
+                User.objects.create_user(username='essai', email=email, password=password)
+                context["message"] = "Votre compte a bien été créé."
+                context["color"] = "green"
 
-                # if password and password control are the same
-                if password_control == password:
-                    # encrypted user's password
-                    password = password.encode()
-                    encrypted_password = hashlib.sha1(password).hexdigest()
-                    # insert user's data in the database
-                    UserAccount.objects.create(e_mail=email, password=encrypted_password)
-                    # create confirmation message
-                    context["message"] = "Votre compte a bien été créé."
-                    context["color"] = "green"
-
-                # if password and password control aren't the same
-                else:
-                    # create error message
-                    context["message"] = "Vos mots de passe ne sont pas identiques."
-                    context["color"] = "red"
-
-            # if e-mail isn't valid
+            # if password and password control aren't the same
             else:
-                context["message"] = "Cet e-mail n'est pas valide."
+                # create error message
+                context["message"] = "Vos mots de passe ne sont pas identiques."
                 context["color"] = "red"
 
-        # if the data entered by the user is not valid
         else:
-            # if e-mail is not valid
-            email = request.POST.get('e_mail')
+            print(form.errors.as_data()['email'], "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL")
+            email = str(request.POST.get('e_mail'))
             regexp = r"(^[a-z0-9._-]+@[a-z0-9._-]+\.[(com|fr)]+)"
             if re.match(regexp, email) is None:
-                # create error message
-                context["message"] = "Cet e-mail n'est pas valide."
+                context["message"] = "L'e-mail n'est pas valide."
                 context["color"] = "red"
 
-            # if e-mail is valid
-            else:
-                # if user's e-mail exists to the database
-                data = UserAccount.objects.values_list('e_mail')
-                email_database = data.get(e_mail=email)[0]
-                if email == email_database:
-                    # create error message
-                    context["message"] = "Ce compte existe déjà."
-                    context["color"] = "red"
-
-                # if user's e-mail don't exists to the database
-                else:
-                    password = request.POST.get('password')
-                    # if user's password is too long
-                    if len(password) > 8:
-                        context["message"] = "Votre mot de passe doit contenir 8 caractères"
-                        context["color"] = "red"
 
     return render(request, 'account/create_account.html', context)

@@ -9,7 +9,7 @@ from django.shortcuts import render, redirect
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from food.classes import database
 from food.models import Food, Categorie
-from account.models import UserAccount
+
 from requests.exceptions import ConnectionError
 from django.db.utils import IntegrityError
 
