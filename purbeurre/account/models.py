@@ -5,15 +5,17 @@
 
 # Import
 from django.contrib.auth.models import AbstractUser
-from food.models import Food
+from django.contrib.auth import validators
 from django.db import models
-from django.utils import timezone
+from django.utils.translation import ugettext_lazy as _
+import django
 
+
+# custom User model
 class User(AbstractUser):
-    e_mail = models.EmailField(unique=True)
-    password = models.CharField(max_length=50)
-    creation_date = models.DateField(default=timezone.now)
-    favorites = models.ManyToManyField(Food)
+    USERNAME_FIELD = 'email'
+    email = models.EmailField(_('email address'), unique=True)
+    username = models.CharField(_('username'), null=True, max_length=150,
+                                validators=[django.contrib.auth.validators.UnicodeUsernameValidator()])
+    REQUIRED_FIELDS = []
 
-    def __str__(self):
-        return self.e_mail, self.creation_date, self.favorites

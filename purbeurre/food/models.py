@@ -6,7 +6,8 @@
 
 # Import
 from django.db import models
-from django.contrib.auth.models import User
+
+from django.contrib.auth import get_user_model
 
 
 
@@ -18,6 +19,7 @@ class Categorie(models.Model):
 
 
 class Food(models.Model):
+    User = get_user_model()
     name = models.CharField(max_length=120, unique=True)
     categorie = models.ForeignKey(Categorie, on_delete=models.CASCADE)
     nutrition_grade = models.CharField(max_length=1)
@@ -30,6 +32,7 @@ class Food(models.Model):
     sugars = models.CharField(max_length=10, null=True)
     fiber = models.CharField(max_length=10, null=True)
     sodium = models.CharField(max_length=10, null=True)
+    favorites = models.ManyToManyField(User)
 
     def __str__(self):
         return self.name, self.categorie, self.nutrition_grade, self.url_picture, self.link, \
