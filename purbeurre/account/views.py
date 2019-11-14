@@ -107,22 +107,22 @@ def create_account(request):
             # if password and password control are the same
             if password_control == password:
                 User.objects.create_user(username='essai', email=email, password=password)
-                context["message"] = "Votre compte a bien été créé."
+                context["message"] = ["Votre compte a bien été créé."]
                 context["color"] = "green"
 
             # if password and password control aren't the same
             else:
                 # create error message
-                context["message"] = "Vos mots de passe ne sont pas identiques."
+                context["message"] = ["Vos mots de passe ne sont pas identiques."]
                 context["color"] = "red"
 
         else:
-            print(form.errors.as_data()['email'], "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL")
-            email = str(request.POST.get('e_mail'))
-            regexp = r"(^[a-z0-9._-]+@[a-z0-9._-]+\.[(com|fr)]+)"
-            if re.match(regexp, email) is None:
-                context["message"] = "L'e-mail n'est pas valide."
+            # add the error messages in the context dictionary
+            error_list = []
+            for key, value in form.errors.as_data().items():
+                message = str(key).title() + ' : ' + str(value[0]).replace("['", "").replace("']", "")
+                error_list.append(message)
+                context["message"] = error_list
                 context["color"] = "red"
-
 
     return render(request, 'account/create_account.html', context)
