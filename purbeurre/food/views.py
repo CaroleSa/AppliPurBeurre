@@ -14,17 +14,18 @@ from account.forms import Account
 from requests.exceptions import ConnectionError
 from django.db.utils import IntegrityError
 from django.contrib.auth import logout
+from django.contrib.auth import get_user_model
 
 
 
 
 def index(request):
-
+    # NE FONCTIONNE PAS POUR LE MOMENT
+    print(request.method, "indexLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL")
     if request.method == 'POST':
         disconnection = request.POST.get('disconnection', False)
         print(disconnection, "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL")
-        # ET QUE L4UTILISATEUR EST CONNECT2
-        if disconnection is True:
+        if disconnection is True and request.user.is_authenticated:
             logout(request)
             context = {'message': "Vous êtes bien déconnecté."}
             return render(request, 'food/index.html', context)
@@ -45,16 +46,18 @@ def result(request):
     print(request.method, "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL")
     # cette ligne inutile ?
     if request.method == 'POST':
+
         # SAVE FOOD SELECTED BY USER
         id_food = request.POST.get('id', None)
         # ON TESTE JUSTE LE USER 1
         id_user = 1
-        if id_food and id_user is not None:
+        if id_food is not None and request.user.is_authenticated:
             # ENREGISTRER DANS COURS L'INSERTION DES DONNEES DANS TABLE INTERMEDIAIRE
             food = Food.objects.get(id=id_food)
-            user = UserAccount.objects.get(id=id_user)
+            user = get_user_model()
+            user = user.objects.get(id=id_user)
             try:
-                user.favorites.add(food)
+                food.favorites.add(user)
             except IntegrityError:
                 pass
 
@@ -99,23 +102,32 @@ def detail(request):
     print(request.method, "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL")
 
 
-    id_food = request.POST.get('id_food', None)
+    if request.method == 'GET':
+        redirect('food/detail/')
 
-    print(id_food, "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL")
 
-    # get the data to the food selected
-    food = Food.objects.values_list('name', 'nutrition_grade', 'url_picture', 'link', 'energy',
+    if request.method == 'POST':
+
+        id_food = request.POST.get('id_food', None)
+
+        print(id_food, "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL")
+
+        # get the data to the food selected
+        food = Food.objects.values_list('name', 'nutrition_grade', 'url_picture', 'link', 'energy',
                                             'proteins', 'fat', 'carbohydrates', 'sugars', 'fiber', 'sodium')
-    food_data = food.get(id=id_food)
+        food_data = food.get(id=id_food)
 
-    # create the context dictionary
-    context = {}
-    name_data = ('name', 'nutrition_grade', 'url_picture', 'link', 'energy', 'proteins', 'fat',
+        # create the context dictionary
+        context = {}
+
+        name_data = ('name', 'nutrition_grade', 'url_picture', 'link', 'energy', 'proteins', 'fat',
                          'carbohydrates', 'sugars', 'fiber', 'sodium')
-    for i, elt in enumerate(name_data):
-        context[elt] = food_data[i]
+        for i, elt in enumerate(name_data):
+            context[elt] = food_data[i]
 
-    return render(request, 'food/detail.html', context)
+
+
+        return render(request, 'food/detail.html', context)
 
 
 def favorites(request):

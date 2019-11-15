@@ -108,7 +108,7 @@ $('#exit_logo').on('click', function() {
     $.ajax({
       data : {disconnection: 'True'},
       type : 'POST',
-      url : '/food/'
+      url : '/'
     });
  });
 

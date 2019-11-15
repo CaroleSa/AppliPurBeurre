@@ -44,7 +44,7 @@ def access_account(request):
                 context["message"] = ["Ce compte n'existe pas."]
                 context["color"] = "red"
 
-        return render(request, 'account/access_account.html', context)
+    return render(request, 'account/access_account.html', context)
 
 
 def create_account(request):
@@ -81,4 +81,4 @@ def create_account(request):
                 context["message"] = error_list
                 context["color"] = "red"
 
-        return render(request, 'account/create_account.html', context)
+    return render(request, 'account/create_account.html', context)
