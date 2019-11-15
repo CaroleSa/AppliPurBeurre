@@ -26,9 +26,9 @@ def access_account(request):
 
         # if user exists - connection and confirmation message
         if user:
-           login(request, user)
-           context["message"] = ["Vous êtes connecté."]
-           context["color"] = "green"
+            login(request, user)
+            context["message"] = ["Vous êtes connecté."]
+            context["color"] = "green"
 
         elif not user:
             if form.is_valid() is False:
@@ -81,4 +81,4 @@ def create_account(request):
                 context["message"] = error_list
                 context["color"] = "red"
 
-    return render(request, 'account/create_account.html', context)
+        return render(request, 'account/create_account.html', context)

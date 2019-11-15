@@ -9,21 +9,35 @@ from django.shortcuts import render, redirect
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from food.classes import database
 from food.models import Food, Categorie
+from account.forms import Account
 
 from requests.exceptions import ConnectionError
 from django.db.utils import IntegrityError
+from django.contrib.auth import logout
+
 
 
 
 def index(request):
+
+    if request.method == 'POST':
+        disconnection = request.POST.get('disconnection', False)
+        print(disconnection, "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL")
+        # ET QUE L4UTILISATEUR EST CONNECT2
+        if disconnection is True:
+            logout(request)
+            context = {'message': "Vous êtes bien déconnecté."}
+            return render(request, 'food/index.html', context)
+
     # create database and insert data if database is empty
     try:
         bdd = database.Database()
         bdd.insert_data()
         return render(request, 'food/index.html')
     except ConnectionError:
-        context = {'error_message': "Problème de connexion"}
+        context = {'message': "Problème de connexion"}
         return render(request, 'food/index.html', context)
+
 
 
 
@@ -105,6 +119,13 @@ def detail(request):
 
 
 def favorites(request):
+    if not request.user.is_authenticated:
+        form = Account()
+        message = ["Veuillez vous connecter pour accéder à vos favoris."]
+        context = {'form': form, 'message': message, 'color': 'red'}
+        return render(request, 'account/my_account.html', context)
+
+    else:
 
         data = Food.objects.filter(useraccount__id=1)
 
