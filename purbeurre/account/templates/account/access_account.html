@@ -22,7 +22,9 @@
             {% csrf_token %}
             <label for="{{ form.email.id_for_label }}">{{ form.email }}<br>
             <label for="{{ form.password.id_for_label }}">{{ form.password }}<br>
-            <p id="{{ color }}">{{ message }}</p>
+            {% for elt in message %}
+              <p id="{{ color }}">{{ elt }}</p>
+            {% endfor %}
             <input type="submit" value="M'identifier"><br><br>
           </form>
           <a href="{% url 'account:create_account' %}"><p class="small">Créer mon compte</p></a>
