@@ -94,14 +94,7 @@ $('.save').on('click', function() {
     });
  });
 
-// get id of element clicked in the result page for display the food in detail page
-$('.detail').on('click', function() {
-    $.ajax({
-      data : {id_food: this.id},
-      type : 'POST',
-      url : '/food/detail/'
-    });
- });
+
 
 // get id of element clicked in the result page for display the food in detail page
 $('#exit_logo').on('click', function() {

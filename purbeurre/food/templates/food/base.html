@@ -55,7 +55,7 @@
         <ul class="navbar-nav ml-auto my-2 my-lg-0">
 
           <li class="nav-item search">
-            <form onsubmit="location.href='{% url 'food:result' %}'" action="{% url 'food:result' %}" method="post">
+            <form action="{% url 'food:result' %}" method="post">
               {% csrf_token %}
               <input type="text" id="searchTextarea" placeholder="  Chercher" name="search">
             </form>

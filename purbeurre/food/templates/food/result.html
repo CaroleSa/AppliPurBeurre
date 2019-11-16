@@ -25,20 +25,22 @@
       <div class="row">
 
 
-        <p class="text-center">
-          {{ message }}
-        </p>
+
 
 
         {% for food_data in foods_data %}
           {% if not food_data.name %}
+          <p class="text-center">
+            {{ message }}
+          </p>
           {% else %}
           <div>
-              <div class="detail" id="{{ food_data.id }}">
-                <a id="image" href="{% url 'food:detail' %}">
-                    <img src="{{ food_data.url_picture }}" alt="food image" height="196" width="196">
-                </a>
-              </div>
+              <form action="{% url 'food:detail' %}" method="post">{% csrf_token %}
+                <p>
+                    <input type="hidden" name="id_food" value="{{ food_data.id }}" /><input id="image" type="image" height="196" width="196" src="{{ food_data.url_picture }}" />
+                </p>
+              </form>
+
             <div class="foreground">
               <p id="nutriscore">{{ food_data.nutrition_grade }}</p>
             </div>
