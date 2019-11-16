@@ -85,14 +85,14 @@ def result(request):
                     foods_data = data.order_by('nutrition_grade')
 
                     # create context dictionary
-                    context = {'search': food, 'foods_data': foods_data}
+                    context = {'search': food, 'foods_data': foods_data, 'favorites': 'False'}
                     return render(request, 'food/result.html', context)
 
                 # if a categorie don't exists
                 else:
                     # create context dictionary
                     context = {"message": "Pas de résultat."}
-                    return render(request, 'food/result.html', context)
+                    return render(request, 'food/index.html', context)
 
 
 

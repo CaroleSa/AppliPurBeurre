@@ -29,11 +29,7 @@
 
 
         {% for food_data in foods_data %}
-          {% if not food_data.name %}
-          <p class="text-center">
-            {{ message }}
-          </p>
-          {% else %}
+          {% if food_data.name %}
           <div>
               <form action="{% url 'food:detail' %}" method="post">{% csrf_token %}
                 <p>
@@ -46,9 +42,11 @@
             </div>
             <br><p id="nameFood" class="text-center">{{ food_data.name }}</p>
              <div class="save" id="{{ food_data.id }}">
+                {% if favorites == 'False' %}
                 <p class="text-center">
                     <i id="floppy" class="fas fa-save"></i> Sauvegarder
                 </p>
+                {% endif %}
              </div>
           </div>
           {% endif %}
