@@ -73,8 +73,14 @@
 
           <li class="nav-item logo" id="exit_logo">
             <a onmouseover="document.photo2.src='{% static 'food/img/logo_exit.png' %}'"
-            onmouseout="document.photo2.src='{% static 'food/img/logo_exit_2.png' %}'"
-            href="{% url 'index' %}" ><img src="{% static 'food/img/logo_exit_2.png' %}"  name="photo2" title="Accueil" alt="logo exit"></a>
+            onmouseout="document.photo2.src='{% static 'food/img/logo_exit_2.png' %}'">
+              <form action="{% url 'index' %}" method="post">{% csrf_token %}
+                <p>
+                    <input type="hidden" name="disconnection" value="True" />
+                    <input type="image" src="{% static 'food/img/logo_exit_2.png' %}" name="photo2" title="Accueil" alt="logo exit" />
+                </p>
+              </form>
+            </a>
           </li>
 
         </ul>

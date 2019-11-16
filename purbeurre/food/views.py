@@ -20,17 +20,15 @@ from django.contrib.auth import get_user_model
 
 
 def index(request):
-    # NE FONCTIONNE PAS POUR LE MOMENT
-    print(request.method, "indexLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL")
+    # user's disconnection
     if request.method == 'POST':
         disconnection = request.POST.get('disconnection', False)
-        print(disconnection, "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL")
-        if disconnection is True and request.user.is_authenticated:
+        if disconnection == 'True' and request.user.is_authenticated:
             logout(request)
             context = {'message': "Vous êtes bien déconnecté."}
             return render(request, 'food/index.html', context)
 
-    # create database and insert data if database is empty
+    # insert data if database is empty
     try:
         bdd = database.Database()
         bdd.insert_data()
@@ -99,33 +97,21 @@ def result(request):
 
 
 def detail(request):
-    print(request.method, "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL")
-
-
-    if request.method == 'GET':
-        redirect('food/detail/')
-
-
     if request.method == 'POST':
-
+        # get id of the food selected
         id_food = request.POST.get('id_food', None)
-
-        print(id_food, "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL")
 
         # get the data to the food selected
         food = Food.objects.values_list('name', 'nutrition_grade', 'url_picture', 'link', 'energy',
-                                            'proteins', 'fat', 'carbohydrates', 'sugars', 'fiber', 'sodium')
+                                        'proteins', 'fat', 'carbohydrates', 'sugars', 'fiber', 'sodium')
         food_data = food.get(id=id_food)
 
         # create the context dictionary
         context = {}
-
         name_data = ('name', 'nutrition_grade', 'url_picture', 'link', 'energy', 'proteins', 'fat',
-                         'carbohydrates', 'sugars', 'fiber', 'sodium')
+                     'carbohydrates', 'sugars', 'fiber', 'sodium')
         for i, elt in enumerate(name_data):
             context[elt] = food_data[i]
-
-
 
         return render(request, 'food/detail.html', context)
 

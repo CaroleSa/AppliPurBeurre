@@ -9729,12 +9729,13 @@ text-decoration:none;
 
 .logo{
   background-color: rgb(255,255,255,0.3) ;
-  padding : 15px ;
+  padding : 15px 15px 0 15px ;
   border-radius: 60px;
 }
 
 #searchTextarea{
-    border-radius: 5x; margin-top:22px;
+    border-radius: 5x;
+    margin-top: 28px;
 }
 
 
