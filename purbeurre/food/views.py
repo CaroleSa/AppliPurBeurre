@@ -22,7 +22,7 @@ from django.contrib.auth import get_user_model
 def index(request):
     # user's disconnection
     if request.method == 'POST':
-        disconnection = request.POST.get('disconnection', False)
+        disconnection = request.POST.get('disconnection', 'False')
         if disconnection == 'True' and request.user.is_authenticated:
             logout(request)
             context = {'message': "Vous êtes bien déconnecté."}
@@ -41,58 +41,72 @@ def index(request):
 
 
 def result(request):
-    print(request.method, "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL")
-    # cette ligne inutile ?
     if request.method == 'POST':
 
         # SAVE FOOD SELECTED BY USER
-        id_food = request.POST.get('id', None)
-        # ON TESTE JUSTE LE USER 1
+        save_id_food = request.POST.get('id', None)
         id_user = 1
-        if id_food is not None and request.user.is_authenticated:
-            # ENREGISTRER DANS COURS L'INSERTION DES DONNEES DANS TABLE INTERMEDIAIRE
-            food = Food.objects.get(id=id_food)
-            user = get_user_model()
-            user = user.objects.get(id=id_user)
-            try:
-                food.favorites.add(user)
-            except IntegrityError:
-                pass
+        print(save_id_food, "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL")
 
-        # DISPLAY AN ERROR MESSAGE OR RETURN THE RESULT PAGE
-        # get food searched
-        food = request.POST.get('search')
+        if save_id_food:
+            if request.user.is_authenticated:
+                print('authentifié')
+                # ENREGISTRER DANS COURS L'INSERTION DES DONNEES DANS TABLE INTERMEDIAIRE
 
-        # if there is no food searched
-        if not food:
-            # create context dictionary
-            context = {'message': "Vous n'avez rien demandé"}
-            return render(request, 'food/index.html', context)
+                food = Food.objects.get(id=save_id_food)
+                user = get_user_model()
+                user = user.objects.get(id=id_user)
+                try:
+                    food.favorites.add(user)
+                except IntegrityError:
+                    pass
+                return render(request, 'account/access_account.html')
 
-        # if there is food searched
-        else:
-            # get the categorie of the food searched in the database
-            list_food = food.split()
-            for word in list_food:
-                name = Food.objects.filter(name__icontains=word)[ :1]
-                categorie_food = name.values_list('categorie')
+            if not request.user.is_authenticated:
+                # redirect to the access_account page
+                form = Account()
+                message = ["Veuillez vous connecter pour accéder à vos favoris."]
+                context = {'form': form, 'message': message, 'color': 'red'}
+                print("non authentifié")
+                return render(request, 'account/access_account.html', context)
 
-                # if a categorie exists
-                if categorie_food:
-                    # get data of all foods of the same categorie and order by nutrition grade
-                    categorie_food = categorie_food[0]
-                    data = Food.objects.filter(categorie=categorie_food)
-                    foods_data = data.order_by('nutrition_grade')
+        if save_id_food is None:
+            # DISPLAY AN ERROR MESSAGE OR RETURN THE RESULT PAGE
+            # get food searched
+            food = request.POST.get('search')
+            print(food)
+            # if there is no food searched
+            if not food:
+                # create context dictionary
+                context = {'message': "Vous n'avez rien demandé"}
+                print(context)
+                return render(request, 'food/index.html', context)
 
-                    # create context dictionary
-                    context = {'search': food, 'foods_data': foods_data, 'favorites': 'False'}
-                    return render(request, 'food/result.html', context)
+            # if there is food searched
+            else:
+                print('suite')
+                # get the categorie of the food searched in the database
+                list_food = food.split()
+                for word in list_food:
+                    name = Food.objects.filter(name__icontains=word)[ :1]
+                    categorie_food = name.values_list('categorie')
 
-                # if a categorie don't exists
-                else:
-                    # create context dictionary
-                    context = {"message": "Pas de résultat."}
-                    return render(request, 'food/index.html', context)
+                    # if a categorie exists
+                    if categorie_food:
+                        # get data of all foods of the same categorie and order by nutrition grade
+                        categorie_food = categorie_food[0]
+                        data = Food.objects.filter(categorie=categorie_food)
+                        foods_data = data.order_by('nutrition_grade')
+
+                        # create context dictionary
+                        context = {'search': food, 'foods_data': foods_data, 'authenticated': 'False'}
+                        return render(request, 'food/result.html', context)
+
+                    # if a categorie don't exists
+                    else:
+                        # create context dictionary
+                        context = {"message": "Pas de résultat."}
+                        return render(request, 'food/index.html', context)
 
 
 
@@ -117,16 +131,21 @@ def detail(request):
 
 
 def favorites(request):
+    # if user is not authenticated
     if not request.user.is_authenticated:
+        # redirect to the access_account page
         form = Account()
         message = ["Veuillez vous connecter pour accéder à vos favoris."]
         context = {'form': form, 'message': message, 'color': 'red'}
-        return render(request, 'account/my_account.html', context)
+        return render(request, 'account/access_account.html', context)
 
+    # if user is authenticated
     else:
+        # get the favorites food data
+        user = get_user_model()
+        data = user(id=1).food_set.all()
 
-        data = Food.objects.filter(useraccount__id=1)
-
+        # create context dictionary
         context = {'data': data}
 
         return render(request, 'food/favorites.html', context)

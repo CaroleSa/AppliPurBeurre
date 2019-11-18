@@ -90,7 +90,8 @@ $.ajaxSetup({
 $('.save').on('click', function() {
     $.ajax({
       data : {id: this.id},
-      type : 'POST'
+      type : 'POST',
+      url : '/food/result/'
     });
  });
 
