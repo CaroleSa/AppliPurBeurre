@@ -20,15 +20,16 @@ from django.contrib.auth import get_user_model
 
 
 def index(request):
-    # user's disconnection
+    # USER'S DISCONNECTION
     if request.method == 'POST':
+        # get disconnection == 'True' if user clicked to the exit logo
         disconnection = request.POST.get('disconnection', 'False')
-        if disconnection == 'True' and request.user.is_authenticated:
+        if request.user.is_authenticated and disconnection == 'True':
             logout(request)
             context = {'message': "Vous êtes bien déconnecté."}
             return render(request, 'food/index.html', context)
 
-    # insert data if database is empty
+    # INSERT DATA IF THE DATABASE IS EMPTY
     try:
         bdd = database.Database()
         bdd.insert_data()
@@ -38,77 +39,82 @@ def index(request):
         return render(request, 'food/index.html', context)
 
 
-
-
 def result(request):
     if request.method == 'POST':
-
-        # SAVE FOOD SELECTED BY USER
+        # get the id food selected by the user
         save_id_food = request.POST.get('id', None)
-        id_user = 1
         print(save_id_food, "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL")
 
         if save_id_food:
+            # SAVE FOOD SELECTED BY USER
+            # if user is authenticated
             if request.user.is_authenticated:
                 print('authentifié')
-                # ENREGISTRER DANS COURS L'INSERTION DES DONNEES DANS TABLE INTERMEDIAIRE
-
+                id_user = 1
                 food = Food.objects.get(id=save_id_food)
                 user = get_user_model()
                 user = user.objects.get(id=id_user)
-                try:
-                    food.favorites.add(user)
-                except IntegrityError:
-                    pass
-                return render(request, 'account/access_account.html')
+                food.favorites.add(user)
 
+            # DISPLAY ACCESS_ACCOUNT PAGE
+            # if user is not authenticated
             if not request.user.is_authenticated:
-                # redirect to the access_account page
+                print("non authentifié")
                 form = Account()
                 message = ["Veuillez vous connecter pour accéder à vos favoris."]
                 context = {'form': form, 'message': message, 'color': 'red'}
-                print("non authentifié")
                 return render(request, 'account/access_account.html', context)
 
         if save_id_food is None:
-            # DISPLAY AN ERROR MESSAGE OR RETURN THE RESULT PAGE
-            # get food searched
+            # get the name food searched
             food = request.POST.get('search')
             print(food)
+
+            # DISPLAY THE INDEX PAGE WITH AN ERROR MESSAGE
             # if there is no food searched
             if not food:
-                # create context dictionary
                 context = {'message': "Vous n'avez rien demandé"}
                 print(context)
                 return render(request, 'food/index.html', context)
 
             # if there is food searched
             else:
-                print('suite')
-                # get the categorie of the food searched in the database
+                context = {}
+                context['search'] = food
+                # get the categorie of the food searched
                 list_food = food.split()
                 for word in list_food:
                     name = Food.objects.filter(name__icontains=word)[:1]
                     categorie_food = name.values_list('categorie')
 
+                    # DISPLAY THE RESULT PAGE
                     # if a categorie exists
                     if categorie_food:
-                        # get data of all foods of the same categorie and order by nutrition grade
+                        # get data of all foods of the same categorie
+                        # ordered by nutrition grade
+                        context = {}
                         categorie_food = categorie_food[0]
                         data = Food.objects.filter(categorie=categorie_food)
                         foods_data = data.order_by('nutrition_grade')
+                        context['foods_data'] = foods_data
 
-                        # get the favorites foods id
-                        user = get_user_model()
-                        favorites_id = []
-                        for elt in user(id=1).food_set.values_list('id'):
-                            favorites_id.append(elt[0])
-                        print(favorites_id)
+                        # does not display the floppy logo
+                        # if the user has already registered the food
+                        if request.user.is_authenticated:
+                            # get the favorites foods id
+                            user = get_user_model()
+                            favorites_id = []
+                            for elt in user(id=1).food_set.values_list('id'):
+                                favorites_id.append(elt[0])
+                            context['authenticated'] = 'True'
+                            context['favorites_id'] = favorites_id
+                        else:
+                            context['authenticated'] = 'False'
+                            context['favorites_id'] = []
 
-                        # create context dictionary
-                        context = {'search': food, 'foods_data': foods_data, 'favorites_id': favorites_id, 'authenticated': 'False'}
                         return render(request, 'food/result.html', context)
 
+                    # DISPLAY THE INDEX PAGE WITH AN ERROR MESSAGE
                     # if a categorie don't exists
                     else:
                         # create context dictionary
@@ -116,8 +122,8 @@ def result(request):
                         return render(request, 'food/index.html', context)
 
 
-
 def detail(request):
+    # DISPLAY THE DETAIL PAGE
     if request.method == 'POST':
         # get id of the food selected
         id_food = request.POST.get('id_food', None)
@@ -138,6 +144,16 @@ def detail(request):
 
 
 def favorites(request):
+    # DELETE THE FOOD SELECTED BY USER
+    if request.method == 'POST':
+        id_food = request.POST.get('id', None)
+        id_user = 1
+        food = Food.objects.get(id=id_food)
+        user = get_user_model()
+        user = user.objects.get(id=id_user)
+        food.favorites.remove(user)
+
+    # RETURN TO THE ACCESS_ACCOUNT PAGE
     # if user is not authenticated
     if not request.user.is_authenticated:
         # redirect to the access_account page
@@ -146,13 +162,12 @@ def favorites(request):
         context = {'form': form, 'message': message, 'color': 'red'}
         return render(request, 'account/access_account.html', context)
 
+    # DISPLAY THE FAVORITES PAGE
     # if user is authenticated
     else:
         # get the favorites food data
         user = get_user_model()
         data = user(id=1).food_set.all()
-
         # create context dictionary
         context = {'data': data}
-
         return render(request, 'food/favorites.html', context)

@@ -93,8 +93,17 @@ $('.save').on('click', function() {
       type : 'POST',
       url : '/food/result/'
     });
-    alert(this.id);
     $('#' + this.id).hide();
+ });
+
+// get id of element clicked in the result page for delete the food
+$('.delete').on('click', function() {
+    $.ajax({
+      data : {id: this.id},
+      type : 'POST',
+      url : '/food/favorites/'
+    });
+    $('#delete' + this.id).hide();
  });
 
 

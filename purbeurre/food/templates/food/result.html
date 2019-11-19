@@ -43,9 +43,9 @@
             <br><p id="nameFood" class="text-center">{{ food_data.name }}</p>
               <div class="save" id="{{ food_data.id }}">
 
-                {% if food_data.id in favorites_id %}
+                {% if food_data.id in favorites_id and authenticated == 'True' %}
                 {% else %}
-                <p class="text-center">
+                <p class="text-center" >
                     <i id="floppy" class="fas fa-save"></i> Sauvegarder
                 </p>
                 {% endif %}

@@ -22,10 +22,20 @@
     <div class="container">
       <div class="row justify-content-around">
         {% for food in data %}
-          <a id="image" href="{{ food.link }} ">
-              <img src="{{ food.url_picture }}" alt="food image" height="196" width="196">
-          </a>
-          <p class="text-left"> {{ food.name }}</p>
+        <div id="delete{{ food.id }}">
+          <a href="{{ food.link }} ">
+              <img id="image"  src="{{ food.url_picture }}" alt="food image" height="196" width="196">
+          </a><br>
+          <div class="foreground">
+              <p id="nutriscore">{{ food.nutrition_grade }}</p>
+          </div>
+          <p id="nameFood" class="text-center"> {{ food.name }}</p>
+          <div class="delete" id="{{ food.id }}">
+                <p class="text-center">
+                    <i id="delete" class="far fa-trash-alt"></i> Supprimer
+                </p>
+          </div>
+          </div>
         {% endfor %}
       </div>
     </div>
