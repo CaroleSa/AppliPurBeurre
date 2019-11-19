@@ -88,7 +88,7 @@ def result(request):
                 # get the categorie of the food searched in the database
                 list_food = food.split()
                 for word in list_food:
-                    name = Food.objects.filter(name__icontains=word)[ :1]
+                    name = Food.objects.filter(name__icontains=word)[:1]
                     categorie_food = name.values_list('categorie')
 
                     # if a categorie exists
@@ -98,8 +98,14 @@ def result(request):
                         data = Food.objects.filter(categorie=categorie_food)
                         foods_data = data.order_by('nutrition_grade')
 
+                        # get the favorites foods id
+                        user = get_user_model()
+                        data = user(id=1).food_set.values_list('id')
+                        favorites_id = [entry for entry in data]
+                        print(favorites_id)
+
                         # create context dictionary
-                        context = {'search': food, 'foods_data': foods_data, 'authenticated': 'False'}
+                        context = {'search': food, 'foods_data': foods_data, 'favorites_id': favorites_id, 'authenticated': 'False'}
                         return render(request, 'food/result.html', context)
 
                     # if a categorie don't exists
