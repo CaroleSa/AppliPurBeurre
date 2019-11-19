@@ -100,8 +100,9 @@ def result(request):
 
                         # get the favorites foods id
                         user = get_user_model()
-                        data = user(id=1).food_set.values_list('id')
-                        favorites_id = [entry for entry in data]
+                        favorites_id = []
+                        for elt in user(id=1).food_set.values_list('id'):
+                            favorites_id.append(elt[0])
                         print(favorites_id)
 
                         # create context dictionary

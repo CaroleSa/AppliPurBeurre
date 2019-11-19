@@ -93,6 +93,8 @@ $('.save').on('click', function() {
       type : 'POST',
       url : '/food/result/'
     });
+    alert(this.id);
+    $('#' + this.id).hide();
  });
 
 
