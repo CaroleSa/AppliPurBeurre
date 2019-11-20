@@ -38,32 +38,19 @@ def result(request):
     if request.method == 'POST':
         # get the id food selected by the user
         save_id_food = request.POST.get('id', None)
-        print(save_id_food, "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL")
 
-        if save_id_food:
-            # SAVE FOOD SELECTED BY USER
-            # if user is authenticated
-            if request.user.is_authenticated:
-                print('authentifié')
-                id_user = request.user.id
-                food = Food.objects.get(id=save_id_food)
-                user = get_user_model()
-                user = user.objects.get(id=id_user)
-                food.favorites.add(user)
-
-            # DISPLAY ACCESS_ACCOUNT PAGE
-            # if user is not authenticated
-            if not request.user.is_authenticated:
-                print("non authentifié")
-                form = Account()
-                message = ["Veuillez vous connecter pour accéder à vos favoris."]
-                context = {'form': form, 'message': message, 'color': 'red'}
-                return render(request, 'account/access_account.html', context)
+        # SAVE FOOD SELECTED BY USER
+        # if user is authenticated
+        if save_id_food and request.user.is_authenticated:
+            id_user = request.user.id
+            food = Food.objects.get(id=save_id_food)
+            user = get_user_model()
+            user = user.objects.get(id=id_user)
+            food.favorites.add(user)
 
         if save_id_food is None:
             # get the name food searched
             food = request.POST.get('search')
-            print(food)
 
             # DISPLAY THE INDEX PAGE WITH AN ERROR MESSAGE
             # if there is no food searched
@@ -113,7 +100,7 @@ def result(request):
                         # create context dictionary
                         context = {"message": "Pas de résultat."}
                         return render(request, 'food/index.html', context)
-    print("non post")
+
 
 def detail(request):
     # DISPLAY THE DETAIL PAGE

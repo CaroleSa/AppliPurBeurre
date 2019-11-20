@@ -65,20 +65,20 @@
           <li class="nav-item logo">
             <a onmouseover="document.photo.src='{% static 'food/img/logo_user_black.png' %}'"
             onmouseout="document.photo.src='{% static 'food/img/logo_user.png' %}'"
-            href="{% url 'account:access_account' %}" ><img class="center" src="{% static 'food/img/logo_user.png' %}" title="Mon compte" name="photo" alt="logo user"></a>
+            href="{% url 'account:access_account' %}" ><img class="center" src="{% static 'food/img/logo_user.png' %}" name="photo" alt="logo user"></a>
             <p>M'identifier</p>
           </li>
           {% else %}
           <li class="nav-item logo">
             <a onmouseover="document.photo.src='{% static 'food/img/logo_user_green2.png' %}'"
             onmouseout="document.photo.src='{% static 'food/img/logo_user_green.png' %}'"
-            href="{% url 'account:my_account' %}" ><img class="center" src="{% static 'food/img/logo_user_green.png' %}" title="Mon compte" name="photo" alt="logo user"></a>
+            href="{% url 'account:my_account' %}" ><img class="center" src="{% static 'food/img/logo_user_green.png' %}" name="photo" alt="logo user"></a>
             <p>Mon compte</p>
           </li>
           {% endif %}
 
           <li class="nav-item logo" id="carrotLogoLi">
-            <a href="{% url 'food:favorites' %}" ><img class="center" id="carrotLogo" src="{% static 'food/img/logo_carrot.png' %}" title="Mes aliments" alt="logo carrot"></a>
+            <a href="{% url 'food:favorites' %}" ><img class="center" id="carrotLogo" src="{% static 'food/img/logo_carrot.png' %}" alt="logo carrot"></a>
             <p>Mes favoris</p>
           </li>
 
@@ -86,7 +86,7 @@
           <li class="nav-item logo">
               <form action="{% url 'index' %}" method="post">{% csrf_token %}
                 <input type="hidden" name="disconnection" value="True" />
-                <input class="center" type="image" src="{% static 'food/img/logo_exit.png' %}" title="Accueil - Déconnexion" alt="logo exit" />
+                <input class="center" type="image" src="{% static 'food/img/logo_exit.png' %}" alt="logo exit" />
               </form>
             {% if authenticated == 'False' %}
             <p>Accueil</p>

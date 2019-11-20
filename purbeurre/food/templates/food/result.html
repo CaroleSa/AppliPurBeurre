@@ -44,10 +44,14 @@
               <div class="save" id="{{ food_data.id }}">
 
                 {% if food_data.id in favorites_id and authenticated == 'True' %}
-                {% else %}
+                {% elif authenticated == 'True' %}
                 <p class="text-center" >
                     <i id="floppy" class="fas fa-save"></i> Sauvegarder
                 </p>
+                 {% elif authenticated == 'False' %}
+                  <a href="{% url 'account:access_account' %}"><p class="text-center" >
+                    <i id="floppy" class="fas fa-save"></i> Sauvegarder
+                   </p></a>
                 {% endif %}
 
              </div>
