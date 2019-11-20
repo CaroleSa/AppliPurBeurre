@@ -30,7 +30,7 @@
 
         {% for food_data in foods_data %}
           {% if food_data.name %}
-          <div>
+          <div class="result" id="{{ food_data.url_picture }}">
               <form action="{% url 'food:detail' %}" method="post">{% csrf_token %}
                 <p>
                     <input type="hidden" name="id_food" value="{{ food_data.id }}" /><input id="image" type="image" height="196" width="196" src="{{ food_data.url_picture }}" />

@@ -86,6 +86,21 @@ $.ajaxSetup({
     }
 });
 
+
+// display the food picture at the top of the result and detail pages
+if (window.location.pathname == '/food/result/') {
+    var $url = $('.result').attr('id');
+    $('header.masthead').css('background', 'linear-gradient(to bottom, rgba(92, 77, 66, 20) 0%, rgba(92, 77, 66, 0.5) 100%), url("'+ $url +'") no-repeat');
+    $('header.masthead').css('background-size', '1600px');
+    }
+
+if (window.location.pathname == '/food/detail/') {
+    alert("{{ url 'food:detail' }}");
+    var $url = $('.detail').attr('id');
+    $('header.masthead').css('background', 'linear-gradient(to bottom, rgba(92, 77, 66, 20) 0%, rgba(92, 77, 66, 0.5) 100%), url("'+ $url +'") no-repeat');
+    $('header.masthead').css('background-size', '1600px');
+    }
+
 // get id of element clicked in the result page for save the food
 $('.save').on('click', function() {
     $.ajax({
@@ -105,11 +120,6 @@ $('.delete').on('click', function() {
     });
     $('#delete' + this.id).hide();
  });
-
-
-
-
-
 
 
 })(jQuery); // End of use strict

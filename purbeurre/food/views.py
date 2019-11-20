@@ -87,7 +87,6 @@ def result(request):
                     if categorie_food:
                         # get data of all foods of the same categorie
                         # ordered by nutrition grade
-                        context = {}
                         categorie_food = categorie_food[0]
                         data = Food.objects.filter(categorie=categorie_food)
                         foods_data = data.order_by('nutrition_grade')
