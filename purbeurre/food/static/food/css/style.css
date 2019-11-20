@@ -37,7 +37,7 @@ h2{
     text-align:center ;
     font-weight : bold ;
     font-size : 1.5em;
-    margin : -220px 0 0 270px;
+    margin : -235px 0 0 270px;
     margin-bottom:210px;}
 
 @media (min-width: 992) {
@@ -87,4 +87,3 @@ h4{
     Color:#345a61;
     font-weight : bold ;
 }
-

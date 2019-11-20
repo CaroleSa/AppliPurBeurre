@@ -12,7 +12,6 @@
     {% csrf_token %}
     <input type="text" class="js-scroll-trigger" id="productTextarea" placeholder="  Produit" name="search">
     <input type="submit" onclick="location.href='{% url 'food:result' %}'" value="Chercher"/><br><br>
-    <p class="text-white-75">{{ message }}</p>
   </form>
 
 

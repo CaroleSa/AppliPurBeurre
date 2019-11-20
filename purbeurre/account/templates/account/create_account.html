@@ -20,8 +20,7 @@
       <div class="row justify-content-center">
         <div class="col-lg-4 text-center" id="form"><br>
           <h4 class="text-black mt-0">Création compte utilisateur :</h4><br>
-          <form action="{% url 'account:create_account' %}" method="post">
-            {% csrf_token %}
+          <form action="{% url 'account:create_account' %}" method="post">{% csrf_token %}
             <label for="{{ form.email.id_for_label }}">{{ form.email }}<br>
             <label for="{{ form.password.id_for_label }}">{{ form.password }}<br>
             <input class="form-control" placeholder="Confirmer mot de passe" type="password" name="passwordControl" maxlength="8" minlength="8" required><br>

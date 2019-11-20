@@ -24,12 +24,15 @@ def access_account(request):
         # verify that the user exists
         user = authenticate(email=email, password=password)
 
-        # if user exists - connection and confirmation message
+        # USER'S CONNECTION AND DISPLAY THE MY_ACCOUNT PAGE
+        # if user exists
         if user:
+            # user's connection
             login(request, user)
-            context["message"] = ["Vous êtes connecté."]
-            context["color"] = "green"
+            return render(request, 'food/index.html')
 
+        # DISPLAY AN ERROR MESSAGE
+        # if user does not exists
         elif not user:
             if form.is_valid() is False:
                 # add the error messages in the context dictionary
@@ -43,8 +46,17 @@ def access_account(request):
                 # add the error message in the context dictionary
                 context["message"] = ["Ce compte n'existe pas."]
                 context["color"] = "red"
+            return render(request, 'account/access_account.html', context)
 
     return render(request, 'account/access_account.html', context)
+
+
+def my_account(request):
+    # get the user's data
+    mail = request.user.email
+    date = request.user.date_joined
+    context = {'date': date, 'mail': mail}
+    return render(request, 'account/my_account.html', context)
 
 
 def create_account(request):

@@ -69,7 +69,6 @@ def result(request):
             # if there is no food searched
             if not food:
                 context = {'message': "Vous n'avez rien demandé"}
-                print(context)
                 return render(request, 'food/index.html', context)
 
             # if there is food searched
@@ -83,8 +82,9 @@ def result(request):
                     categorie_food = name.values_list('categorie')
 
                     # DISPLAY THE RESULT PAGE
-                    # if a categorie exists
+                    # if the categorie exists
                     if categorie_food:
+
                         # get data of all foods of the same categorie
                         # ordered by nutrition grade
                         categorie_food = categorie_food[0]
@@ -92,7 +92,7 @@ def result(request):
                         foods_data = data.order_by('nutrition_grade')
                         context['foods_data'] = foods_data
 
-                        # does not display the floppy logo
+                        # DOES NOT DISPLAY THE FLOPPY LOGO
                         # if the user has already registered the food
                         if request.user.is_authenticated:
                             # get the favorites foods id
@@ -101,21 +101,19 @@ def result(request):
                             id_user = request.user.id
                             for elt in user(id=id_user).food_set.values_list('id'):
                                 favorites_id.append(elt[0])
-                            context['authenticated'] = 'True'
                             context['favorites_id'] = favorites_id
                         else:
-                            context['authenticated'] = 'False'
                             context['favorites_id'] = []
 
                         return render(request, 'food/result.html', context)
 
                     # DISPLAY THE INDEX PAGE WITH AN ERROR MESSAGE
-                    # if a categorie don't exists
+                    # if the categorie don't exists
                     else:
                         # create context dictionary
                         context = {"message": "Pas de résultat."}
                         return render(request, 'food/index.html', context)
-
+    print("non post")
 
 def detail(request):
     # DISPLAY THE DETAIL PAGE

@@ -9668,7 +9668,7 @@ header.masthead h1 {
 
 
 
-#carrotLogo  img{
+#carrotLogoLi  img{
   -webkit-transition:-webkit-transform .9s; // Chrome Safari
   -moz-transition:-moz-transform .9s;       // Mozilla
   -o-transition:-o-transform .9s;           // Opéra
@@ -9676,7 +9676,7 @@ header.masthead h1 {
   transition:transform .9s;
 }
 
-#carrotLogo  img:hover{
+#carrotLogoLi  img:hover{
   -webkit-transform:rotate(360deg);
   -moz-transform:rotate(360deg);
   -o-transform:rotate(360deg);
@@ -9696,7 +9696,7 @@ li{
     margin-top:20px;
 }
 
-#carrotLogo{
+#carrotLogoLi{
     margin-left:10px;
     margin-right:10px;
 }
@@ -9730,7 +9730,7 @@ text-decoration:none;
 .logo{
   background-color: rgb(255,255,255,0.3) ;
   padding : 15px 15px 0 15px ;
-  border-radius: 60px;
+  margin:auto;
 }
 
 #searchTextarea{
@@ -9738,5 +9738,9 @@ text-decoration:none;
     margin-top: 28px;
 }
 
+.center{
+    border: 3px blue solid;
+    margin : 0 0 20px 50px ;
+}
 
 
