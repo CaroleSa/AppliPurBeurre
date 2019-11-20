@@ -5,18 +5,13 @@
 
 
 # imports
-from django.shortcuts import render, redirect
-from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.shortcuts import render
+from django.contrib.auth import logout
+from django.contrib.auth import get_user_model
+from requests.exceptions import ConnectionError
 from food.classes import database
 from food.models import Food, Categorie
 from account.forms import Account
-
-from requests.exceptions import ConnectionError
-from django.db.utils import IntegrityError
-from django.contrib.auth import logout
-from django.contrib.auth import get_user_model
-
-
 
 
 def index(request):
@@ -50,7 +45,7 @@ def result(request):
             # if user is authenticated
             if request.user.is_authenticated:
                 print('authentifié')
-                id_user = 1
+                id_user = request.user.id
                 food = Food.objects.get(id=save_id_food)
                 user = get_user_model()
                 user = user.objects.get(id=id_user)
@@ -104,7 +99,8 @@ def result(request):
                             # get the favorites foods id
                             user = get_user_model()
                             favorites_id = []
-                            for elt in user(id=1).food_set.values_list('id'):
+                            id_user = request.user.id
+                            for elt in user(id=id_user).food_set.values_list('id'):
                                 favorites_id.append(elt[0])
                             context['authenticated'] = 'True'
                             context['favorites_id'] = favorites_id
@@ -145,9 +141,9 @@ def detail(request):
 
 def favorites(request):
     # DELETE THE FOOD SELECTED BY USER
-    if request.method == 'POST':
+    if request.method == 'POST' and request.user.is_authenticated:
         id_food = request.POST.get('id', None)
-        id_user = 1
+        id_user = request.user.id
         food = Food.objects.get(id=id_food)
         user = get_user_model()
         user = user.objects.get(id=id_user)
@@ -167,7 +163,8 @@ def favorites(request):
     else:
         # get the favorites food data
         user = get_user_model()
-        data = user(id=1).food_set.all()
+        id_user = request.user.id
+        data = user(id=id_user).food_set.all()
         # create context dictionary
         context = {'data': data}
         return render(request, 'food/favorites.html', context)
