@@ -21,7 +21,7 @@ def index(request):
         disconnection = request.POST.get('disconnection', 'False')
         if request.user.is_authenticated and disconnection == 'True':
             logout(request)
-            context = {'message': "Vous êtes bien déconnecté."}
+            context = {'message': "Vous êtes déconnecté."}
             return render(request, 'food/index.html', context)
 
     # INSERT DATA IF THE DATABASE IS EMPTY

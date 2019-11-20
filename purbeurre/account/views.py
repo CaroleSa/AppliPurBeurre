@@ -24,12 +24,14 @@ def access_account(request):
         # verify that the user exists
         user = authenticate(email=email, password=password)
 
-        # USER'S CONNECTION AND DISPLAY THE MY_ACCOUNT PAGE
+        # USER'S CONNECTION AND DISPLAY THE INDEX PAGE
         # if user exists
         if user:
             # user's connection
             login(request, user)
-            return render(request, 'food/index.html')
+            mail = request.user.email
+            context = {'message': "Bonjour {} ! Vous êtes bien connecté.".format(mail)}
+            return render(request, 'food/index.html', context)
 
         # DISPLAY AN ERROR MESSAGE
         # if user does not exists
@@ -76,8 +78,8 @@ def create_account(request):
             # if password and password control are the same
             if password_control == password:
                 user.objects.create_user(username='Null', email=email, password=password)
-                context["message"] = ["Votre compte a bien été créé."]
-                context["color"] = "green"
+                context = {"message": "Le compte {} a bien été créé.".format(email)}
+                return render(request, 'food/index.html', context)
             # if password and password control aren't the same
             else:
                 # create error message

@@ -84,15 +84,12 @@
 
 
           <li class="nav-item" id="exit_logo">
-            <a onmouseover="document.photo2.src='{% static 'food/img/logo_exit.png' %}'"
-            onmouseout="document.photo2.src='{% static 'food/img/logo_exit_2.png' %}'">
               <form action="{% url 'index' %}" method="post">{% csrf_token %}
                 <p>
                     <input type="hidden" name="disconnection" value="True" />
-                    <input class="center" type="image" src="{% static 'food/img/logo_exit_2.png' %}" name="photo2" title="Accueil - Déconnexion" alt="logo exit" />
+                    <input class="center" type="image" src="{% static 'food/img/logo_exit.png' %}" title="Accueil - Déconnexion" alt="logo exit" />
                 </p>
               </form>
-            </a>
             {% if authenticated == 'False' %}
             <p>Accueil</p>
             {% else %}
