@@ -52,7 +52,7 @@
       </button>
 
       <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto my-2 my-lg-0">
+        <ul class="navbar-nav ml-auto my-2 my-lg-0 logoUl">
 
           <li class="nav-item search">
             <form action="{% url 'food:result' %}" method="post">{% csrf_token %}
@@ -60,16 +60,16 @@
             </form>
           </li>
 
-          <div class="row logo">
+          <div class="row">
           {% if authenticated == 'False' %}
-          <li class="nav-item" id="userLogo">
+          <li class="nav-item logo">
             <a onmouseover="document.photo.src='{% static 'food/img/logo_user_black.png' %}'"
             onmouseout="document.photo.src='{% static 'food/img/logo_user.png' %}'"
             href="{% url 'account:access_account' %}" ><img class="center" src="{% static 'food/img/logo_user.png' %}" title="Mon compte" name="photo" alt="logo user"></a>
             <p>M'identifier</p>
           </li>
           {% else %}
-          <li class="nav-item" id="userLogo">
+          <li class="nav-item logo">
             <a onmouseover="document.photo.src='{% static 'food/img/logo_user_green2.png' %}'"
             onmouseout="document.photo.src='{% static 'food/img/logo_user_green.png' %}'"
             href="{% url 'account:my_account' %}" ><img class="center" src="{% static 'food/img/logo_user_green.png' %}" title="Mon compte" name="photo" alt="logo user"></a>
@@ -77,18 +77,16 @@
           </li>
           {% endif %}
 
-          <li class="nav-item" id="carrotLogoLi">
+          <li class="nav-item logo" id="carrotLogoLi">
             <a href="{% url 'food:favorites' %}" ><img class="center" id="carrotLogo" src="{% static 'food/img/logo_carrot.png' %}" title="Mes aliments" alt="logo carrot"></a>
             <p>Mes favoris</p>
           </li>
 
 
-          <li class="nav-item" id="exit_logo">
+          <li class="nav-item logo">
               <form action="{% url 'index' %}" method="post">{% csrf_token %}
-                <p>
-                    <input type="hidden" name="disconnection" value="True" />
-                    <input class="center" type="image" src="{% static 'food/img/logo_exit.png' %}" title="Accueil - Déconnexion" alt="logo exit" />
-                </p>
+                <input type="hidden" name="disconnection" value="True" />
+                <input class="center" type="image" src="{% static 'food/img/logo_exit.png' %}" title="Accueil - Déconnexion" alt="logo exit" />
               </form>
             {% if authenticated == 'False' %}
             <p>Accueil</p>

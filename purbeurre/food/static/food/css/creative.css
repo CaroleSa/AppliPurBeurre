@@ -9729,8 +9729,11 @@ text-decoration:none;
 
 .logo{
   background-color: rgb(255,255,255,0.3) ;
-  padding : 15px 15px 0 15px ;
-  margin:auto;
+  margin-top : 16px;
+  width : 130px;
+  height : 100px;
+  text-align:center;
+
 }
 
 #searchTextarea{
@@ -9739,8 +9742,8 @@ text-decoration:none;
 }
 
 .center{
-    border: 3px blue solid;
-    margin : 0 0 20px 50px ;
+    display:inline;
+    margin-top:12px;
+    margin-bottom:3px;
 }
-
 
