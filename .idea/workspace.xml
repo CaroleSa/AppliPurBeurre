@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d68bf07-bf33-40bf-9bcd-0e0ec4acc973" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/purbeurre/food/templates/food/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/purbeurre/food/templates/food/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/purbeurre/food/templates/food/mentions_legal.html" beforeDir="false" afterPath="$PROJECT_DIR$/purbeurre/food/templates/food/mentions_legal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/purbeurre/food/classes/test_call_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/purbeurre/food/classes/test_call_api.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,11 +15,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="162">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/purbeurre/purbeurre/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="397">
               <caret line="92" column="1" lean-forward="true" selection-start-line="92" selection-start-column="1" selection-end-line="92" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/purbeurre/food/classes/tests.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/purbeurre/food/classes/test_call_api.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="25" column="78" selection-start-line="25" selection-start-column="78" selection-end-line="25" selection-end-column="78" />
+              <folding>
+                <element signature="e#77#106#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/purbeurre/food/classes/call_api.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
             </state>
           </provider>
         </entry>
@@ -164,9 +188,7 @@
         <option value="$PROJECT_DIR$/../GrandPyBot/webapp/static/script.js" />
         <option value="$PROJECT_DIR$/purbeurre/account/templates/account/account.html" />
         <option value="$PROJECT_DIR$/purbeurre/food/classes/database.py" />
-        <option value="$PROJECT_DIR$/purbeurre/food/classes/call_api.py" />
         <option value="$PROJECT_DIR$/purbeurre/account/test_call_api.py" />
-        <option value="$PROJECT_DIR$/purbeurre/food/classes/test_call_api.py" />
         <option value="$PROJECT_DIR$/purbeurre/purbeurre/urls.py" />
         <option value="$PROJECT_DIR$/purbeurre/account/templates/account/my_account.html" />
         <option value="$PROJECT_DIR$/purbeurre/account/__init__.py" />
@@ -193,6 +215,8 @@
         <option value="$PROJECT_DIR$/purbeurre/food/templates/food/index.html" />
         <option value="$PROJECT_DIR$/purbeurre/food/templates/food/mentions_legal.html" />
         <option value="$PROJECT_DIR$/purbeurre/purbeurre/settings.py" />
+        <option value="$PROJECT_DIR$/purbeurre/food/classes/call_api.py" />
+        <option value="$PROJECT_DIR$/purbeurre/food/classes/test_call_api.py" />
       </list>
     </option>
   </component>
@@ -262,6 +286,13 @@
               <item name="AppliPurBeurre" type="462c0819:PsiDirectoryNode" />
               <item name="purbeurre" type="462c0819:PsiDirectoryNode" />
               <item name="food" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AppliPurBeurre" type="b2602c69:ProjectViewProjectNode" />
+              <item name="AppliPurBeurre" type="462c0819:PsiDirectoryNode" />
+              <item name="purbeurre" type="462c0819:PsiDirectoryNode" />
+              <item name="food" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AppliPurBeurre" type="b2602c69:ProjectViewProjectNode" />
@@ -356,7 +387,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.__init__ (1)">
+  <component name="RunManager" selected="Python.call_api">
     <configuration name="__init__ (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AppliPurBeurre" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -457,9 +488,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.call_api" />
         <item itemvalue="Python.__init__ (1)" />
         <item itemvalue="Python tests.Unittests in test_call_api.py" />
-        <item itemvalue="Python.call_api" />
         <item itemvalue="Python.__init__ (3)" />
         <item itemvalue="Python.__init__ (2)" />
       </list>
@@ -488,7 +519,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16476552" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.16476552" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49936628" weight="0.32974428" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32839838" />
@@ -498,7 +529,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Favorites" order="7" weight="0.32974428" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32974428" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.91951835" visible="true" weight="0.38896367" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.91951835" visible="true" weight="0.38896367" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.08048162" side_tool="true" weight="0.25033647" />
       <window_info anchor="bottom" id="Python Console" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -526,7 +557,6 @@
     </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/purbeurre/account/templates/account/my_account" />
     <entry file="file://$PROJECT_DIR$/purbeurre/food/static/food/js/creative.min.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -541,16 +571,6 @@
           <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
           <folding>
             <element signature="e#76#107#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/purbeurre/food/classes/test_call_api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-          <folding>
-            <element signature="e#77#106#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -622,13 +642,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="394">
           <caret line="40" selection-start-line="40" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/purbeurre/food/classes/call_api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
         </state>
       </provider>
     </entry>
@@ -806,16 +819,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/purbeurre/food/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#91#126#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/purbeurre/food/templates/food/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-93">
@@ -823,10 +826,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/purbeurre/food/templates/food/index.html">
+    <entry file="file://$PROJECT_DIR$/purbeurre/purbeurre/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="62" column="12" lean-forward="true" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
+        <state relative-caret-position="397">
+          <caret line="92" column="1" lean-forward="true" selection-start-line="92" selection-start-column="1" selection-end-line="92" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purbeurre/food/classes/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purbeurre/food/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#91#126#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -841,10 +857,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/purbeurre/purbeurre/settings.py">
+    <entry file="file://$PROJECT_DIR$/purbeurre/food/templates/food/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="92" column="1" lean-forward="true" selection-start-line="92" selection-start-column="1" selection-end-line="92" selection-end-column="1" />
+        <state relative-caret-position="391">
+          <caret line="62" column="12" lean-forward="true" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purbeurre/food/classes/call_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purbeurre/food/classes/test_call_api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="25" column="78" selection-start-line="25" selection-start-column="78" selection-end-line="25" selection-end-column="78" />
+          <folding>
+            <element signature="e#77#106#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
