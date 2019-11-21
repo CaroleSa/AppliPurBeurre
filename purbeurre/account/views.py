@@ -9,6 +9,7 @@ from django.shortcuts import render
 from account.forms import Account
 from django.contrib.auth import get_user_model
 from django.contrib.auth import authenticate, login
+import re
 
 
 
@@ -75,16 +76,23 @@ def create_account(request):
 
         # if the data entered by the user is valid
         if form.is_valid() is True:
-            # if password and password control are the same
-            if password_control == password:
-                user.objects.create_user(username='Null', email=email, password=password)
-                context = {"message": "Le compte {} a bien été créé.".format(email)}
-                return render(request, 'food/index.html', context)
-            # if password and password control aren't the same
-            else:
+            regex = r"^[a-z0-9-_.]+@[a-z0-9-]+\.(com|fr)$"
+            result = re.match(regex, email)
+            if result is None:
                 # create error message
-                context["message"] = ["Vos mots de passe ne sont pas identiques."]
+                context["message"] = ["Votre adresse e-mail n'est pas valide."]
                 context["color"] = "red"
+            else:
+                # if password and password control are the same
+                if password_control == password:
+                    user.objects.create_user(username='Null', email=email, password=password)
+                    context = {"message": "Le compte {} a bien été créé.".format(email)}
+                    return render(request, 'food/index.html', context)
+                # if password and password control aren't the same
+                else:
+                    # create error message
+                    context["message"] = ["Vos mots de passe ne sont pas identiques."]
+                    context["color"] = "red"
 
         else:
             # add the error messages in the context dictionary
