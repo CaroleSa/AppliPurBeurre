@@ -152,3 +152,7 @@ def favorites(request):
         # create context dictionary
         context = {'data': data}
         return render(request, 'food/favorites.html', context)
+
+
+def mentions_legal(request):
+    return render(request, 'food/mentions_legal.html')
