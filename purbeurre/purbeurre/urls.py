@@ -21,6 +21,7 @@ from food import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
+    url(r'^mentions_legal/$', views.mentions_legal, name='mentions_legal'),
     url(r'^account/', include('account.urls', namespace='account')),
     url(r'^food/', include('food.urls', namespace='food')),
     path('admin/', admin.site.urls)
