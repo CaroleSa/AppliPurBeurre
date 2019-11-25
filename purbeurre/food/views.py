@@ -118,7 +118,7 @@ def result(request):
                     # if the categorie don't exists
                     else:
                         # create context dictionary
-                        context = {"message": "Pas de résultat."}
+                        context = {"message": "Pas de résultat pour l'aliment {}.".format(food)}
                         return render(request, 'food/index.html', context)
 
     if 'food' in request.session:

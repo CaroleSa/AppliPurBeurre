@@ -88,17 +88,18 @@ $.ajaxSetup({
 
 
 // display the food picture at the top of the result and detail pages
-if (window.location.pathname == '/food/result/') {
-    var $url = $('.result').attr('id');
-    $('header.masthead').css('background', 'linear-gradient(to bottom, rgba(92, 77, 66, 20) 0%, rgba(92, 77, 66, 0.5) 100%), url("'+ $url +'") no-repeat');
+var $urlResult = $('.result').attr('id');
+if ($urlResult !== undefined) {
+    $('header.masthead').css('background', 'linear-gradient(to bottom, rgba(92, 77, 66, 20) 0%, rgba(92, 77, 66, 0.5) 100%), url("'+ $urlResult +'") no-repeat');
     $('header.masthead').css('background-size', '1600px');
     }
 
-if (window.location.pathname == '/food/detail/') {
-    var $url = $('.detail').attr('id');
-    $('header.masthead').css('background', 'linear-gradient(to bottom, rgba(92, 77, 66, 20) 0%, rgba(92, 77, 66, 0.5) 100%), url("'+ $url +'") no-repeat');
+var $urlDetail = $('.detail').attr('id');
+if ($urlDetail !== undefined) {
+    $('header.masthead').css('background', 'linear-gradient(to bottom, rgba(92, 77, 66, 20) 0%, rgba(92, 77, 66, 0.5) 100%), url("'+ $urlDetail +'") no-repeat');
     $('header.masthead').css('background-size', '1600px');
     }
+
 
 // get id of element clicked in the result page for save the food
 $('.save').on('click', function() {
@@ -119,7 +120,6 @@ $('.delete').on('click', function() {
     });
     $('#delete' + this.id).hide();
  });
-
 
 
 })(jQuery); // End of use strict

@@ -60,20 +60,22 @@
             </form>
           </li>
 
+
+          {% if authenticated == 'False' %}
           <li class="nav-item logo" id="userLogoLi">
-            {% if authenticated == 'False' %}
             <a onmouseover="document.photo.src='{% static 'food/img/logo_user_black.png' %}'"
             onmouseout="document.photo.src='{% static 'food/img/logo_user.png' %}'"
             href="{% url 'account:access_account' %}" ><img class="center" src="{% static 'food/img/logo_user.png' %}" name="photo" alt="logo user"></a>
             <p>M'identifier</p>
-            {% else %}
+          </li>
+          {% else %}
+          <li class="nav-item logo" id="userLogoLi">
             <a onmouseover="document.photo.src='{% static 'food/img/logo_user_green2.png' %}'"
             onmouseout="document.photo.src='{% static 'food/img/logo_user_green.png' %}'"
             href="{% url 'account:my_account' %}" ><img class="center" src="{% static 'food/img/logo_user_green.png' %}" name="photo" alt="logo user"></a>
             <p>Mon compte</p>
-            {% endif %}
-             </li>
-
+          </li>
+          {% endif %}
 
           <li class="nav-item logo" id="carrotLogoLi">
             <a href="{% url 'food:favorites' %}" ><img class="center" id="carrotLogo" src="{% static 'food/img/logo_carrot.png' %}" alt="logo carrot"></a>
