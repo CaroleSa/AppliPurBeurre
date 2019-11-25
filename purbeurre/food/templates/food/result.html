@@ -65,8 +65,8 @@
             <div class="pagination">
     <span class="step-links" id="direction-pages"><br><br><br>
         {% if foods_data.has_previous %}
-            <a href="?page=1">&laquo;&laquo; Retour page 1&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
-            <a href="?page={{ foods_data.previous_page_number }}">&laquo; Page précédente&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
+            <a href="?page=1">Retour page 1&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a><br>
+            <a href="?page={{ foods_data.previous_page_number }}">&laquo; Page précédente&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a><br>
         {% endif %}
 
         {% if foods_data.has_next %}
