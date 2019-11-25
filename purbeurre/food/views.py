@@ -9,6 +9,8 @@ from django.shortcuts import render
 from django.contrib.auth import logout
 from django.contrib.auth import get_user_model
 from requests.exceptions import ConnectionError
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+from django.http import HttpResponse
 from food.classes import database
 from food.models import Food, Categorie
 from account.forms import Account
@@ -35,6 +37,7 @@ def index(request):
 
 
 def result(request):
+
     if request.method == 'POST':
         # get the id food selected by the user
         save_id_food = request.POST.get('id', None)
@@ -51,6 +54,7 @@ def result(request):
         if save_id_food is None:
             # get the name food searched
             food = request.POST.get('search')
+            request.session['food'] = food
 
             # DISPLAY THE INDEX PAGE WITH AN ERROR MESSAGE
             # if there is no food searched
@@ -77,7 +81,24 @@ def result(request):
                         categorie_food = categorie_food[0]
                         data = Food.objects.filter(categorie=categorie_food)
                         foods_data = data.order_by('nutrition_grade')
+
+                        ######TEST#######
+                        # Slice pages
+                        paginator = Paginator(foods_data, 18, orphans=4)
+                        # Get current page number
+                        page = request.GET.get('page')
+                        try:
+                            # Return only this page albums and not others
+                            foods_data = paginator.get_page(page)
+                        except PageNotAnInteger:
+                            # If page is not an integer, deliver first page.
+                            foods_data = paginator.page(1)
+                        except EmptyPage:
+                            # If page is out of range (e.g. 9999), deliver last page of results.
+                            foods_data = paginator.page(paginator.num_pages)
+
                         context['foods_data'] = foods_data
+
 
                         # DOES NOT DISPLAY THE FLOPPY LOGO
                         # if the user has already registered the food
@@ -100,6 +121,34 @@ def result(request):
                         # create context dictionary
                         context = {"message": "Pas de résultat."}
                         return render(request, 'food/index.html', context)
+
+    if 'food' in request.session:
+        food = request.session['food']
+        context = {}
+        context['search'] = food
+        # DISPLAY THE RESULT PAGE
+        # get data of all foods of the same categorie
+        # ordered by nutrition grade
+        list_food = food.split()
+        for word in list_food:
+            name = Food.objects.filter(name__icontains=word)[:1]
+            categorie_food = name.values_list('categorie')
+            categorie_food = categorie_food[0]
+            data = Food.objects.filter(categorie=categorie_food)
+            foods_data = data.order_by('nutrition_grade')
+            paginator = Paginator(foods_data, 18, orphans=4)
+            page = request.GET.get('page')
+            try:
+                foods_data = paginator.get_page(page)
+            except PageNotAnInteger:
+                # If page is not an integer, deliver first page.
+                foods_data = paginator.page(1)
+            except EmptyPage:
+                # If page is out of range (e.g. 9999), deliver last page of results.
+                foods_data = paginator.page(paginator.num_pages)
+
+            context['foods_data'] = foods_data
+        return render(request, 'food/result.html', context)
 
 
 def detail(request):

@@ -121,6 +121,7 @@ $('.delete').on('click', function() {
  });
 
 
+
 })(jQuery); // End of use strict
 
 

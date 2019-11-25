@@ -9696,10 +9696,7 @@ li{
     margin-top:20px;
 }
 
-#carrotLogoLi{
-    margin-left:10px;
-    margin-right:10px;
-}
+
 
 #productTextarea{
     height : 30px;
@@ -9730,6 +9727,7 @@ text-decoration:none;
 .logo{
   background-color: rgb(255,255,255,0.3) ;
   margin-top : 16px;
+  margin-right : 10px;
   width : 130px;
   height : 100px;
   text-align:center;
