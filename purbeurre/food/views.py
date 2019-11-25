@@ -213,7 +213,7 @@ def favorites(request):
         data = user(id=id_user).food_set.all()
 
         # Slice pages
-        paginator = Paginator(data, 6, orphans=2)
+        paginator = Paginator(data, 10, orphans=4)
         # Get current page number
         page = request.GET.get('page')
         try:
