@@ -87,3 +87,26 @@ h4{
     Color:#345a61;
     font-weight : bold ;
 }
+
+.max-width{
+    width : 196px;
+    margin:auto;
+}
+
+#direction-pages{
+    margin:auto;
+    text-align:center;
+}
+
+#pages{
+    display:inline;
+}
+
+.page-section{
+    text-align:center;
+}
+
+.pagination{
+    width : 600px;
+    margin : auto ;
+}

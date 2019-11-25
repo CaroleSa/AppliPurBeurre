@@ -41,7 +41,7 @@
             <div class="foreground">
               <p id="nutriscore">{{ food_data.nutrition_grade }}</p>
             </div>
-            <br><p id="nameFood" class="text-center">{{ food_data.name }}</p>
+              <br><div class="max-width"><p id="nameFood" class="text-center">{{ food_data.name }}</p></div>
               <div class="save" id="{{ food_data.id }}">
 
                 {% if food_data.id in favorites_id and authenticated == 'True' %}
@@ -63,18 +63,17 @@
 
 
             <div class="pagination">
-    <span class="step-links">
+    <span class="step-links" id="direction-pages"><br><br><br>
         {% if foods_data.has_previous %}
-            <a href="?page=1">&laquo; first</a>
-            <a href="?page={{ foods_data.previous_page_number }}">previous</a>
+            <a href="?page=1">&laquo;&laquo; Retour page 1&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
+            <a href="?page={{ foods_data.previous_page_number }}">&laquo; Page précédente&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
         {% endif %}
 
         {% if foods_data.has_next %}
-            <a href="?page={{ foods_data.paginator.num_pages }}">Page précédente </a>
-        <a href="?page={{ foods_data.next_page_number }}">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspPage suivante</a><br>
+        <a href="?page={{ foods_data.next_page_number }}">Page suivante &raquo;</a><br>
         {% endif %}
-        <span class="current">
-            Page {{ foods_data.number }} à {{ foods_data.paginator.num_pages }}.
+        <br><span class="current" id="pages">
+            Page {{ foods_data.number }} sur {{ foods_data.paginator.num_pages }}
         </span>
     </span>
 </div>

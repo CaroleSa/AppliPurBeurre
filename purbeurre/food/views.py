@@ -82,7 +82,6 @@ def result(request):
                         data = Food.objects.filter(categorie=categorie_food)
                         foods_data = data.order_by('nutrition_grade')
 
-                        ######TEST#######
                         # Slice pages
                         paginator = Paginator(foods_data, 18, orphans=4)
                         # Get current page number
@@ -148,6 +147,20 @@ def result(request):
                 foods_data = paginator.page(paginator.num_pages)
 
             context['foods_data'] = foods_data
+
+            # DOES NOT DISPLAY THE FLOPPY LOGO
+            # if the user has already registered the food
+            if request.user.is_authenticated:
+                # get the favorites foods id
+                user = get_user_model()
+                favorites_id = []
+                id_user = request.user.id
+                for elt in user(id=id_user).food_set.values_list('id'):
+                    favorites_id.append(elt[0])
+                context['favorites_id'] = favorites_id
+            else:
+                context['favorites_id'] = []
+
         return render(request, 'food/result.html', context)
 
 
@@ -198,6 +211,20 @@ def favorites(request):
         user = get_user_model()
         id_user = request.user.id
         data = user(id=id_user).food_set.all()
+
+        # Slice pages
+        paginator = Paginator(data, 6, orphans=2)
+        # Get current page number
+        page = request.GET.get('page')
+        try:
+            # Return only this page albums and not others
+            data = paginator.get_page(page)
+        except PageNotAnInteger:
+            # If page is not an integer, deliver first page.
+            data = paginator.page(1)
+        except EmptyPage:
+            # If page is out of range (e.g. 9999), deliver last page of results.
+            data = paginator.page(paginator.num_pages)
         # create context dictionary
         context = {'data': data}
         return render(request, 'food/favorites.html', context)

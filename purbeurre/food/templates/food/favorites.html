@@ -29,7 +29,7 @@
           <div class="foreground">
               <p id="nutriscore">{{ food.nutrition_grade }}</p>
           </div>
-          <p id="nameFood" class="text-center"> {{ food.name }}</p>
+            <div class="max-width"><p id="nameFood" class="text-center"> {{ food.name }}</p></div>
           <div class="delete" id="{{ food.id }}">
                 <p class="text-center">
                     <i id="delete" class="far fa-trash-alt"></i> Supprimer
@@ -39,5 +39,22 @@
         {% endfor %}
       </div>
     </div>
+
+      <div class="pagination">
+    <span class="step-links" id="direction-pages"><br><br><br>
+        {% if data.has_previous %}
+            <a href="?page=1">&laquo;&laquo; Retour page 1&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
+            <a href="?page={{ data.previous_page_number }}">&laquo; Page précédente&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
+        {% endif %}
+
+        {% if data.has_next %}
+        <a href="?page={{ data.next_page_number }}">Page suivante &raquo;</a><br>
+        {% endif %}
+        <br><span class="current" id="pages">
+            Page {{ data.number }} sur {{ data.paginator.num_pages }}
+        </span>
+    </span>
+</div>
+
   </section>
 {% endblock %}
