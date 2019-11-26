@@ -1,14 +1,13 @@
 #! /usr/bin/env python3
 # coding: UTF-8
 
-""" URLS """
+""" Account URLS """
 
 
-
-# import
+# imports
 from django.conf.urls import url
 from . import views
-from django.urls import path
+
 
 app_name = 'account'
 
