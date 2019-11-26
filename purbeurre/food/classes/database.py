@@ -1,14 +1,13 @@
 #! /usr/bin/env python3
 # coding: UTF-8
 
-""" Class Database """
+""" Database class """
 
 
 # imports
 import os
 os.environ['DJANGO_SETTINGS_MODULE'] = 'purbeurre.purbeurre.settings'
-import django
-django.setup()
+from django import setup()
 
 from food.models import Food, Categorie
 from food.classes.call_api import CallApi
