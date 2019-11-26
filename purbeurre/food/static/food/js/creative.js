@@ -111,7 +111,7 @@ $('.save').on('click', function() {
     $('#' + this.id).hide();
  });
 
-// get id of element clicked in the result page for delete the food
+// get id of element clicked in the favorites page for delete the food
 $('.delete').on('click', function() {
     $.ajax({
       data : {id: this.id},
