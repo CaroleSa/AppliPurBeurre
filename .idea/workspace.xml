@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d68bf07-bf33-40bf-9bcd-0e0ec4acc973" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/purbeurre/food/templates/food/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/purbeurre/food/templates/food/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/purbeurre/food/templates/food/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/purbeurre/food/templates/food/detail.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,11 +47,20 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/purbeurre/food/templates/food/base.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="392">
               <caret line="143" selection-start-line="143" selection-end-line="143" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/purbeurre/food/templates/food/detail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="406">
+              <caret line="50" selection-start-line="50" selection-end-line="50" />
             </state>
           </provider>
         </entry>
@@ -128,7 +137,6 @@
         <option value="$PROJECT_DIR$/purbeurre/account/test_call_api.py" />
         <option value="$PROJECT_DIR$/purbeurre/food/admin.py" />
         <option value="$PROJECT_DIR$/purbeurre/food/__init__.py" />
-        <option value="$PROJECT_DIR$/purbeurre/food/templates/food/detail.html" />
         <option value="$PROJECT_DIR$/purbeurre/food/context_processor.py" />
         <option value="$PROJECT_DIR$/purbeurre/food/templates/food/mentions_legal.html" />
         <option value="$PROJECT_DIR$/purbeurre/purbeurre/urls.py" />
@@ -156,6 +164,7 @@
         <option value="$PROJECT_DIR$/purbeurre/food/static/food/css/style.css" />
         <option value="$PROJECT_DIR$/purbeurre/food/static/food/js/creative.js" />
         <option value="$PROJECT_DIR$/purbeurre/food/templates/food/base.html" />
+        <option value="$PROJECT_DIR$/purbeurre/food/templates/food/detail.html" />
       </list>
     </option>
   </component>
@@ -544,13 +553,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/purbeurre/food/templates/food/detail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="52" selection-start-line="52" selection-end-line="52" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/purbeurre/food/templates/food/favorites.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="867">
@@ -740,6 +742,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="392">
           <caret line="143" selection-start-line="143" selection-end-line="143" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purbeurre/food/templates/food/detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="50" selection-start-line="50" selection-end-line="50" />
         </state>
       </provider>
     </entry>
