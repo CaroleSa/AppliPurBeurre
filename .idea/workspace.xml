@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d68bf07-bf33-40bf-9bcd-0e0ec4acc973" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/purbeurre/food/templates/food/mentions_legal.html" beforeDir="false" afterPath="$PROJECT_DIR$/purbeurre/food/templates/food/mentions_legal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/purbeurre/food/templates/food/favorites.html" beforeDir="false" afterPath="$PROJECT_DIR$/purbeurre/food/templates/food/favorites.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/purbeurre/food/templates/food/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/purbeurre/food/templates/food/result.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,6 +16,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="162">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/purbeurre/food/templates/food/result.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="338">
+              <caret line="68" column="9" lean-forward="true" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/purbeurre/food/static/food/css/creative.css">
           <provider selected="true" editor-type-id="text-editor">
@@ -33,7 +43,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/purbeurre/food/templates/food/mentions_legal.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
@@ -51,6 +61,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="857">
               <caret line="143" selection-start-line="143" selection-end-line="143" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/purbeurre/food/templates/food/favorites.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="429">
+              <caret line="49" column="8" lean-forward="true" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -132,7 +151,6 @@
         <option value="$PROJECT_DIR$/purbeurre/food/models.py" />
         <option value="$PROJECT_DIR$/purbeurre/food/urls.py" />
         <option value="$PROJECT_DIR$/purbeurre/food/views.py" />
-        <option value="$PROJECT_DIR$/purbeurre/food/templates/food/result.html" />
         <option value="$PROJECT_DIR$/purbeurre/account/templates/account/access_account.html" />
         <option value="$PROJECT_DIR$/purbeurre/account/templates/account/create_account.html" />
         <option value="$PROJECT_DIR$/purbeurre/account/templates/account/my_account.html" />
@@ -152,9 +170,10 @@
         <option value="$PROJECT_DIR$/purbeurre/food/static/food/js/creative.js" />
         <option value="$PROJECT_DIR$/purbeurre/food/templates/food/base.html" />
         <option value="$PROJECT_DIR$/purbeurre/food/templates/food/detail.html" />
-        <option value="$PROJECT_DIR$/purbeurre/food/templates/food/favorites.html" />
         <option value="$PROJECT_DIR$/purbeurre/food/templates/food/index.html" />
         <option value="$PROJECT_DIR$/purbeurre/food/templates/food/mentions_legal.html" />
+        <option value="$PROJECT_DIR$/purbeurre/food/templates/food/favorites.html" />
+        <option value="$PROJECT_DIR$/purbeurre/food/templates/food/result.html" />
       </list>
     </option>
   </component>
@@ -498,13 +517,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/purbeurre/food/templates/food/result.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1241">
-          <caret line="73" column="36" selection-start-line="73" selection-start-column="36" selection-end-line="73" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/purbeurre/food/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3519">
@@ -696,13 +708,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/purbeurre/food/templates/food/favorites.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="52" column="14" lean-forward="true" selection-start-line="52" selection-start-column="14" selection-end-line="52" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/purbeurre/food/templates/food/detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="389">
@@ -739,6 +744,20 @@
             <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#2;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purbeurre/food/templates/food/favorites.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="49" column="8" lean-forward="true" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purbeurre/food/templates/food/result.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="68" column="9" lean-forward="true" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
         </state>
       </provider>
     </entry>

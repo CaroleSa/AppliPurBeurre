@@ -44,8 +44,7 @@
         {% if data.has_next %}
         <a href="?page={{ data.next_page_number }}">suivant &raquo;</a>
         {% endif %}
-        <br><br><span class="current" id="pages">
-           Page {{ data.number }} sur {{ data.paginator.num_pages }}
+        <br><br><span class="current" id="pages">Page {{ data.number }} sur {{ data.paginator.num_pages }}
         </span>
      </span>
   </div>
