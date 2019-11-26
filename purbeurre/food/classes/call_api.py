@@ -10,7 +10,7 @@ import requests
 
 class CallApi:
     """ Call A.P.I. OpenFoodFacts :
-    load_data function """
+    load_data method """
 
     def __init__(self):
         # creating an empty list
