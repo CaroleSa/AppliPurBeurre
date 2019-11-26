@@ -8,10 +8,10 @@ create_account """
 
 
 # Imports
+import re
 from django.shortcuts import render
 from django.contrib.auth import get_user_model
 from django.contrib.auth import authenticate, login
-import re
 from account.forms import Account
 
 
@@ -42,18 +42,18 @@ def access_account(request):
 
         # DISPLAY AN ERROR MESSAGE ON THE ACCESS_ACCOUNT PAGE
         # if user does not exists
-        elif not user:
-            if form.is_valid() is False:
-                error_list = []
-                for key, value in form.errors.as_data().items():
-                    message = str(key).title() + ' : ' + str(value[0]).replace("['", "").replace("']", "")
-                    error_list.append(message)
-                    context["message"] = error_list
-                    context["color"] = "red"
-            else:
-                context["message"] = ["Ce compte n'existe pas."]
+        if form.is_valid() is False:
+            error_list = []
+            for key, value in form.errors.as_data().items():
+                message = str(key).title() + ' : ' + str(value[0]).\
+                          replace("['", "").replace("']", "")
+                error_list.append(message)
+                context["message"] = error_list
                 context["color"] = "red"
-            return render(request, 'account/access_account.html', context)
+        else:
+            context["message"] = ["Ce compte n'existe pas."]
+            context["color"] = "red"
+        return render(request, 'account/access_account.html', context)
 
     return render(request, 'account/access_account.html', context)
 
@@ -106,16 +106,16 @@ def create_account(request):
 
                 # DISPLAY AN ERROR MESSAGE ON THE CREATE_ACCOUNT PAGE
                 # if password and password control aren't the same
-                else:
-                    context["message"] = ["Vos mots de passe ne sont pas identiques."]
-                    context["color"] = "red"
+                context["message"] = ["Vos mots de passe ne sont pas identiques."]
+                context["color"] = "red"
 
         # DISPLAY AN ERROR MESSAGE ON THE CREATE_ACCOUNT PAGE
         # if the form isn't valid
         else:
             error_list = []
             for key, value in form.errors.as_data().items():
-                message = str(key).title() + ' : ' + str(value[0]).replace("['", "").replace("']", "")
+                message = str(key).title() + ' : ' + str(value[0]).\
+                          replace("['", "").replace("']", "")
                 error_list.append(message)
                 context["message"] = error_list
                 context["color"] = "red"

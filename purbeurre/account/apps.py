@@ -8,4 +8,6 @@ from django.apps import AppConfig
 
 
 class AccountConfig(AppConfig):
+    """ AccountConfig class :
+    the application name """
     name = 'account'

@@ -19,5 +19,5 @@ class User(AbstractUser):
     email = models.EmailField(_('email address'), unique=True)
     username = models.CharField(_('username'), null=True, max_length=150,
                                 validators=[django.contrib.auth.validators.
-                                UnicodeUsernameValidator()])
+                                            UnicodeUsernameValidator()])
     REQUIRED_FIELDS = []

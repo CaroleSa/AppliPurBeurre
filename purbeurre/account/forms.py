@@ -10,10 +10,11 @@ from django.contrib.auth import get_user_model
 
 
 class Account(ModelForm):
-    """ModelForm Account
+    """ ModelForm Account
     model : custom User
-    fields : email and password"""
+    fields : email and password """
     class Meta:
+        """ Meta class """
         model = get_user_model()
         fields = ["email", "password"]
         widgets = {
