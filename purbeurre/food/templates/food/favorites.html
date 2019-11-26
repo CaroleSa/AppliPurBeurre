@@ -1,53 +1,52 @@
 {% extends 'food/base.html' %}
 {% load static %}
 
-{% block link %}
 
+{% block link %}
 <!-- Import css file -->
 <link rel="stylesheet" href="{% static 'food/css/style.css' %}">
+{% endblock %}
 
+
+{% block content2 %}
+<h2 class="text-white">Mes aliments</h2>
 {% endblock %}
 
 
 {% block content %}
-
-<!-- Masthead -->
-  <header class="masthead">
-    <div class="container h-100">
-      <div class="row h-100 align-items-center justify-content-center text-center">
-        <div class="col-lg-10">
-          <h1 class="text-white">Aliment cherché</h1>
-      </div>
-    </div>
-  </header>
-
-  <!-- About Section -->
-  <section class="page-section bg-primary" id="about">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <h2 class="text-black mt-0">Vous pouvez remplacer cet aliment par :</h2>
-
-
-
+<!-- About Section -->
+<section class="page-section bg-primary" id="about">
+  <div class="container">
+     <div class="row justify-content-around">
+        {% for food in data %}
+        <div id="delete{{ food.id }}">
+           <a href="{{ food.link }} ">
+              <img id="image"  src="{{ food.url_picture }}" alt="food image" height="196" width="196">
+           </a><br>
+           <div class="max-width"><p id="nameFood" class="text-center"> {{ food.name }}</p>
+           </div>
+           <div class="delete" id="{{ food.id }}">
+              <p class="text-center">
+                 <i id="delete" class="far fa-trash-alt"></i> Supprimer
+              </p>
+           </div>
         </div>
-      </div>
-      <div class="row">
-        <div><a id="image" href=""><img src="{% static 'food/img/logo_carrot.png' %}" alt="logo carrot"></a>
-          <p id="nutriscore">A</p><p class="text-center">Nom aliment</p><p class="text-center"><i class="fa fa-floppy-o" aria-hidden="true"></i>Sauvegarder</p>
-        </div>
-        <div><a id="image" href=""><img src="{% static 'food/img/logo_carrot.png' %}" alt="logo carrot"></a><p id="nutriscore">A</p></div>
-        <div><a id="image" href=""><img src="{% static 'food/img/logo_carrot.png' %}" alt="logo carrot"></a><p id="nutriscore">A</p></div>
-      </div>
+        {% endfor %}
+     </div>
+  </div>
 
-      <div class="row">
-        <div><a id="image" href=""><img src="{% static 'food/img/logo_carrot.png' %}" alt="logo carrot"></a><p id="nutriscore">A</p></div>
-        <div><a id="image" href=""><img src="{% static 'food/img/logo_carrot.png' %}" alt="logo carrot"></a><p id="nutriscore">A</p></div>
-        <div><a id="image" href=""><img src="{% static 'food/img/logo_carrot.png' %}" alt="logo carrot"></a><p id="nutriscore">A</p></div>
-      </div>
-
-
-    </div>
-  </section>
-
+  <div class="pagination">
+     <span class="step-links" id="direction-pages"><br><br><br>
+        {% if data.has_previous %}
+        <a href="?page=1">Retour page 1</a><br>
+        <a href="?page={{ data.previous_page_number }}">&laquo; précédent&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
+        {% endif %}
+        {% if data.has_next %}
+        <a href="?page={{ data.next_page_number }}">suivant &raquo;</a>
+        {% endif %}
+        <br><br><span class="current" id="pages">Page {{ data.number }} sur {{ data.paginator.num_pages }}
+        </span>
+     </span>
+  </div>
+</section>
 {% endblock %}

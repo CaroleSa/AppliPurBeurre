@@ -1,3 +1,6 @@
+#! /usr/bin/env python3
+# coding: UTF-8
+
 """purbeurre URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -13,16 +16,21 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
+
+# imports
 from django.contrib import admin
 from django.conf import settings
 from django.urls import include, path
 from django.conf.urls import url
 from food import views
 
+
 urlpatterns = [
-    url(r'^$', views.index),
-    url(r'^food/', include('food.urls')),
-    url(r'^account/', include('account.urls')),
+    url(r'^$', views.index, name='index'),
+    url(r'^mentions_legal/$', views.mentions_legal, name='mentions_legal'),
+    url(r'^account/', include('account.urls', namespace='account')),
+    url(r'^food/', include('food.urls', namespace='food')),
     path('admin/', admin.site.urls)
 ]
 

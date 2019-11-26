@@ -53,6 +53,76 @@
     image: {
       tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
     }
+
   });
 
+
+// using jQuery
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie != '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+var csrftoken = getCookie('csrftoken');
+function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+$.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        }
+    }
+});
+
+
+// display the food picture at the top of the result and detail pages
+var $urlResult = $('.result').attr('id');
+if ($urlResult !== undefined) {
+    $('header.masthead').css('background', 'linear-gradient(to bottom, rgba(92, 77, 66, 20) 0%, rgba(92, 77, 66, 0.5) 100%), url("'+ $urlResult +'") no-repeat');
+    $('header.masthead').css('background-size', '1600px');
+    }
+
+var $urlDetail = $('.detail').attr('id');
+if ($urlDetail !== undefined) {
+    $('header.masthead').css('background', 'linear-gradient(to bottom, rgba(92, 77, 66, 20) 0%, rgba(92, 77, 66, 0.5) 100%), url("'+ $urlDetail +'") no-repeat');
+    $('header.masthead').css('background-size', '1600px');
+    }
+
+
+// get id of element clicked in the result page for save the food
+$('.save').on('click', function() {
+    $.ajax({
+      data : {id: this.id},
+      type : 'POST',
+      url : '/food/result/'
+    });
+    $('#' + this.id).hide();
+ });
+
+// get id of element clicked in the favorites page for delete the food
+$('.delete').on('click', function() {
+    $.ajax({
+      data : {id: this.id},
+      type : 'POST',
+      url : '/food/favorites/'
+    });
+    $('#delete' + this.id).hide();
+ });
+
+
 })(jQuery); // End of use strict
+
+
+

@@ -9666,9 +9666,7 @@ header.masthead h1 {
   }
 }
 
-
-
-#carrotLogo  img{
+#carrotLogoLi  img{
   -webkit-transition:-webkit-transform .9s; // Chrome Safari
   -moz-transition:-moz-transform .9s;       // Mozilla
   -o-transition:-o-transform .9s;           // Opéra
@@ -9676,7 +9674,7 @@ header.masthead h1 {
   transition:transform .9s;
 }
 
-#carrotLogo  img:hover{
+#carrotLogoLi  img:hover{
   -webkit-transform:rotate(360deg);
   -moz-transform:rotate(360deg);
   -o-transform:rotate(360deg);
@@ -9696,11 +9694,6 @@ li{
     margin-top:20px;
 }
 
-#carrotLogo{
-    margin-left:10px;
-    margin-right:10px;
-}
-
 #productTextarea{
     height : 30px;
     color : black;
@@ -9708,13 +9701,40 @@ li{
 
 .imageCenter{
     margin : auto ;
-
 }
 
 .medium{
-font-size : 1.5em ;
+    font-size : 1.5em ;
 }
 
 .big{
-font-size : 2em ;
+    font-size : 2em ;
+}
+
+a:link{
+    text-decoration:none;
+}
+
+#red{
+    Color:#c4101f;
+}
+
+.logo{
+  background-color: rgb(255,255,255,0.3) ;
+  margin-top : 16px;
+  margin-right : 10px;
+  width : 130px;
+  height : 100px;
+  text-align:center;
+}
+
+#searchTextarea{
+    border-radius: 5x;
+    margin-top: 28px;
+}
+
+.center{
+    display:inline;
+    margin-top:12px;
+    margin-bottom:3px;
 }

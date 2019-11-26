@@ -2,13 +2,40 @@ header{
     background-color: #343a40 !important;
 }
 
+#form{
+    background-color: #de9440;
+    border: 1px white solid;
+}
+
 #image{
     display: block;
+    border: 2px black solid;
     width : 200px;
     height : 200px;
-    border: 2px white outset;
-    margin:90px;
-    margin-bottom: 70px;}
+    margin:auto;
+    margin-top: 70px;
+}
+
+.result{
+    width : 300px;
+    margin : auto ;
+    margin-bottom : 0px;
+    margin-top : 30px;
+}
+
+.rox{
+    border: 4px black solid;
+}
+
+h2{
+    margin-bottom: 50px;
+    font-size : 3em ;
+}
+
+.foreground{
+    z-index: 1;
+    position: absolute;
+}
 
 #nutriscore{
     border: 2px black solid;
@@ -19,8 +46,9 @@ header{
     text-align:center ;
     font-weight : bold ;
     font-size : 1.5em;
-    margin : -290px 0 0 270px;
-    margin-bottom:210px;}
+    margin : -235px 0 0 230px;
+    margin-bottom:210px;
+}
 
 @media (min-width: 992) {
   .container {
@@ -31,7 +59,7 @@ header{
 @media (min-width: 992px) {
   header.masthead {
     height: 4vh;
-    min-height: 15rem;
+    min-height: 18.2rem;
     padding-top: 72px;
     padding-bottom: 0;
   }
@@ -41,4 +69,56 @@ header{
   header.masthead h1 {
     font-size: 3rem;
   }
+}
+
+.delete, .save:hover{
+   Color:#c45525;
+   cursor: default;
+}
+
+a{
+   Color:black ;
+}
+
+a:hover{
+   Color:#c45525 ;
+}
+
+#green{
+    Color:#124a18 ;
+}
+
+#red{
+    Color:#c4101f;
+}
+
+h4{
+    text-decoration : underline ;
+    Color:#345a61;
+    font-weight : bold ;
+}
+
+.max-width{
+    width : 196px;
+    margin:auto;
+}
+
+#direction-pages{
+    margin:auto;
+    text-align:center;
+}
+
+#pages{
+    display:inline;
+}
+
+.page-section{
+    border: 2px black solid;
+    text-align:center;
+}
+
+.pagination{
+    width : 600px;
+    margin:auto;
+    display:inline;
 }

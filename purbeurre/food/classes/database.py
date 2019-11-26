@@ -1,36 +1,39 @@
 #! /usr/bin/env python3
 # coding: UTF-8
 
-""" Class Database """
+""" Database class """
 
 
 # imports
-import os
-os.environ['DJANGO_SETTINGS_MODULE'] = 'purbeurre.purbeurre.settings'
-import django
-django.setup()
-
+from django.db.utils import IntegrityError
 from food.models import Food, Categorie
 from food.classes.call_api import CallApi
-from django.db.utils import IntegrityError
 
 
 class Database:
-    """ Get and insert the data in database """
+    """ Database class :
+    insert_data method """
 
     def __init__(self):
-        # instantiate the class Call_api
+        # instantiate the Call_api class
         self.new_call_api = CallApi()
 
     def insert_data(self):
-        # get categories list and the data food of the CallApi class
-        categories_food = self.new_call_api.categories
-        list_data = self.new_call_api.load_data()
+        """ call load_data method of the CallApi class,
+        get a list of data of the OpenFoodFacts A.P.I.
+        and insert the data in the database :
+        if the database is empty """
 
-        # insert the data if they do not exist in the database
+        # INSERT DATA IN THE DATABASE
+        # if the database is empty
         data_food = Food.objects.all()
         if not data_food:
 
+            # get the data food of the CallApi class
+            categories_food = ['pizza', 'pate a tartiner', 'gateau', 'yaourt', 'bonbon']
+            list_data = self.new_call_api.load_data(categories_food)
+
+            # INSERT DATA
             for elt, data in zip(categories_food, list_data):
                 # insert data in Categorie table
                 index = categories_food.index(elt) + 1
@@ -53,12 +56,14 @@ class Database:
                             fiber_100g = nutriments.get('fiber_100g')
                             sodium_100g = nutriments.get('sodium_100g')
 
-                            # inserting data in Food table
+                            # insert data in Food table
                             categorie_id = Categorie.objects.get(id=index)
                             Food.objects.create(name=product_name, categorie=categorie_id,
-                                                nutrition_grade=grade, url_picture=picture, link=page_link,
-                                                energy=energy_100g, proteins=proteins_100g, fat=fat_100g,
-                                                carbohydrates=carbohydrates_100g, sugars=sugars_100g, fiber=fiber_100g,
+                                                nutrition_grade=grade, url_picture=picture,
+                                                link=page_link, energy=energy_100g,
+                                                proteins=proteins_100g, fat=fat_100g,
+                                                carbohydrates=carbohydrates_100g,
+                                                sugars=sugars_100g, fiber=fiber_100g,
                                                 sodium=sodium_100g)
 
                         except IntegrityError:
