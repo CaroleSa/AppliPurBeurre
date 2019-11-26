@@ -1,14 +1,11 @@
 {% extends 'food/base.html' %}
 {% load static %}
 
-{% block link %}
 
+{% block link %}
 <!-- Import css file -->
 <link rel="stylesheet" href="{% static 'food/css/style.css' %}">
-
 {% endblock %}
-
-
 
 
 {% block content2 %}
@@ -17,7 +14,6 @@
 
 
 {% block content %}
-
 <section class="p-0">
         <div class="container">
             <div class="row">
@@ -291,12 +287,9 @@
 
                         <br><h4>Base de données</h4>
                         <p>Données récupérées de l'A.P.I. d'OpenFoodFacts</p><br><br><br>
-
-
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
+</section>
 {% endblock %}
