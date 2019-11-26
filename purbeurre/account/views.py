@@ -2,16 +2,13 @@
 # coding: UTF-8
 
 """ Account views :
-access_account
-my_account
-create_account """
+access_account, my_account, create_account """
 
 
 # Imports
 import re
 from django.shortcuts import render
-from django.contrib.auth import get_user_model
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import get_user_model, authenticate, login
 from account.forms import Account
 
 
