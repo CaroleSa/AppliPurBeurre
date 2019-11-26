@@ -9666,8 +9666,6 @@ header.masthead h1 {
   }
 }
 
-
-
 #carrotLogoLi  img{
   -webkit-transition:-webkit-transform .9s; // Chrome Safari
   -moz-transition:-moz-transform .9s;       // Mozilla
@@ -9696,8 +9694,6 @@ li{
     margin-top:20px;
 }
 
-
-
 #productTextarea{
     height : 30px;
     color : black;
@@ -9705,19 +9701,18 @@ li{
 
 .imageCenter{
     margin : auto ;
-
 }
 
 .medium{
-font-size : 1.5em ;
+    font-size : 1.5em ;
 }
 
 .big{
-font-size : 2em ;
+    font-size : 2em ;
 }
 
 a:link{
-text-decoration:none;
+    text-decoration:none;
 }
 
 #red{
@@ -9731,7 +9726,6 @@ text-decoration:none;
   width : 130px;
   height : 100px;
   text-align:center;
-
 }
 
 #searchTextarea{
@@ -9744,4 +9738,3 @@ text-decoration:none;
     margin-top:12px;
     margin-bottom:3px;
 }
-
