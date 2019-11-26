@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d68bf07-bf33-40bf-9bcd-0e0ec4acc973" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/purbeurre/account/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/purbeurre/account/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/purbeurre/account/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/purbeurre/account/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -92,7 +92,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/purbeurre/account/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
@@ -104,13 +104,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/purbeurre/account/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-204">
-              <caret selection-end-line="3" selection-end-column="13" />
+            <state relative-caret-position="289">
+              <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
               <folding>
-                <element signature="e#67#102#0" expanded="true" />
+                <element signature="e#118#153#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -187,12 +187,10 @@
         <option value="$PROJECT_DIR$/purbeurre/account/templates/account/account.html" />
         <option value="$PROJECT_DIR$/purbeurre/food/classes/database.py" />
         <option value="$PROJECT_DIR$/purbeurre/account/test_call_api.py" />
-        <option value="$PROJECT_DIR$/purbeurre/account/__init__.py" />
         <option value="$PROJECT_DIR$/purbeurre/food/admin.py" />
         <option value="$PROJECT_DIR$/purbeurre/food/__init__.py" />
         <option value="$PROJECT_DIR$/purbeurre/food/templates/food/detail.html" />
         <option value="$PROJECT_DIR$/purbeurre/food/context_processor.py" />
-        <option value="$PROJECT_DIR$/purbeurre/account/views.py" />
         <option value="$PROJECT_DIR$/purbeurre/food/templates/food/mentions_legal.html" />
         <option value="$PROJECT_DIR$/purbeurre/food/classes/call_api.py" />
         <option value="$PROJECT_DIR$/purbeurre/food/classes/test_call_api.py" />
@@ -216,6 +214,8 @@
         <option value="$PROJECT_DIR$/purbeurre/account/forms.py" />
         <option value="$PROJECT_DIR$/purbeurre/account/models.py" />
         <option value="$PROJECT_DIR$/purbeurre/account/urls.py" />
+        <option value="$PROJECT_DIR$/purbeurre/account/__init__.py" />
+        <option value="$PROJECT_DIR$/purbeurre/account/views.py" />
       </list>
     </option>
   </component>
@@ -291,7 +291,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.call_api">
+  <component name="RunManager" selected="Python.__init__ (3)">
     <configuration name="__init__ (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="AppliPurBeurre" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -392,10 +392,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.__init__ (3)" />
         <item itemvalue="Python.call_api" />
         <item itemvalue="Python.__init__ (1)" />
         <item itemvalue="Python tests.Unittests in test_call_api.py" />
-        <item itemvalue="Python.__init__ (3)" />
         <item itemvalue="Python.__init__ (2)" />
       </list>
     </recent_temporary>
@@ -423,17 +423,17 @@
     <editor active="true" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16476552" />
+      <window_info content_ui="combo" id="Project" order="1" weight="0.16476552" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49936628" weight="0.32974428" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32839838" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32839838" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39973083" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Favorites" order="7" weight="0.32974428" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32974428" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.91951835" visible="true" weight="0.30820996" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.91951835" weight="0.30820996" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.08048162" side_tool="true" weight="0.25033647" />
       <window_info anchor="bottom" id="Python Console" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -442,7 +442,7 @@
     </layout>
     <layout-to-restore>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.16476552" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16476552" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49936628" weight="0.32974428" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32839838" />
@@ -710,9 +710,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/purbeurre/account/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/purbeurre/account/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -741,16 +738,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
           <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/purbeurre/account/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-204">
-          <caret selection-end-line="3" selection-end-column="13" />
-          <folding>
-            <element signature="e#67#102#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -787,6 +774,19 @@
           <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
           <folding>
             <element signature="e#74#106#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purbeurre/account/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purbeurre/account/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="79" lean-forward="true" selection-start-line="79" selection-end-line="79" />
+          <folding>
+            <element signature="e#118#153#0" expanded="true" />
           </folding>
         </state>
       </provider>
