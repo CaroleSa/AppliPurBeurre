@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6d68bf07-bf33-40bf-9bcd-0e0ec4acc973" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/purbeurre/food/templates/food/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/purbeurre/food/templates/food/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/purbeurre/food/templates/food/favorites.html" beforeDir="false" afterPath="$PROJECT_DIR$/purbeurre/food/templates/food/favorites.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,11 +56,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/purbeurre/food/templates/food/detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="406">
+            <state relative-caret-position="389">
               <caret line="50" selection-start-line="50" selection-end-line="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/purbeurre/food/templates/food/favorites.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="372">
+              <caret line="52" column="14" lean-forward="true" selection-start-line="52" selection-start-column="14" selection-end-line="52" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -143,7 +152,6 @@
         <option value="$PROJECT_DIR$/purbeurre/food/templates/food/index.html" />
         <option value="$PROJECT_DIR$/purbeurre/food/models.py" />
         <option value="$PROJECT_DIR$/purbeurre/food/urls.py" />
-        <option value="$PROJECT_DIR$/purbeurre/food/templates/food/favorites.html" />
         <option value="$PROJECT_DIR$/purbeurre/food/views.py" />
         <option value="$PROJECT_DIR$/purbeurre/food/templates/food/result.html" />
         <option value="$PROJECT_DIR$/purbeurre/account/templates/account/access_account.html" />
@@ -165,6 +173,7 @@
         <option value="$PROJECT_DIR$/purbeurre/food/static/food/js/creative.js" />
         <option value="$PROJECT_DIR$/purbeurre/food/templates/food/base.html" />
         <option value="$PROJECT_DIR$/purbeurre/food/templates/food/detail.html" />
+        <option value="$PROJECT_DIR$/purbeurre/food/templates/food/favorites.html" />
       </list>
     </option>
   </component>
@@ -553,13 +562,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/purbeurre/food/templates/food/favorites.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="51" column="69" lean-forward="true" selection-start-line="51" selection-start-column="69" selection-end-line="51" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/purbeurre/account/static/account/style.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -747,8 +749,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/purbeurre/food/templates/food/detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="406">
+        <state relative-caret-position="389">
           <caret line="50" selection-start-line="50" selection-end-line="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/purbeurre/food/templates/food/favorites.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="52" column="14" lean-forward="true" selection-start-line="52" selection-start-column="14" selection-end-line="52" selection-end-column="14" />
         </state>
       </provider>
     </entry>
