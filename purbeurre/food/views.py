@@ -73,57 +73,59 @@ def result(request):
                 return render(request, 'food/index.html', context)
 
             context = {'search': food}
+
             # get the categorie of the food searched
-            list_food = food.split()
-            for word in list_food:
-                name = Food.objects.filter(name__icontains=word)[:1]
-                categorie_food = name.values_list('categorie')
+            re_food = '^.*'+food+'.*$'
+            re_food = re_food.replace(' ', '.*')
+            re_food = r'{}'.format(re_food)
+            name = Food.objects.filter(name__iregex=re_food)[:1]
+            categorie_food = name.values_list('categorie')
 
-                # DISPLAY THE RESULT PAGE
-                # DISPLAY THE RESULT ON PAGE 1
-                # if there is food searched
-                # and if the categorie exists
-                if categorie_food:
+            # DISPLAY THE RESULT PAGE
+            # DISPLAY THE RESULT ON PAGE 1
+            # if there is food searched
+            # and if the categorie exists
+            if categorie_food:
 
-                    # get data of all foods of the same categorie
-                    # ordered by nutrition grade
-                    categorie_food = categorie_food[0]
-                    data = Food.objects.filter(categorie=categorie_food)
-                    foods_data = data.order_by('nutrition_grade')
+                # get data of all foods of the same categorie
+                # ordered by nutrition grade
+                categorie_food = categorie_food[0]
+                data = Food.objects.filter(categorie=categorie_food)
+                foods_data = data.order_by('nutrition_grade')
 
-                    # use paginator :
-                    # display of page 1 of result
-                    paginator = Paginator(foods_data, 18, orphans=4)
-                    page = request.GET.get('page')
-                    try:
-                        foods_data = paginator.get_page(page)
-                    except PageNotAnInteger:
-                        foods_data = paginator.page(1)
-                    except EmptyPage:
-                        foods_data = paginator.page(paginator.num_pages)
-                    context['foods_data'] = foods_data
+                # use paginator :
+                # display of page 1 of result
+                paginator = Paginator(foods_data, 18, orphans=4)
+                page = request.GET.get('page')
+                try:
+                    foods_data = paginator.get_page(page)
+                except PageNotAnInteger:
+                    foods_data = paginator.page(1)
+                except EmptyPage:
+                    foods_data = paginator.page(paginator.num_pages)
+                context['foods_data'] = foods_data
 
-                    # DOES NOT DISPLAY THE FLOPPY LOGO
-                    # if the user has already registered the food
-                    if request.user.is_authenticated:
-                        # get the favorites foods id
-                        user = get_user_model()
-                        favorites_id = []
-                        id_user = request.user.id
-                        for elt in user(id=id_user).food_set.values_list('id'):
-                            favorites_id.append(elt[0])
-                        context['favorites_id'] = favorites_id
-                    else:
-                        context['favorites_id'] = []
-
-                    return render(request, 'food/result.html', context)
-
-                # DISPLAY THE INDEX PAGE WITH AN ERROR MESSAGE
-                # if there is food searched
-                # but that the categorie don't exists
+                # DOES NOT DISPLAY THE FLOPPY LOGO
+                # if the user has already registered the food
+                if request.user.is_authenticated:
+                    # get the favorites foods id
+                    user = get_user_model()
+                    favorites_id = []
+                    id_user = request.user.id
+                    for elt in user(id=id_user).food_set.values_list('id'):
+                        favorites_id.append(elt[0])
+                    context['favorites_id'] = favorites_id
                 else:
-                    context = {"message": "Pas de résultat pour l'aliment {}.".format(food)}
-                    return render(request, 'food/index.html', context)
+                    context['favorites_id'] = []
+
+                return render(request, 'food/result.html', context)
+
+            # DISPLAY THE INDEX PAGE WITH AN ERROR MESSAGE
+            # if there is food searched
+            # but that the categorie don't exists
+            else:
+                context = {"message": "Pas de résultat pour l'aliment {}.".format(food)}
+                return render(request, 'food/index.html', context)
 
     # DISPLAY THE RESULT PAGE
     # DISPLAY THE RESULT ON SEVERAL PAGES : page > 1
