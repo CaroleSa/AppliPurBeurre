@@ -220,17 +220,6 @@ def favorites(request):
     user = get_user_model()
     id_user = request.user.id
     data = user(id=id_user).food_set.all()
-
-    # use paginator :
-    # multi-page food display
-    paginator = Paginator(data, 10, orphans=4)
-    page = request.GET.get('page')
-    try:
-        data = paginator.get_page(page)
-    except PageNotAnInteger:
-        data = paginator.page(1)
-    except EmptyPage:
-        data = paginator.page(paginator.num_pages)
     context = {'data': data}
 
     return render(request, 'food/favorites.html', context)

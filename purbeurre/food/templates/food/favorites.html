@@ -34,19 +34,5 @@
         {% endfor %}
      </div>
   </div>
-
-  <div class="pagination">
-     <span class="step-links" id="direction-pages"><br><br><br>
-        {% if data.has_previous %}
-        <a href="?page=1">Retour page 1</a><br>
-        <a href="?page={{ data.previous_page_number }}">&laquo; précédent&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
-        {% endif %}
-        {% if data.has_next %}
-        <a href="?page={{ data.next_page_number }}">suivant &raquo;</a>
-        {% endif %}
-        <br><br><span class="current" id="pages">Page {{ data.number }} sur {{ data.paginator.num_pages }}
-        </span>
-     </span>
-  </div>
 </section>
 {% endblock %}

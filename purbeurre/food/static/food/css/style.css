@@ -113,7 +113,7 @@ h4{
 }
 
 .page-section{
-    border: 2px black solid;
+    min-height : 444px;
     text-align:center;
 }
 
