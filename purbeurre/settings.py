@@ -47,7 +47,7 @@ else:
     DEBUG = True
 
 
-ALLOWED_HOSTS = ['purbeurre.herokuapp.com']
+ALLOWED_HOSTS = ['carolepurbeurre.herokuapp.com']
 
 
 # Application definition
