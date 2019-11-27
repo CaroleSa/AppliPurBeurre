@@ -9559,8 +9559,6 @@ hr.light {
   font-family: "Scope One", sans-serif;
 }
 
-
-
 .page-section {
   padding: 4rem 0;
 }
@@ -9683,40 +9681,40 @@ header.masthead h1 {
 }
 
 #searchTextarea{
-    margin-top:10px;
-    margin-right:30px;
+    margin-top: 10px;
+    margin-right: 30px;
     height : 30px;
     color : black;
-    background:#C0C0C0;
+    background: #C0C0C0;
 }
 
 li{
-    margin-top:20px;
+    margin-top: 20px;
 }
 
 #productTextarea{
-    height : 30px;
-    color : black;
+    height: 30px;
+    color: black;
 }
 
 .imageCenter{
-    margin : auto ;
+    margin: auto;
 }
 
 .medium{
-    font-size : 1.5em ;
+    font-size: 1.5em;
 }
 
 .big{
-    font-size : 2em ;
+    font-size: 2em;
 }
 
 a:link{
-    text-decoration:none;
+    text-decoration: none;
 }
 
 #red{
-    Color:#c4101f;
+    Color: #c4101f;
 }
 
 .logo{
@@ -9725,7 +9723,7 @@ a:link{
   margin-right : 10px;
   width : 130px;
   height : 100px;
-  text-align:center;
+  text-align: center;
 }
 
 #searchTextarea{
@@ -9734,7 +9732,7 @@ a:link{
 }
 
 .center{
-    display:inline;
-    margin-top:12px;
-    margin-bottom:3px;
+    display: inline;
+    margin-top: 12px;
+    margin-bottom: 3px;
 }

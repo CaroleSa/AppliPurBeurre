@@ -10,17 +10,17 @@ header{
 #image{
     display: block;
     border: 2px black solid;
-    width : 200px;
-    height : 200px;
-    margin:auto;
+    width: 200px;
+    height: 200px;
+    margin: auto;
     margin-top: 70px;
 }
 
 .result{
-    width : 300px;
-    margin : auto ;
-    margin-bottom : 0px;
-    margin-top : 30px;
+    width: 300px;
+    margin: auto;
+    margin-bottom: 0px;
+    margin-top: 30px;
 }
 
 .rox{
@@ -29,7 +29,7 @@ header{
 
 h2{
     margin-bottom: 50px;
-    font-size : 3em ;
+    font-size: 3em ;
 }
 
 .foreground{
@@ -40,14 +40,14 @@ h2{
 #nutriscore{
     border: 2px black solid;
     border-radius: 30px;
-    width : 40px;
-    height : 40px;
-    background-color:#86ebe6;
-    text-align:center ;
-    font-weight : bold ;
-    font-size : 1.5em;
-    margin : -235px 0 0 230px;
-    margin-bottom:210px;
+    width: 40px;
+    height: 40px;
+    background-color: #86ebe6;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin: -235px 0 0 230px;
+    margin-bottom: 210px;
 }
 
 @media (min-width: 992) {
@@ -72,53 +72,53 @@ h2{
 }
 
 .delete, .save:hover{
-   Color:#c45525;
+   Color: #c45525;
    cursor: default;
 }
 
 a{
-   Color:black ;
+   Color: black ;
 }
 
 a:hover{
-   Color:#c45525 ;
+   Color: #c45525 ;
 }
 
 #green{
-    Color:#124a18 ;
+    Color: #124a18 ;
 }
 
 #red{
-    Color:#c4101f;
+    Color: #c4101f;
 }
 
 h4{
-    text-decoration : underline ;
-    Color:#345a61;
-    font-weight : bold ;
+    text-decoration: underline ;
+    Color: #345a61;
+    font-weight: bold ;
 }
 
 .max-width{
-    width : 196px;
-    margin:auto;
+    width: 196px;
+    margin: auto;
 }
 
 #direction-pages{
-    margin:auto;
-    text-align:center;
+    margin: auto;
+    text-align: center;
 }
 
 #pages{
-    display:inline;
+    display: inline;
 }
 
 .page-section{
-    min-height : 444px;
-    text-align:center;
+    min-height: 444px;
+    text-align: center;
 }
 
 .pagination{
     width : 600px;
-    margin:auto;
-    display:inline;
+    margin: auto;
+    display: inline;
 }
