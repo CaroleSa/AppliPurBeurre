@@ -26,36 +26,37 @@ et d’installer le projet afin de pouvoir développer et tester localement.
     
     Installation :
         Créer un dossier au nom de "purbeurre" sur votre disque
+        
         Cloner le dépôt dans le dossier "purbeurre" avec la commande :
         git clone https://github.com/CaroleSa/AppliPurBeurre.git
+        
+        Initialiser un dépôt git avec la commande :
+        git init
 
-        Installer un environnement virtuel
-         
-        Activer l'environnement virtuel :activation d'un environnement virtuel
-        installation des requirements avec la commande :
+        Installer et activer un environnement virtuel
+        
+        Installer les requirements avec la commande :
         pip install -r requirements.txt
 
-    Données configurables :
+    Indiquer les données configurables :
         obligatoires :
-            purbeurre/purbeurre/settings.py
+            purbeurre/settings.py
             USER ligne 88 : nom utilisateur PostgreSQL 
             PASSWORD ligne 89 : mot de passe
         
         optionnelles :
-            purbeurre/food/classes/database.py
+            food/classes/database.py
             categories_food ligne 33 : liste contenant le nom des catégories d'aliments 
                                        utilisées par le programme
     
-    Création des tables dans la base de données grâce à la commande :
+    Créer les tables dans la base de données grâce à la commande :
         python manage.py migrate
         
-    Activation du serveur en loccal avec la commande :
+    Activer le serveur en local avec la commande :
         python manage.py runserver
 
-Ce projet est accessible à cette adresse :
+Ce projet est accessible à cette adresse : 
+http://carolepurbeurre.herokuapp.com/
 
 Auteur :
 Carole Sartori
-
-
- 
