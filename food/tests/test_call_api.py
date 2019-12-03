@@ -25,7 +25,7 @@ class TestCallApi(TestCase):
                       {'skip': 0, 'page': 1, 'products': [], 'page_size': 100, 'count': 0}, \
                       {'skip': 0, 'page': '1', 'products': [], 'page_size': '100', 'count': 0}, \
                       {'page': '1', 'skip': 0, 'count': 0, 'page_size': '100', 'products': []}, \
-                      {'skip': 0, 'page': '1', 'page_size': '100', 'products':[], 'count': 10}
+                      {'skip': 0, 'page': '1', 'page_size': '100', 'products': [], 'count': 10}
         mock_api.return_value.json.return_value = result_json
         result_list = [result_json]
 
