@@ -20,6 +20,7 @@ class TestDatabase(TestCase):
 
     def test_data_database_exists(self):
         """ Verify that the method insert the data """
+
         self.assertTrue(Food.objects.all().exists())
 
 
