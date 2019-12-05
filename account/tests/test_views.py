@@ -26,10 +26,10 @@ class TestViews(TestCase):
         self.user.objects.create_user(id=self.id_user, username='Null', email=self.email, password=self.password)
 
         # try to get the user data
-        data = self.user.objects.get(id=self.id_user)
-        if data:
+        try:
+            self.user.objects.get(id=self.id_user)
             data = True
-        else:
+        except self.user.DoesNotExist:
             data = False
         self.assertTrue(data)
 

@@ -29,10 +29,10 @@ class TestViews(TestCase):
         food.favorites.add(user)
 
         # try to get the favorites data
-        data = self.user(id=self.id_user).food_set.get(id=self.id_food)
-        if data:
+        try:
+            self.user(id=self.id_user).food_set.get(id=self.id_food)
             data = True
-        else:
+        except Food.DoesNotExist:
             data = False
         self.assertTrue(data)
 
